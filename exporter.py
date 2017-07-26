@@ -38,24 +38,6 @@ class EnumValue:
     _hx_class_name = "EnumValue"
 
 
-class Hmd:
-    _hx_class_name = "Hmd"
-    __slots__ = ()
-    _hx_methods = ["write"]
-
-    def __init__(self):
-        pass
-
-    def write(self,filepath):
-        io = haxe_io_BytesOutput()
-        writer = hxd_fmt_hmd_Writer(io)
-        hmd = hxd_fmt_hmd_Data()
-        hmd.version = 2
-        writer.write(hmd)
-        sys_io_File.saveBytes(filepath,io.getBytes())
-
-
-
 class Reflect:
     _hx_class_name = "Reflect"
     __slots__ = ()
@@ -64,6 +46,74 @@ class Reflect:
     @staticmethod
     def field(o,field):
         return python_Boot.field(o,field)
+
+
+class exporter_Exporter:
+    _hx_class_name = "exporter.Exporter"
+    __slots__ = ("geom",)
+    _hx_fields = ["geom"]
+    _hx_methods = ["write"]
+
+    def __init__(self):
+        self.geom = exporter_Mesh()
+
+    def write(self,filepath):
+        io = haxe_io_BytesOutput()
+        writer = hxd_fmt_hmd_Writer(io)
+        hmd = hxd_fmt_hmd_Data()
+        hmd.version = 2
+        hmd.geometries = list()
+        ngeom = hxd_fmt_hmd_Geometry()
+        ngeom.vertexCount = 24
+        ngeom.vertexStride = 6
+        ngeom.vertexFormat = [hxd_fmt_hmd_GeometryFormat("position",3), hxd_fmt_hmd_GeometryFormat("normal",3)]
+        hmd.geometries.append(ngeom)
+        ngeom.vertexPosition = 0
+        ngeom.indexCounts = [36]
+        ngeom.indexPosition = 0
+        b = h3d_col_Bounds()
+        b.xMin = 0
+        b.yMin = 0
+        b.zMin = 0
+        b.xMax = 1
+        b.yMax = 1
+        b.zMax = 1
+        ngeom.bounds = b
+        hmd.materials = list()
+        hmd.models = list()
+        hmd.animations = list()
+        hmd.dataPosition = 0
+        hmd.data = haxe_io_Bytes.alloc(0)
+        writer.write(hmd)
+        sys_io_File.saveBytes(filepath,io.getBytes())
+
+
+
+class exporter_Mesh:
+    _hx_class_name = "exporter.Mesh"
+    __slots__ = ("vertexArray",)
+    _hx_fields = ["vertexArray"]
+    _hx_methods = ["addVertex"]
+
+    def __init__(self):
+        self.vertexArray = list()
+
+    def addVertex(self,x,y,z):
+        x1 = exporter_Vertex(x,y,z)
+        self.vertexArray.append(x1)
+
+
+
+class exporter_Vertex:
+    _hx_class_name = "exporter.Vertex"
+    __slots__ = ("x", "y", "z")
+    _hx_fields = ["x", "y", "z"]
+
+    def __init__(self,x,y,z):
+        self.x = x
+        self.y = y
+        self.z = z
+
 
 class h2d_BlendMode(Enum):
     __slots__ = ()
@@ -92,6 +142,14 @@ class h3d_col_Bounds:
     __slots__ = ("xMin", "xMax", "yMin", "yMax", "zMin", "zMax")
     _hx_fields = ["xMin", "xMax", "yMin", "yMax", "zMin", "zMax"]
 
+    def __init__(self):
+        self.xMin = 1e20
+        self.xMax = -1e20
+        self.yMin = 1e20
+        self.yMax = -1e20
+        self.zMin = 1e20
+        self.zMax = -1e20
+
 
 class h3d_mat_Face(Enum):
     __slots__ = ()
@@ -106,11 +164,15 @@ class haxe_io_Bytes:
     _hx_class_name = "haxe.io.Bytes"
     __slots__ = ("length", "b")
     _hx_fields = ["length", "b"]
-    _hx_statics = ["ofString"]
+    _hx_statics = ["alloc", "ofString"]
 
     def __init__(self,length,b):
         self.length = length
         self.b = b
+
+    @staticmethod
+    def alloc(length):
+        return haxe_io_Bytes(length,bytearray(length))
 
     @staticmethod
     def ofString(s):
@@ -305,12 +367,26 @@ class hxd_fmt_hmd_GeometryFormat:
     __slots__ = ("name", "format")
     _hx_fields = ["name", "format"]
 
+    def __init__(self,name,format):
+        self.name = name
+        self.format = format
+
 
 
 class hxd_fmt_hmd_Geometry:
     _hx_class_name = "hxd.fmt.hmd.Geometry"
     __slots__ = ("props", "vertexCount", "vertexStride", "vertexFormat", "vertexPosition", "indexCounts", "indexPosition", "bounds")
     _hx_fields = ["props", "vertexCount", "vertexStride", "vertexFormat", "vertexPosition", "indexCounts", "indexPosition", "bounds"]
+
+    def __init__(self):
+        self.bounds = None
+        self.indexPosition = None
+        self.indexCounts = None
+        self.vertexPosition = None
+        self.vertexFormat = None
+        self.vertexStride = None
+        self.vertexCount = None
+        self.props = None
 
 
 class hxd_fmt_hmd_MaterialFlag(Enum):
@@ -393,11 +469,12 @@ class hxd_fmt_hmd_Animation:
 
 class hxd_fmt_hmd_Data:
     _hx_class_name = "hxd.fmt.hmd.Data"
-    __slots__ = ("version", "props", "geometries", "materials", "models", "animations", "data")
-    _hx_fields = ["version", "props", "geometries", "materials", "models", "animations", "data"]
+    __slots__ = ("version", "props", "geometries", "materials", "models", "animations", "dataPosition", "data")
+    _hx_fields = ["version", "props", "geometries", "materials", "models", "animations", "dataPosition", "data"]
 
     def __init__(self):
         self.data = None
+        self.dataPosition = None
         self.animations = None
         self.models = None
         self.materials = None

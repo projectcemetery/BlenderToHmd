@@ -1,12 +1,17 @@
+package exporter;
+
 import hxd.fmt.hmd.Writer;
 import hxd.fmt.hmd.Data;
 import h3d.col.Bounds;
+import haxe.io.Bytes;
 
 /**
  *  For working with hmd
  */
 @:keep
-class Hmd {
+class Exporter {
+
+    var geom = new Mesh ();
 
     /**
      *  Constructor
@@ -30,11 +35,17 @@ class Hmd {
         hmd.geometries.push (ngeom);
         ngeom.vertexPosition = 0;
         ngeom.indexCounts = [36];
-        ngeom.indexPosition = 576;
+        ngeom.indexPosition = 0;
         ngeom.bounds = Bounds.fromValues (0,0,0,1,1,1);
 
+        hmd.materials = new Array<Material> ();
+        hmd.models = new Array<Model> ();
+        hmd.animations = new Array<Animation> ();        
+        hmd.dataPosition = 0;        
+        hmd.data = Bytes.alloc(0);
+        
+
         writer.write (hmd);
-        hxd.fmt.hmd.Dump
         sys.io.File.saveBytes (filepath, io.getBytes ());
     }
 }
