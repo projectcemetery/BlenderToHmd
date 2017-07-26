@@ -2,5 +2,5 @@
 -D analyzer-optimize
 -dce full
 -lib heaps
-Hmd
--python hmd.py
+-main Dumper
+-python dumper.py

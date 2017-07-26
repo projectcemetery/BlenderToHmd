@@ -1,5 +1,6 @@
 {
     "haxe.displayConfigurations": [
         ["build.hxml"]
-    ]
+    ],
+    "python.linting.pylintEnabled": false
 }
