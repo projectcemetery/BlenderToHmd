@@ -1,4 +1,4 @@
-package exporter;
+package io;
 
 import hxd.fmt.hmd.Writer;
 import hxd.fmt.hmd.Data;
@@ -9,9 +9,7 @@ import haxe.io.Bytes;
  *  For working with hmd
  */
 @:keep
-class Exporter {
-
-    var geom = new Mesh ();
+class Exporter {    
 
     /**
      *  Constructor
@@ -19,8 +17,15 @@ class Exporter {
     public function new () {
     }
 
-    public function write (filepath : String) : Void {
-        var io = new haxe.io.BytesOutput ();
+    /**
+     *  Write scene
+     *  @param filepath - 
+     *  @param scene - 
+     */
+    public function write (filepath : String, scene : Scene) : Void {
+        sys.io.File.saveContent (filepath, haxe.Json.stringify (scene, null, " "));
+
+        /*var io = new haxe.io.BytesOutput ();
         var writer = new Writer (io);
         var hmd = new Data ();
         hmd.version = Data.CURRENT_VERSION;
@@ -44,8 +49,7 @@ class Exporter {
         hmd.dataPosition = 0;        
         hmd.data = Bytes.alloc(0);
         
-
         writer.write (hmd);
-        sys.io.File.saveBytes (filepath, io.getBytes ());
+        sys.io.File.saveBytes (filepath, io.getBytes ());*/
     }
 }

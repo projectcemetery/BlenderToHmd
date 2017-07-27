@@ -2,5 +2,5 @@
 -D analyzer-optimize
 -dce full
 -lib heaps
-exporter.Exporter
+io.Exporter
 -python exporter.py

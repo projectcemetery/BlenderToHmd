@@ -1,3 +1,5 @@
+import importlib
+
 bl_info = {
     "name": "Heaps HMD format",
     "author": "Grabli66",

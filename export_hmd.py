@@ -8,6 +8,14 @@ from . import exporter
 
 from progress_report import ProgressReport, ProgressReportSubstep
 
+def mesh_triangulate(me):
+    import bmesh
+    bm = bmesh.new()
+    bm.from_mesh(me)
+    bmesh.ops.triangulate(bm, faces=bm.faces)
+    bm.to_mesh(me)
+    bm.free()
+
 def save(context, filepath,
         EXPORT_APPLY_MODIFIERS = True):
     with ProgressReport(context.window_manager) as progress:
@@ -19,19 +27,45 @@ def save(context, filepath,
         scene.frame_set(frame, 0.0)
         objects = scene.objects
 
-        for i, ob_main in enumerate(objects):
-            obs = [(ob_main, ob_main.matrix_world)]
+        nscene = exporter.io_Scene ()
 
-            for ob, ob_mat in obs: 
+        for i, ob_main in enumerate(objects):            
+            obs = [(ob_main, ob_main.matrix_world)]            
+
+            for ob, ob_mat in obs:
+                nmodel = exporter.io_Model ()
                 try:
                     me = ob.to_mesh(scene, EXPORT_APPLY_MODIFIERS, 'PREVIEW', calc_tessface=False)
-                except RuntimeError:
+                except:
                     continue
+                
+                mesh_triangulate (me)
+                me.calc_normals_split()
 
                 me_verts = me.vertices[:]
-                ngeom = exporter.exporter_Mesh ()
-                ngeom.addVertex (me_verts[0], me_verts[1], me_verts[2])
+                loops = me.loops
 
-        fhmd = exporter.exporter_Exporter ()
-        fhmd.write (filepath)
+                ngeom = exporter.io_Geometry ()
+
+                for face in me.polygons:
+                    triangle = exporter.io_Triangle ()
+                    verts = face.vertices[:]
+
+                    # Face vertices
+                    for vi in verts:
+                        vert = me_verts[vi]
+                        ps = vert.co[:]
+                        triangle.addVertex (ps[0], ps[1], ps[2])
+
+                    # Face normals
+                    for l_idx in face.loop_indices:
+                        normal = loops[l_idx].normal
+
+                    ngeom.addTriangle (triangle)
+
+                nmodel.geometry = ngeom
+                nscene.addModel (nmodel)
+
+        fhmd = exporter.io_Exporter ()
+        fhmd.write (filepath, nscene)
     return {'FINISHED'}
