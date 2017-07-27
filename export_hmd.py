@@ -38,7 +38,9 @@ def save(context, filepath,
                     me = ob.to_mesh(scene, EXPORT_APPLY_MODIFIERS, 'PREVIEW', calc_tessface=False)
                 except:
                     continue
-                
+
+                vertMap = {}
+
                 mesh_triangulate (me)
                 me.calc_normals_split()
 
@@ -46,23 +48,46 @@ def save(context, filepath,
                 loops = me.loops
 
                 ngeom = exporter.io_Geometry ()
-
+                
+                # Create full vertex map
                 for face in me.polygons:
-                    triangle = exporter.io_Triangle ()
                     verts = face.vertices[:]
 
-                    # Face vertices
+                    # Vertices
                     for vi in verts:
                         vert = me_verts[vi]
                         ps = vert.co[:]
-                        triangle.addVertex (ps[0], ps[1], ps[2])
+                        vertMap[vi] = ps
 
-                    # Face normals
+                # Create triangle data
+                for face in me.polygons:
+                    verts = face.vertices[:]
+                    triangle = exporter.io_Triangle ()
+
+                    normals = {}
+                    # Normals
                     for l_idx in face.loop_indices:
-                        normal = loops[l_idx].normal
+                        loop = loops[l_idx]
+                        vi = loop.vertex_index
+                        normal = loop.normal[:]
+                        normals[vi] = normal
 
+                    # Uvs
+
+                    # Vertices
+                    for vi in verts:
+                        vert = me_verts[vi]
+                        ps = vert.co[:]
+                        normal = normals[vi]
+
+                        nvert = exporter.io_Vertex ()
+                        nvert.setPosition (ps[0], ps[1], ps[2])
+                        nvert.setNormal (normal[0], normal[1], normal[2])
+                        triangle.addVertex (nvert)
+                    
                     ngeom.addTriangle (triangle)
 
+                nmodel.name = ob.name
                 nmodel.geometry = ngeom
                 nscene.addModel (nmodel)
 

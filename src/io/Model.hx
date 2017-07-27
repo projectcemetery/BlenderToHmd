@@ -7,6 +7,11 @@ package io;
 class Model {
 
     /**
+     *  Model name
+     */
+    public var name : String = "Object";
+
+    /**
      *  Model geometry
      */
     public var geometry : Geometry;
