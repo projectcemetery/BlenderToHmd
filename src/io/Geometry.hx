@@ -12,6 +12,11 @@ class Geometry {
     public var triangles (default, null) : Array<Triangle>;
 
     /**
+     *  Geometry has uv
+     */
+    public var hasUv : Bool;
+
+    /**
      *  Constructor
      */
     public function new () {

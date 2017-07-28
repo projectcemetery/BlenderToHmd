@@ -24,7 +24,7 @@ class Exporter {
      *  @param scene - 
      */
     public function write (filepath : String, scene : Scene) : Void {
-        //sys.io.File.saveContent (filepath + ".trace", haxe.Json.stringify (scene, null, " "));        
+        sys.io.File.saveContent (filepath + ".trace", haxe.Json.stringify (scene, null, " "));        
 
         var io = new haxe.io.BytesOutput ();
         var writer = new Writer (io);
@@ -38,10 +38,18 @@ class Exporter {
         var ngeom = new Geometry();        
         ngeom.vertexCount = vertCount;
         ngeom.vertexPosition = 0;
-        ngeom.vertexStride = 6;
+        
         var pf = new GeometryFormat ("position", GeometryDataFormat.DVec3);
         var pn = new GeometryFormat ("normal", GeometryDataFormat.DVec3);
         ngeom.vertexFormat = [pf, pn];
+
+        if (egeom.hasUv) {
+            ngeom.vertexStride = 8;
+            var pu = new GeometryFormat ("uv", GeometryDataFormat.DVec2);
+            ngeom.vertexFormat.push (pu);
+        } else {
+            ngeom.vertexStride = 6;
+        }        
               
         ngeom.indexCounts = [vertCount];
         ngeom.bounds = Bounds.fromValues (0,0,0,1,1,1);        
@@ -87,6 +95,11 @@ class Exporter {
                 bytes.writeFloat (vert.normal.x);
                 bytes.writeFloat (vert.normal.y);
                 bytes.writeFloat (vert.normal.z);
+
+                if (egeom.hasUv) {
+                    bytes.writeFloat (vert.uv.u);
+                    bytes.writeFloat (vert.uv.v);
+                }
             }
         }
 

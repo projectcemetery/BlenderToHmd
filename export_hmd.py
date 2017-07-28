@@ -16,6 +16,9 @@ def mesh_triangulate(me):
     bm.to_mesh(me)
     bm.free()
 
+def veckey3d(v):
+    return round(v[0], 4), round(v[1], 4), round(v[2], 4)
+
 def save(context, filepath,
         EXPORT_APPLY_MODIFIERS = True):
     with ProgressReport(context.window_manager) as progress:
@@ -39,15 +42,20 @@ def save(context, filepath,
                 except:
                     continue
 
+                ngeom = exporter.io_Geometry ()
+                ngeom.hasUv = False
+
                 vertMap = {}
 
                 mesh_triangulate (me)
                 me.calc_normals_split()
 
                 me_verts = me.vertices[:]
-                loops = me.loops
-
-                ngeom = exporter.io_Geometry ()
+                hasUv = len(me.uv_textures) > 0
+                if hasUv:
+                    uv_layer = me.uv_layers.active.data[:]
+                    ngeom.hasUv = True
+                loops = me.loops                
                 
                 # Create full vertex map
                 for face in me.polygons:
@@ -64,8 +72,8 @@ def save(context, filepath,
                     verts = face.vertices[:]
                     triangle = exporter.io_Triangle ()
 
-                    normals = {}
                     # Normals
+                    normals = {}                    
                     for l_idx in face.loop_indices:
                         loop = loops[l_idx]
                         vi = loop.vertex_index
@@ -73,6 +81,13 @@ def save(context, filepath,
                         normals[vi] = normal
 
                     # Uvs
+                    uvs = {}
+                    if hasUv:
+                        for l_idx in face.loop_indices:
+                            loop = loops[l_idx]
+                            uv = uv_layer[l_idx].uv
+                            vi = loop.vertex_index
+                            uvs[vi] = uv[:]
 
                     # Vertices
                     for vi in verts:
@@ -81,8 +96,13 @@ def save(context, filepath,
                         normal = normals[vi]
 
                         nvert = exporter.io_Vertex ()
-                        nvert.setPosition (ps[0], ps[1], ps[2])
-                        nvert.setNormal (normal[0], normal[1], normal[2])
+                        vps = veckey3d (ps)
+                        vnor = veckey3d (normal) 
+                        nvert.setPosition (vps[0], vps[1], vps[2])
+                        nvert.setNormal (vnor[0], vnor[1], vnor[2])
+                        if hasUv:
+                            uv = uvs[vi]
+                            nvert.setUv (uv[0], uv[1])
                         triangle.addVertex (nvert)
                     
                     ngeom.addTriangle (triangle)
