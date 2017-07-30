@@ -3,11 +3,13 @@
 !_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
-!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+!_TAG_PROGRAM_VERSION	5.8	//
 Bool	../dumper.py	/^class Bool:$/;"	kind:class	line:443
 CameraFOVY	../dumper.py	/^    def CameraFOVY(v):$/;"	kind:member	line:8319
+CameraFOVY	../exporter.py	/^    def CameraFOVY(v):$/;"	kind:member	line:788
 Class	../dumper.py	/^class Class:$/;"	kind:class	line:61
 Custom	../dumper.py	/^    def Custom(e):$/;"	kind:member	line:4323
+Custom	../exporter.py	/^    def Custom(e):$/;"	kind:member	line:753
 Date	../dumper.py	/^class Date:$/;"	kind:class	line:66
 Date	../exporter.py	/^class Date:$/;"	kind:class	line:41
 Dumper	../dumper.py	/^class Dumper:$/;"	kind:class	line:128
@@ -20,19 +22,26 @@ EnumValue	../exporter.py	/^class EnumValue:$/;"	kind:class	line:103
 ExportHMD	../__init__.py	/^class ExportHMD(bpy.types.Operator, ExportHelper, IOOBJOrientationHelper):$/;"	kind:class	line:37
 Float	../dumper.py	/^class Float:$/;"	kind:class	line:433
 HxOverrides	../dumper.py	/^class HxOverrides:$/;"	kind:class	line:9237
-HxOverrides	../exporter.py	/^class HxOverrides:$/;"	kind:class	line:1236
+HxOverrides	../exporter.py	/^class HxOverrides:$/;"	kind:class	line:1965
 HxString	../dumper.py	/^class HxString:$/;"	kind:class	line:2576
-HxString	../exporter.py	/^class HxString:$/;"	kind:class	line:1256
+HxString	../exporter.py	/^class HxString:$/;"	kind:class	line:1989
 IOOBJOrientationHelper	../__init__.py	/^IOOBJOrientationHelper = orientation_helper_factory("IOOBJOrientationHelper", axis_forward='-Z', axis_up='Y')$/;"	kind:variable	line:34
 Int	../dumper.py	/^class Int:$/;"	kind:class	line:438
 L	../dumper.py	/^    def L(a):$/;"	kind:member	line:1428
 Lambda	../dumper.py	/^class Lambda:$/;"	kind:class	line:206
+Math	../dumper.py	/^import math as Math$/;"	kind:namespace	line:7
+Math	../exporter.py	/^import math as Math$/;"	kind:namespace	line:7
+Matrix	../__init__.py	/^        from mathutils import Matrix$/;"	kind:namespace	line:74
 PFloat	../dumper.py	/^    def PFloat(v):$/;"	kind:member	line:6507
 PFloats	../dumper.py	/^    def PFloats(v):$/;"	kind:member	line:6523
 PIdent	../dumper.py	/^    def PIdent(i):$/;"	kind:member	line:6515
 PInt	../dumper.py	/^    def PInt(v):$/;"	kind:member	line:6503
 PInts	../dumper.py	/^    def PInts(v):$/;"	kind:member	line:6519
 PString	../dumper.py	/^    def PString(v):$/;"	kind:member	line:6511
+ProgressReport	../export_hmd.py	/^from progress_report import ProgressReport, ProgressReportSubstep$/;"	kind:namespace	line:8
+ProgressReport	../export_hmd_back.py	/^from progress_report import ProgressReport, ProgressReportSubstep$/;"	kind:namespace	line:8
+ProgressReportSubstep	../export_hmd.py	/^from progress_report import ProgressReport, ProgressReportSubstep$/;"	kind:namespace	line:8
+ProgressReportSubstep	../export_hmd_back.py	/^from progress_report import ProgressReport, ProgressReportSubstep$/;"	kind:namespace	line:8
 Reflect	../dumper.py	/^class Reflect:$/;"	kind:class	line:223
 Reflect	../exporter.py	/^class Reflect:$/;"	kind:class	line:108
 Std	../dumper.py	/^class Std:$/;"	kind:class	line:260
@@ -60,7 +69,7 @@ ValueType	../dumper.py	/^class ValueType(Enum):$/;"	kind:class	line:785
 ValueType	../exporter.py	/^class ValueType(Enum):$/;"	kind:class	line:225
 Xml	../dumper.py	/^class Xml:$/;"	kind:class	line:921
 _HxException	../dumper.py	/^class _HxException(Exception):$/;"	kind:class	line:9219
-_HxException	../exporter.py	/^class _HxException(Exception):$/;"	kind:class	line:1219
+_HxException	../exporter.py	/^class _HxException(Exception):$/;"	kind:class	line:1948
 _SHADER	../dumper.py	/^    _SHADER = None$/;"	kind:variable	line:3210
 _SHADER	../dumper.py	/^    _SHADER = None$/;"	kind:variable	line:3224
 _SHADER	../dumper.py	/^    _SHADER = None$/;"	kind:variable	line:3237
@@ -156,19 +165,30 @@ __init__	../dumper.py	/^    def __init__(self,x):$/;"	kind:member	line:4503
 __init__	../dumper.py	/^    def __init__(self,x):$/;"	kind:member	line:4514
 __init__	../dumper.py	/^    def __init__(self,x):$/;"	kind:member	line:4526
 __init__	../dumper.py	/^    def __init__(self,year,month,day,hour,_hx_min,sec):$/;"	kind:member	line:73
+__init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:1211
+__init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:1304
+__init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:1323
+__init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:1336
+__init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:1351
 __init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:205
-__init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:562
-__init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:577
-__init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:591
-__init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:603
-__init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:618
+__init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:329
+__init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:619
+__init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:712
+__init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:799
+__init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:830
+__init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:858
+__init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:899
+__init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:954
 __init__	../exporter.py	/^    def __init__(self, fields):$/;"	kind:member	line:16
-__init__	../exporter.py	/^    def __init__(self,it):$/;"	kind:member	line:1067
-__init__	../exporter.py	/^    def __init__(self,replacer,space):$/;"	kind:member	line:337
+__init__	../exporter.py	/^    def __init__(self,it):$/;"	kind:member	line:1796
+__init__	../exporter.py	/^    def __init__(self,length,b):$/;"	kind:member	line:601
+__init__	../exporter.py	/^    def __init__(self,name,format):$/;"	kind:member	line:818
+__init__	../exporter.py	/^    def __init__(self,out):$/;"	kind:member	line:973
+__init__	../exporter.py	/^    def __init__(self,replacer,space):$/;"	kind:member	line:386
 __init__	../exporter.py	/^    def __init__(self,tag,index,params):$/;"	kind:member	line:26
-__init__	../exporter.py	/^    def __init__(self,u,v):$/;"	kind:member	line:305
-__init__	../exporter.py	/^    def __init__(self,val):$/;"	kind:member	line:1228
-__init__	../exporter.py	/^    def __init__(self,x = 0.,y = 0.,z = 0.,w = 1.):$/;"	kind:member	line:283
+__init__	../exporter.py	/^    def __init__(self,u,v):$/;"	kind:member	line:354
+__init__	../exporter.py	/^    def __init__(self,val):$/;"	kind:member	line:1957
+__init__	../exporter.py	/^    def __init__(self,x = 0.,y = 0.,z = 0.,w = 1.):$/;"	kind:member	line:295
 __init__	../exporter.py	/^    def __init__(self,year,month,day,hour,_hx_min,sec):$/;"	kind:member	line:48
 __init__.py	../__init__.py	1;"	kind:file	line:1
 __slots__	../dumper.py	/^    __slots__ = ("_11", "_12", "_13", "_14", "_21", "_22", "_23", "_24", "_31", "_32", "_33", "_34", "_41", "_42", "_43", "_44")$/;"	kind:variable	line:1100
@@ -326,35 +346,62 @@ __slots__	../dumper.py	/^    __slots__ = ()$/;"	kind:variable	line:9436
 __slots__	../dumper.py	/^    __slots__ = ()$/;"	kind:variable	line:9451
 __slots__	../dumper.py	/^    __slots__ = ()$/;"	kind:variable	line:9466
 __slots__	../exporter.py	/^    __slots__ = ("b",)$/;"	kind:variable	line:202
-__slots__	../exporter.py	/^    __slots__ = ("buf", "replacer", "indent", "pretty", "nind")$/;"	kind:variable	line:332
+__slots__	../exporter.py	/^    __slots__ = ("b",)$/;"	kind:variable	line:615
+__slots__	../exporter.py	/^    __slots__ = ("b",)$/;"	kind:variable	line:705
+__slots__	../exporter.py	/^    __slots__ = ("bigEndian",)$/;"	kind:variable	line:633
+__slots__	../exporter.py	/^    __slots__ = ("buf", "replacer", "indent", "pretty", "nind")$/;"	kind:variable	line:381
 __slots__	../exporter.py	/^    __slots__ = ("date",)$/;"	kind:variable	line:43
-__slots__	../exporter.py	/^    __slots__ = ("geometry",)$/;"	kind:variable	line:588
-__slots__	../exporter.py	/^    __slots__ = ("h",)$/;"	kind:variable	line:320
-__slots__	../exporter.py	/^    __slots__ = ("it", "x", "has", "checked")$/;"	kind:variable	line:1063
-__slots__	../exporter.py	/^    __slots__ = ("modelArray",)$/;"	kind:variable	line:599
+__slots__	../exporter.py	/^    __slots__ = ("frame", "data")$/;"	kind:variable	line:935
+__slots__	../exporter.py	/^    __slots__ = ("h",)$/;"	kind:variable	line:369
+__slots__	../exporter.py	/^    __slots__ = ("it", "x", "has", "checked")$/;"	kind:variable	line:1792
+__slots__	../exporter.py	/^    __slots__ = ("length", "b")$/;"	kind:variable	line:597
+__slots__	../exporter.py	/^    __slots__ = ("materialIndex", "joints")$/;"	kind:variable	line:880
+__slots__	../exporter.py	/^    __slots__ = ("modelArray",)$/;"	kind:variable	line:1332
+__slots__	../exporter.py	/^    __slots__ = ("name", "flags", "props")$/;"	kind:variable	line:927
+__slots__	../exporter.py	/^    __slots__ = ("name", "format")$/;"	kind:variable	line:815
+__slots__	../exporter.py	/^    __slots__ = ("name", "geometry")$/;"	kind:variable	line:1320
+__slots__	../exporter.py	/^    __slots__ = ("name", "props", "diffuseTexture", "blendMode", "culling", "killAlpha", "flags")$/;"	kind:variable	line:855
+__slots__	../exporter.py	/^    __slots__ = ("name", "props", "frames", "sampling", "speed", "loop", "objects", "events", "dataPosition")$/;"	kind:variable	line:943
+__slots__	../exporter.py	/^    __slots__ = ("name", "props", "joints", "split")$/;"	kind:variable	line:888
+__slots__	../exporter.py	/^    __slots__ = ("name", "props", "parent", "follow", "position", "geometry", "materials", "skin")$/;"	kind:variable	line:896
+__slots__	../exporter.py	/^    __slots__ = ("name", "props", "parent", "position", "bind", "transpos")$/;"	kind:variable	line:872
+__slots__	../exporter.py	/^    __slots__ = ("out", "version")$/;"	kind:variable	line:969
+__slots__	../exporter.py	/^    __slots__ = ("position", "normal", "uv")$/;"	kind:variable	line:1347
+__slots__	../exporter.py	/^    __slots__ = ("props", "vertexCount", "vertexStride", "vertexFormat", "vertexPosition", "indexCounts", "indexPosition", "bounds")$/;"	kind:variable	line:827
 __slots__	../exporter.py	/^    __slots__ = ("tag", "index", "params")$/;"	kind:variable	line:22
-__slots__	../exporter.py	/^    __slots__ = ("triangles",)$/;"	kind:variable	line:573
-__slots__	../exporter.py	/^    __slots__ = ("u", "v")$/;"	kind:variable	line:302
-__slots__	../exporter.py	/^    __slots__ = ("val",)$/;"	kind:variable	line:1221
-__slots__	../exporter.py	/^    __slots__ = ("vertices", "normals", "uvs")$/;"	kind:variable	line:614
-__slots__	../exporter.py	/^    __slots__ = ("x", "y", "z", "w")$/;"	kind:variable	line:280
+__slots__	../exporter.py	/^    __slots__ = ("u", "v")$/;"	kind:variable	line:351
+__slots__	../exporter.py	/^    __slots__ = ("val",)$/;"	kind:variable	line:1950
+__slots__	../exporter.py	/^    __slots__ = ("version", "props", "geometries", "materials", "models", "animations", "dataPosition", "data")$/;"	kind:variable	line:951
+__slots__	../exporter.py	/^    __slots__ = ("vertexArray", "indexArray", "hasUv")$/;"	kind:variable	line:1300
+__slots__	../exporter.py	/^    __slots__ = ("x", "y", "z", "qx", "qy", "qz", "sx", "sy", "sz")$/;"	kind:variable	line:796
+__slots__	../exporter.py	/^    __slots__ = ("x", "y", "z", "w")$/;"	kind:variable	line:292
+__slots__	../exporter.py	/^    __slots__ = ("xMin", "xMax", "yMin", "yMax", "zMin", "zMax")$/;"	kind:variable	line:326
 __slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:110
-__slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:1100
-__slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:1238
-__slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:1258
+__slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:1208
 __slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:128
-__slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:1341
+__slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:1375
+__slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:1829
+__slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:1967
+__slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:1991
+__slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:2074
 __slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:213
 __slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:226
 __slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:248
+__slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:278
 __slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:314
-__slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:548
-__slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:559
-__slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:646
+__slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:320
+__slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:340
+__slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:363
+__slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:740
+__slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:749
+__slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:763
+__slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:784
+__slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:843
+__slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:912
 __str__	../dumper.py	/^    def __str__(self):$/;"	kind:member	line:51
 __str__	../exporter.py	/^    def __str__(self):$/;"	kind:member	line:31
 _get	../dumper.py	/^    def _get(x,idx):$/;"	kind:member	line:2772
-_get	../exporter.py	/^    def _get(x,idx):$/;"	kind:member	line:1211
+_get	../exporter.py	/^    def _get(x,idx):$/;"	kind:member	line:1940
 _hx_AnonObject	../dumper.py	/^class _hx_AnonObject:$/;"	kind:class	line:35
 _hx_AnonObject	../exporter.py	/^class _hx_AnonObject:$/;"	kind:class	line:15
 _hx_class_name	../dumper.py	/^    _hx_class_name = "Bool"$/;"	kind:variable	line:444
@@ -520,30 +567,57 @@ _hx_class_name	../dumper.py	/^    _hx_class_name = "sys.io.FileOutput"$/;"	kind:
 _hx_class_name	../exporter.py	/^    _hx_class_name = "Date"$/;"	kind:variable	line:42
 _hx_class_name	../exporter.py	/^    _hx_class_name = "Enum"$/;"	kind:variable	line:21
 _hx_class_name	../exporter.py	/^    _hx_class_name = "EnumValue"$/;"	kind:variable	line:104
-_hx_class_name	../exporter.py	/^    _hx_class_name = "HxOverrides"$/;"	kind:variable	line:1237
-_hx_class_name	../exporter.py	/^    _hx_class_name = "HxString"$/;"	kind:variable	line:1257
+_hx_class_name	../exporter.py	/^    _hx_class_name = "HxOverrides"$/;"	kind:variable	line:1966
+_hx_class_name	../exporter.py	/^    _hx_class_name = "HxString"$/;"	kind:variable	line:1990
 _hx_class_name	../exporter.py	/^    _hx_class_name = "Reflect"$/;"	kind:variable	line:109
 _hx_class_name	../exporter.py	/^    _hx_class_name = "Std"$/;"	kind:variable	line:127
 _hx_class_name	../exporter.py	/^    _hx_class_name = "StringBuf"$/;"	kind:variable	line:201
 _hx_class_name	../exporter.py	/^    _hx_class_name = "StringTools"$/;"	kind:variable	line:212
 _hx_class_name	../exporter.py	/^    _hx_class_name = "Type"$/;"	kind:variable	line:247
 _hx_class_name	../exporter.py	/^    _hx_class_name = "ValueType"$/;"	kind:variable	line:227
-_hx_class_name	../exporter.py	/^    _hx_class_name = "_HxException"$/;"	kind:variable	line:1220
-_hx_class_name	../exporter.py	/^    _hx_class_name = "h3d.Vector"$/;"	kind:variable	line:279
-_hx_class_name	../exporter.py	/^    _hx_class_name = "h3d.prim.UV"$/;"	kind:variable	line:301
-_hx_class_name	../exporter.py	/^    _hx_class_name = "haxe.IMap"$/;"	kind:variable	line:313
-_hx_class_name	../exporter.py	/^    _hx_class_name = "haxe.ds.StringMap"$/;"	kind:variable	line:319
-_hx_class_name	../exporter.py	/^    _hx_class_name = "haxe.format.JsonPrinter"$/;"	kind:variable	line:331
-_hx_class_name	../exporter.py	/^    _hx_class_name = "haxe.io.Eof"$/;"	kind:variable	line:547
-_hx_class_name	../exporter.py	/^    _hx_class_name = "io.Exporter"$/;"	kind:variable	line:558
-_hx_class_name	../exporter.py	/^    _hx_class_name = "io.Geometry"$/;"	kind:variable	line:572
-_hx_class_name	../exporter.py	/^    _hx_class_name = "io.Model"$/;"	kind:variable	line:587
-_hx_class_name	../exporter.py	/^    _hx_class_name = "io.Scene"$/;"	kind:variable	line:598
-_hx_class_name	../exporter.py	/^    _hx_class_name = "io.Triangle"$/;"	kind:variable	line:613
-_hx_class_name	../exporter.py	/^    _hx_class_name = "python.Boot"$/;"	kind:variable	line:645
-_hx_class_name	../exporter.py	/^    _hx_class_name = "python.HaxeIterator"$/;"	kind:variable	line:1062
-_hx_class_name	../exporter.py	/^    _hx_class_name = "python.internal.ArrayImpl"$/;"	kind:variable	line:1099
-_hx_class_name	../exporter.py	/^    _hx_class_name = "sys.io.File"$/;"	kind:variable	line:1340
+_hx_class_name	../exporter.py	/^    _hx_class_name = "_HxException"$/;"	kind:variable	line:1949
+_hx_class_name	../exporter.py	/^    _hx_class_name = "h2d.BlendMode"$/;"	kind:variable	line:279
+_hx_class_name	../exporter.py	/^    _hx_class_name = "h3d.Vector"$/;"	kind:variable	line:291
+_hx_class_name	../exporter.py	/^    _hx_class_name = "h3d.col.Bounds"$/;"	kind:variable	line:325
+_hx_class_name	../exporter.py	/^    _hx_class_name = "h3d.col.Collider"$/;"	kind:variable	line:319
+_hx_class_name	../exporter.py	/^    _hx_class_name = "h3d.impl._Serializable.EmptyInterface"$/;"	kind:variable	line:313
+_hx_class_name	../exporter.py	/^    _hx_class_name = "h3d.mat.Face"$/;"	kind:variable	line:341
+_hx_class_name	../exporter.py	/^    _hx_class_name = "h3d.prim.UV"$/;"	kind:variable	line:350
+_hx_class_name	../exporter.py	/^    _hx_class_name = "haxe.IMap"$/;"	kind:variable	line:362
+_hx_class_name	../exporter.py	/^    _hx_class_name = "haxe.ds.StringMap"$/;"	kind:variable	line:368
+_hx_class_name	../exporter.py	/^    _hx_class_name = "haxe.format.JsonPrinter"$/;"	kind:variable	line:380
+_hx_class_name	../exporter.py	/^    _hx_class_name = "haxe.io.Bytes"$/;"	kind:variable	line:596
+_hx_class_name	../exporter.py	/^    _hx_class_name = "haxe.io.BytesBuffer"$/;"	kind:variable	line:614
+_hx_class_name	../exporter.py	/^    _hx_class_name = "haxe.io.BytesOutput"$/;"	kind:variable	line:704
+_hx_class_name	../exporter.py	/^    _hx_class_name = "haxe.io.Eof"$/;"	kind:variable	line:739
+_hx_class_name	../exporter.py	/^    _hx_class_name = "haxe.io.Error"$/;"	kind:variable	line:750
+_hx_class_name	../exporter.py	/^    _hx_class_name = "haxe.io.FPHelper"$/;"	kind:variable	line:762
+_hx_class_name	../exporter.py	/^    _hx_class_name = "haxe.io.Output"$/;"	kind:variable	line:632
+_hx_class_name	../exporter.py	/^    _hx_class_name = "hxd.fmt.hmd.Animation"$/;"	kind:variable	line:942
+_hx_class_name	../exporter.py	/^    _hx_class_name = "hxd.fmt.hmd.AnimationEvent"$/;"	kind:variable	line:934
+_hx_class_name	../exporter.py	/^    _hx_class_name = "hxd.fmt.hmd.AnimationFlag"$/;"	kind:variable	line:913
+_hx_class_name	../exporter.py	/^    _hx_class_name = "hxd.fmt.hmd.AnimationObject"$/;"	kind:variable	line:926
+_hx_class_name	../exporter.py	/^    _hx_class_name = "hxd.fmt.hmd.Data"$/;"	kind:variable	line:950
+_hx_class_name	../exporter.py	/^    _hx_class_name = "hxd.fmt.hmd.Geometry"$/;"	kind:variable	line:826
+_hx_class_name	../exporter.py	/^    _hx_class_name = "hxd.fmt.hmd.GeometryFormat"$/;"	kind:variable	line:814
+_hx_class_name	../exporter.py	/^    _hx_class_name = "hxd.fmt.hmd.Material"$/;"	kind:variable	line:854
+_hx_class_name	../exporter.py	/^    _hx_class_name = "hxd.fmt.hmd.MaterialFlag"$/;"	kind:variable	line:844
+_hx_class_name	../exporter.py	/^    _hx_class_name = "hxd.fmt.hmd.Model"$/;"	kind:variable	line:895
+_hx_class_name	../exporter.py	/^    _hx_class_name = "hxd.fmt.hmd.Position"$/;"	kind:variable	line:795
+_hx_class_name	../exporter.py	/^    _hx_class_name = "hxd.fmt.hmd.Property"$/;"	kind:variable	line:785
+_hx_class_name	../exporter.py	/^    _hx_class_name = "hxd.fmt.hmd.Skin"$/;"	kind:variable	line:887
+_hx_class_name	../exporter.py	/^    _hx_class_name = "hxd.fmt.hmd.SkinJoint"$/;"	kind:variable	line:871
+_hx_class_name	../exporter.py	/^    _hx_class_name = "hxd.fmt.hmd.SkinSplit"$/;"	kind:variable	line:879
+_hx_class_name	../exporter.py	/^    _hx_class_name = "hxd.fmt.hmd.Writer"$/;"	kind:variable	line:968
+_hx_class_name	../exporter.py	/^    _hx_class_name = "io.Exporter"$/;"	kind:variable	line:1207
+_hx_class_name	../exporter.py	/^    _hx_class_name = "io.Geometry"$/;"	kind:variable	line:1299
+_hx_class_name	../exporter.py	/^    _hx_class_name = "io.Model"$/;"	kind:variable	line:1319
+_hx_class_name	../exporter.py	/^    _hx_class_name = "io.Scene"$/;"	kind:variable	line:1331
+_hx_class_name	../exporter.py	/^    _hx_class_name = "io.Vertex"$/;"	kind:variable	line:1346
+_hx_class_name	../exporter.py	/^    _hx_class_name = "python.Boot"$/;"	kind:variable	line:1374
+_hx_class_name	../exporter.py	/^    _hx_class_name = "python.HaxeIterator"$/;"	kind:variable	line:1791
+_hx_class_name	../exporter.py	/^    _hx_class_name = "python.internal.ArrayImpl"$/;"	kind:variable	line:1828
+_hx_class_name	../exporter.py	/^    _hx_class_name = "sys.io.File"$/;"	kind:variable	line:2073
 _hx_constructs	../dumper.py	/^    _hx_constructs = ["ARGB", "BGRA", "RGBA", "RGBA16F", "RGBA32F", "ALPHA8", "ALPHA16F", "ALPHA32F"]$/;"	kind:variable	line:2911
 _hx_constructs	../dumper.py	/^    _hx_constructs = ["Blocked", "Overflow", "OutsideBounds", "Custom"]$/;"	kind:variable	line:4320
 _hx_constructs	../dumper.py	/^    _hx_constructs = ["CameraFOVY", "HasMaterialFlags"]$/;"	kind:variable	line:8316
@@ -660,18 +734,36 @@ _hx_fields	../dumper.py	/^    _hx_fields = []$/;"	kind:variable	line:9401
 _hx_fields	../dumper.py	/^    _hx_fields = []$/;"	kind:variable	line:9416
 _hx_fields	../dumper.py	/^    _hx_fields = []$/;"	kind:variable	line:9437
 _hx_fields	../exporter.py	/^    _hx_fields = ["b"]$/;"	kind:variable	line:203
-_hx_fields	../exporter.py	/^    _hx_fields = ["buf", "replacer", "indent", "pretty", "nind"]$/;"	kind:variable	line:333
+_hx_fields	../exporter.py	/^    _hx_fields = ["b"]$/;"	kind:variable	line:616
+_hx_fields	../exporter.py	/^    _hx_fields = ["b"]$/;"	kind:variable	line:706
+_hx_fields	../exporter.py	/^    _hx_fields = ["bigEndian"]$/;"	kind:variable	line:634
+_hx_fields	../exporter.py	/^    _hx_fields = ["buf", "replacer", "indent", "pretty", "nind"]$/;"	kind:variable	line:382
 _hx_fields	../exporter.py	/^    _hx_fields = ["date"]$/;"	kind:variable	line:44
-_hx_fields	../exporter.py	/^    _hx_fields = ["geometry"]$/;"	kind:variable	line:589
-_hx_fields	../exporter.py	/^    _hx_fields = ["h"]$/;"	kind:variable	line:321
-_hx_fields	../exporter.py	/^    _hx_fields = ["it", "x", "has", "checked"]$/;"	kind:variable	line:1064
-_hx_fields	../exporter.py	/^    _hx_fields = ["modelArray"]$/;"	kind:variable	line:600
+_hx_fields	../exporter.py	/^    _hx_fields = ["frame", "data"]$/;"	kind:variable	line:936
+_hx_fields	../exporter.py	/^    _hx_fields = ["h"]$/;"	kind:variable	line:370
+_hx_fields	../exporter.py	/^    _hx_fields = ["it", "x", "has", "checked"]$/;"	kind:variable	line:1793
+_hx_fields	../exporter.py	/^    _hx_fields = ["length", "b"]$/;"	kind:variable	line:598
+_hx_fields	../exporter.py	/^    _hx_fields = ["materialIndex", "joints"]$/;"	kind:variable	line:881
+_hx_fields	../exporter.py	/^    _hx_fields = ["modelArray"]$/;"	kind:variable	line:1333
+_hx_fields	../exporter.py	/^    _hx_fields = ["name", "flags", "props"]$/;"	kind:variable	line:928
+_hx_fields	../exporter.py	/^    _hx_fields = ["name", "format"]$/;"	kind:variable	line:816
+_hx_fields	../exporter.py	/^    _hx_fields = ["name", "geometry"]$/;"	kind:variable	line:1321
+_hx_fields	../exporter.py	/^    _hx_fields = ["name", "props", "diffuseTexture", "blendMode", "culling", "killAlpha", "flags"]$/;"	kind:variable	line:856
+_hx_fields	../exporter.py	/^    _hx_fields = ["name", "props", "frames", "sampling", "speed", "loop", "objects", "events", "dataPosition"]$/;"	kind:variable	line:944
+_hx_fields	../exporter.py	/^    _hx_fields = ["name", "props", "joints", "split"]$/;"	kind:variable	line:889
+_hx_fields	../exporter.py	/^    _hx_fields = ["name", "props", "parent", "follow", "position", "geometry", "materials", "skin"]$/;"	kind:variable	line:897
+_hx_fields	../exporter.py	/^    _hx_fields = ["name", "props", "parent", "position", "bind", "transpos"]$/;"	kind:variable	line:873
+_hx_fields	../exporter.py	/^    _hx_fields = ["out", "version"]$/;"	kind:variable	line:970
+_hx_fields	../exporter.py	/^    _hx_fields = ["position", "normal", "uv"]$/;"	kind:variable	line:1348
+_hx_fields	../exporter.py	/^    _hx_fields = ["props", "vertexCount", "vertexStride", "vertexFormat", "vertexPosition", "indexCounts", "indexPosition", "bounds"]$/;"	kind:variable	line:828
 _hx_fields	../exporter.py	/^    _hx_fields = ["tag", "index", "params"]$/;"	kind:variable	line:23
-_hx_fields	../exporter.py	/^    _hx_fields = ["triangles"]$/;"	kind:variable	line:574
-_hx_fields	../exporter.py	/^    _hx_fields = ["u", "v"]$/;"	kind:variable	line:303
-_hx_fields	../exporter.py	/^    _hx_fields = ["val"]$/;"	kind:variable	line:1222
-_hx_fields	../exporter.py	/^    _hx_fields = ["vertices", "normals", "uvs"]$/;"	kind:variable	line:615
-_hx_fields	../exporter.py	/^    _hx_fields = ["x", "y", "z", "w"]$/;"	kind:variable	line:281
+_hx_fields	../exporter.py	/^    _hx_fields = ["u", "v"]$/;"	kind:variable	line:352
+_hx_fields	../exporter.py	/^    _hx_fields = ["val"]$/;"	kind:variable	line:1951
+_hx_fields	../exporter.py	/^    _hx_fields = ["version", "props", "geometries", "materials", "models", "animations", "dataPosition", "data"]$/;"	kind:variable	line:952
+_hx_fields	../exporter.py	/^    _hx_fields = ["vertexArray", "indexArray", "hasUv"]$/;"	kind:variable	line:1301
+_hx_fields	../exporter.py	/^    _hx_fields = ["x", "y", "z", "qx", "qy", "qz", "sx", "sy", "sz"]$/;"	kind:variable	line:797
+_hx_fields	../exporter.py	/^    _hx_fields = ["x", "y", "z", "w"]$/;"	kind:variable	line:293
+_hx_fields	../exporter.py	/^    _hx_fields = ["xMin", "xMax", "yMin", "yMax", "zMin", "zMax"]$/;"	kind:variable	line:327
 _hx_init_Sys_environ	../dumper.py	/^def _hx_init_Sys_environ():$/;"	kind:function	line:9575
 _hx_init_haxe_xml_Parser_escapes	../dumper.py	/^def _hx_init_haxe_xml_Parser_escapes():$/;"	kind:function	line:9627
 _hx_init_hxd_fmt_hmd_Material_DEFAULT_FLAGS	../dumper.py	/^def _hx_init_hxd_fmt_hmd_Material_DEFAULT_FLAGS():$/;"	kind:function	line:9638
@@ -744,84 +836,84 @@ _hx_local_1	../dumper.py	/^        def _hx_local_1():$/;"	kind:function	line:459
 _hx_local_1	../dumper.py	/^        def _hx_local_1(j):$/;"	kind:function	line:6346
 _hx_local_1	../dumper.py	/^        def _hx_local_1(name):$/;"	kind:function	line:5657
 _hx_local_1	../dumper.py	/^        def _hx_local_1(o1,o2):$/;"	kind:function	line:7858
-_hx_local_1	../exporter.py	/^                    def _hx_local_1(a11):$/;"	kind:function	line:824
+_hx_local_1	../exporter.py	/^                    def _hx_local_1(a11):$/;"	kind:function	line:1553
 _hx_local_10	../dumper.py	/^                    def _hx_local_10(f2):$/;"	kind:function	line:2393
 _hx_local_10	../dumper.py	/^            def _hx_local_10():$/;"	kind:function	line:2972
 _hx_local_10	../dumper.py	/^        def _hx_local_10(c4):$/;"	kind:function	line:6082
-_hx_local_10	../exporter.py	/^                    def _hx_local_10(f2):$/;"	kind:function	line:878
+_hx_local_10	../exporter.py	/^                    def _hx_local_10(f2):$/;"	kind:function	line:1607
 _hx_local_11	../dumper.py	/^                    def _hx_local_11():$/;"	kind:function	line:2400
 _hx_local_11	../dumper.py	/^                def _hx_local_11(_):$/;"	kind:function	line:7489
 _hx_local_11	../dumper.py	/^        def _hx_local_11(c11,c21):$/;"	kind:function	line:6092
-_hx_local_11	../exporter.py	/^                    def _hx_local_11():$/;"	kind:function	line:885
+_hx_local_11	../exporter.py	/^                    def _hx_local_11():$/;"	kind:function	line:1614
 _hx_local_12	../dumper.py	/^                    def _hx_local_12(a16):$/;"	kind:function	line:2406
 _hx_local_12	../dumper.py	/^            def _hx_local_12():$/;"	kind:function	line:7488
-_hx_local_12	../exporter.py	/^                    def _hx_local_12(a16):$/;"	kind:function	line:891
+_hx_local_12	../exporter.py	/^                    def _hx_local_12(a16):$/;"	kind:function	line:1620
 _hx_local_13	../dumper.py	/^                    def _hx_local_13(d):$/;"	kind:function	line:2412
 _hx_local_13	../dumper.py	/^                def _hx_local_13():$/;"	kind:function	line:7493
-_hx_local_13	../exporter.py	/^                    def _hx_local_13(d):$/;"	kind:function	line:897
+_hx_local_13	../exporter.py	/^                    def _hx_local_13(d):$/;"	kind:function	line:1626
 _hx_local_14	../dumper.py	/^                    def _hx_local_14(a13):$/;"	kind:function	line:2419
 _hx_local_14	../dumper.py	/^            def _hx_local_14(g1):$/;"	kind:function	line:7492
-_hx_local_14	../exporter.py	/^                    def _hx_local_14(a13):$/;"	kind:function	line:904
+_hx_local_14	../exporter.py	/^                    def _hx_local_14(a13):$/;"	kind:function	line:1633
 _hx_local_15	../dumper.py	/^                    def _hx_local_15(x1):$/;"	kind:function	line:2424
-_hx_local_15	../exporter.py	/^                    def _hx_local_15(x1):$/;"	kind:function	line:909
+_hx_local_15	../exporter.py	/^                    def _hx_local_15(x1):$/;"	kind:function	line:1638
 _hx_local_16	../dumper.py	/^                                def _hx_local_16():$/;"	kind:function	line:6178
 _hx_local_16	../dumper.py	/^                    def _hx_local_16():$/;"	kind:function	line:2430
 _hx_local_16	../dumper.py	/^                    def _hx_local_16():$/;"	kind:function	line:4944
-_hx_local_16	../exporter.py	/^                    def _hx_local_16():$/;"	kind:function	line:915
+_hx_local_16	../exporter.py	/^                    def _hx_local_16():$/;"	kind:function	line:1644
 _hx_local_17	../dumper.py	/^                            def _hx_local_17():$/;"	kind:function	line:6177
 _hx_local_17	../dumper.py	/^                    def _hx_local_17(e2):$/;"	kind:function	line:2436
-_hx_local_17	../exporter.py	/^                    def _hx_local_17(e2):$/;"	kind:function	line:921
+_hx_local_17	../exporter.py	/^                    def _hx_local_17(e2):$/;"	kind:function	line:1650
 _hx_local_18	../dumper.py	/^                    def _hx_local_18(f1):$/;"	kind:function	line:2443
-_hx_local_18	../exporter.py	/^                    def _hx_local_18(f1):$/;"	kind:function	line:928
+_hx_local_18	../exporter.py	/^                    def _hx_local_18(f1):$/;"	kind:function	line:1657
 _hx_local_19	../dumper.py	/^                    def _hx_local_19():$/;"	kind:function	line:2449
-_hx_local_19	../exporter.py	/^                    def _hx_local_19():$/;"	kind:function	line:934
+_hx_local_19	../exporter.py	/^                    def _hx_local_19():$/;"	kind:function	line:1663
 _hx_local_2	../dumper.py	/^                    def _hx_local_2(a15):$/;"	kind:function	line:2346
 _hx_local_2	../dumper.py	/^                def _hx_local_2():$/;"	kind:function	line:746
 _hx_local_2	../dumper.py	/^        def _hx_local_2():$/;"	kind:function	line:2943
 _hx_local_2	../dumper.py	/^        def _hx_local_2(t):$/;"	kind:function	line:7360
-_hx_local_2	../exporter.py	/^                    def _hx_local_2(a15):$/;"	kind:function	line:831
+_hx_local_2	../exporter.py	/^                    def _hx_local_2(a15):$/;"	kind:function	line:1560
 _hx_local_20	../dumper.py	/^                    def _hx_local_20():$/;"	kind:function	line:2456
-_hx_local_20	../exporter.py	/^                    def _hx_local_20():$/;"	kind:function	line:941
+_hx_local_20	../exporter.py	/^                    def _hx_local_20():$/;"	kind:function	line:1670
 _hx_local_21	../dumper.py	/^                    def _hx_local_21():$/;"	kind:function	line:2462
-_hx_local_21	../exporter.py	/^                    def _hx_local_21():$/;"	kind:function	line:947
+_hx_local_21	../exporter.py	/^                    def _hx_local_21():$/;"	kind:function	line:1676
 _hx_local_22	../dumper.py	/^                    def _hx_local_22():$/;"	kind:function	line:2467
-_hx_local_22	../exporter.py	/^                    def _hx_local_22():$/;"	kind:function	line:952
+_hx_local_22	../exporter.py	/^                    def _hx_local_22():$/;"	kind:function	line:1681
 _hx_local_23	../dumper.py	/^                    def _hx_local_23(a1):$/;"	kind:function	line:2474
-_hx_local_23	../exporter.py	/^                    def _hx_local_23(a1):$/;"	kind:function	line:959
+_hx_local_23	../exporter.py	/^                    def _hx_local_23(a1):$/;"	kind:function	line:1688
 _hx_local_24	../dumper.py	/^                                    def _hx_local_24():$/;"	kind:function	line:7633
 _hx_local_24	../dumper.py	/^                    def _hx_local_24(a2):$/;"	kind:function	line:2480
-_hx_local_24	../exporter.py	/^                    def _hx_local_24(a2):$/;"	kind:function	line:965
+_hx_local_24	../exporter.py	/^                    def _hx_local_24(a2):$/;"	kind:function	line:1694
 _hx_local_25	../dumper.py	/^                    def _hx_local_25(f):$/;"	kind:function	line:2486
-_hx_local_25	../exporter.py	/^                    def _hx_local_25(f):$/;"	kind:function	line:971
+_hx_local_25	../exporter.py	/^                    def _hx_local_25(f):$/;"	kind:function	line:1700
 _hx_local_26	../dumper.py	/^                    def _hx_local_26(a14,x2):$/;"	kind:function	line:2492
-_hx_local_26	../exporter.py	/^                    def _hx_local_26(a14,x2):$/;"	kind:function	line:977
+_hx_local_26	../exporter.py	/^                    def _hx_local_26(a14,x2):$/;"	kind:function	line:1706
 _hx_local_27	../dumper.py	/^                    def _hx_local_27(e1):$/;"	kind:function	line:2503
-_hx_local_27	../exporter.py	/^                    def _hx_local_27(e1):$/;"	kind:function	line:988
+_hx_local_27	../exporter.py	/^                    def _hx_local_27(e1):$/;"	kind:function	line:1717
 _hx_local_28	../dumper.py	/^                    def _hx_local_28(a17,a21):$/;"	kind:function	line:2509
-_hx_local_28	../exporter.py	/^                    def _hx_local_28(a17,a21):$/;"	kind:function	line:994
+_hx_local_28	../exporter.py	/^                    def _hx_local_28(a17,a21):$/;"	kind:function	line:1723
 _hx_local_29	../dumper.py	/^                    def _hx_local_29(a18):$/;"	kind:function	line:2515
-_hx_local_29	../exporter.py	/^                    def _hx_local_29(a18):$/;"	kind:function	line:1000
+_hx_local_29	../exporter.py	/^                    def _hx_local_29(a18):$/;"	kind:function	line:1729
 _hx_local_3	../dumper.py	/^                    def _hx_local_3(x4):$/;"	kind:function	line:2351
-_hx_local_3	../exporter.py	/^                    def _hx_local_3(x4):$/;"	kind:function	line:836
+_hx_local_3	../exporter.py	/^                    def _hx_local_3(x4):$/;"	kind:function	line:1565
 _hx_local_4	../dumper.py	/^                        def _hx_local_4():$/;"	kind:function	line:6417
 _hx_local_4	../dumper.py	/^                    def _hx_local_4():$/;"	kind:function	line:2357
 _hx_local_4	../dumper.py	/^            def _hx_local_4():$/;"	kind:function	line:4160
 _hx_local_4	../dumper.py	/^            def _hx_local_4(m1,m2):$/;"	kind:function	line:6314
-_hx_local_4	../exporter.py	/^                    def _hx_local_4():$/;"	kind:function	line:842
+_hx_local_4	../exporter.py	/^                    def _hx_local_4():$/;"	kind:function	line:1571
 _hx_local_5	../dumper.py	/^                    def _hx_local_5():$/;"	kind:function	line:2363
 _hx_local_5	../dumper.py	/^                def _hx_local_5(o2):$/;"	kind:function	line:7411
 _hx_local_5	../dumper.py	/^        def _hx_local_5():$/;"	kind:function	line:4159
-_hx_local_5	../exporter.py	/^                    def _hx_local_5():$/;"	kind:function	line:848
+_hx_local_5	../exporter.py	/^                    def _hx_local_5():$/;"	kind:function	line:1577
 _hx_local_6	../dumper.py	/^                    def _hx_local_6(a19):$/;"	kind:function	line:2370
-_hx_local_6	../exporter.py	/^                    def _hx_local_6(a19):$/;"	kind:function	line:855
+_hx_local_6	../exporter.py	/^                    def _hx_local_6(a19):$/;"	kind:function	line:1584
 _hx_local_7	../dumper.py	/^                    def _hx_local_7():$/;"	kind:function	line:2376
 _hx_local_7	../dumper.py	/^            def _hx_local_7(loopRec1):$/;"	kind:function	line:7410
 _hx_local_7	../dumper.py	/^        def _hx_local_7(j11,j21):$/;"	kind:function	line:2026
-_hx_local_7	../exporter.py	/^                    def _hx_local_7():$/;"	kind:function	line:861
+_hx_local_7	../exporter.py	/^                    def _hx_local_7():$/;"	kind:function	line:1590
 _hx_local_8	../dumper.py	/^                    def _hx_local_8(sep):$/;"	kind:function	line:2381
-_hx_local_8	../exporter.py	/^                    def _hx_local_8(sep):$/;"	kind:function	line:866
+_hx_local_8	../exporter.py	/^                    def _hx_local_8(sep):$/;"	kind:function	line:1595
 _hx_local_9	../dumper.py	/^                    def _hx_local_9(e):$/;"	kind:function	line:2387
-_hx_local_9	../exporter.py	/^                    def _hx_local_9(e):$/;"	kind:function	line:872
+_hx_local_9	../exporter.py	/^                    def _hx_local_9(e):$/;"	kind:function	line:1601
 _hx_methods	../dumper.py	/^    _hx_methods = ["__str__"]$/;"	kind:variable	line:44
 _hx_methods	../dumper.py	/^    _hx_methods = ["addCurve", "addAlphaCurve", "addUVCurve", "addPropCurve"]$/;"	kind:variable	line:1652
 _hx_methods	../dumper.py	/^    _hx_methods = ["alloc", "set_mipMap", "set_filter", "set_wrap", "clear", "checkMipMapGen", "uploadBitmap", "uploadPixels", "dispose"]$/;"	kind:variable	line:2927
@@ -894,16 +986,20 @@ _hx_methods	../dumper.py	/^    _hx_methods = []$/;"	kind:variable	line:9343
 _hx_methods	../dumper.py	/^    _hx_methods = []$/;"	kind:variable	line:9402
 _hx_methods	../dumper.py	/^    _hx_methods = []$/;"	kind:variable	line:9438
 _hx_methods	../exporter.py	/^    _hx_methods = ["__str__"]$/;"	kind:variable	line:24
-_hx_methods	../exporter.py	/^    _hx_methods = ["addModel"]$/;"	kind:variable	line:601
-_hx_methods	../exporter.py	/^    _hx_methods = ["addTriangle"]$/;"	kind:variable	line:575
-_hx_methods	../exporter.py	/^    _hx_methods = ["addVertex", "addNormal", "addUv"]$/;"	kind:variable	line:616
-_hx_methods	../exporter.py	/^    _hx_methods = ["keys"]$/;"	kind:variable	line:322
-_hx_methods	../exporter.py	/^    _hx_methods = ["next", "hasNext"]$/;"	kind:variable	line:1065
+_hx_methods	../exporter.py	/^    _hx_methods = ["addModel"]$/;"	kind:variable	line:1334
+_hx_methods	../exporter.py	/^    _hx_methods = ["addVertex", "addIndex"]$/;"	kind:variable	line:1302
+_hx_methods	../exporter.py	/^    _hx_methods = ["getBytes"]$/;"	kind:variable	line:617
+_hx_methods	../exporter.py	/^    _hx_methods = ["keys"]$/;"	kind:variable	line:371
+_hx_methods	../exporter.py	/^    _hx_methods = ["next", "hasNext"]$/;"	kind:variable	line:1794
+_hx_methods	../exporter.py	/^    _hx_methods = ["setPosition", "setNormal", "setUv"]$/;"	kind:variable	line:1349
 _hx_methods	../exporter.py	/^    _hx_methods = ["toString"]$/;"	kind:variable	line:45
-_hx_methods	../exporter.py	/^    _hx_methods = ["toString"]$/;"	kind:variable	line:549
-_hx_methods	../exporter.py	/^    _hx_methods = ["write", "fieldsString", "quote"]$/;"	kind:variable	line:334
-_hx_methods	../exporter.py	/^    _hx_methods = ["write"]$/;"	kind:variable	line:560
-_hx_methods	../exporter.py	/^    _hx_methods = []$/;"	kind:variable	line:1223
+_hx_methods	../exporter.py	/^    _hx_methods = ["toString"]$/;"	kind:variable	line:741
+_hx_methods	../exporter.py	/^    _hx_methods = ["write", "fieldsString", "quote"]$/;"	kind:variable	line:383
+_hx_methods	../exporter.py	/^    _hx_methods = ["write"]$/;"	kind:variable	line:1209
+_hx_methods	../exporter.py	/^    _hx_methods = ["writeByte", "writeBytes", "getBytes"]$/;"	kind:variable	line:707
+_hx_methods	../exporter.py	/^    _hx_methods = ["writeByte", "writeBytes", "set_bigEndian", "write", "writeFullBytes", "writeFloat", "writeUInt16", "writeInt32", "writeString"]$/;"	kind:variable	line:635
+_hx_methods	../exporter.py	/^    _hx_methods = ["writeProperty", "writeProps", "writeName", "writePosition", "writeBounds", "writeSkin", "write"]$/;"	kind:variable	line:971
+_hx_methods	../exporter.py	/^    _hx_methods = []$/;"	kind:variable	line:1952
 _hx_statics	../dumper.py	/^    _hx_statics = ["BLEND", "CULLING"]$/;"	kind:variable	line:8544
 _hx_statics	../dumper.py	/^    _hx_statics = ["CURRENT"]$/;"	kind:variable	line:1087
 _hx_statics	../dumper.py	/^    _hx_statics = ["DEFAULT_FLAGS"]$/;"	kind:variable	line:8389
@@ -977,17 +1073,20 @@ _hx_statics	../dumper.py	/^    _hx_statics = []$/;"	kind:variable	line:9439
 _hx_statics	../dumper.py	/^    _hx_statics = []$/;"	kind:variable	line:9489
 _hx_statics	../dumper.py	/^    _hx_statics = []$/;"	kind:variable	line:9532
 _hx_statics	../exporter.py	/^    _hx_statics = ["EPOCH_UTC", "now", "fromTime", "UTC", "datetimeTimestamp", "fromString"]$/;"	kind:variable	line:46
-_hx_statics	../exporter.py	/^    _hx_statics = ["concat", "iterator", "indexOf", "lastIndexOf", "toString", "pop", "push", "unshift", "remove", "shift", "slice", "sort", "splice", "map", "filter", "insert", "reverse", "_get"]$/;"	kind:variable	line:1101
-_hx_statics	../exporter.py	/^    _hx_statics = ["eq", "stringOrNull"]$/;"	kind:variable	line:1239
+_hx_statics	../exporter.py	/^    _hx_statics = ["concat", "iterator", "indexOf", "lastIndexOf", "toString", "pop", "push", "unshift", "remove", "shift", "slice", "sort", "splice", "map", "filter", "insert", "reverse", "_get"]$/;"	kind:variable	line:1830
+_hx_statics	../exporter.py	/^    _hx_statics = ["eq", "stringOrNull", "rshift"]$/;"	kind:variable	line:1968
 _hx_statics	../exporter.py	/^    _hx_statics = ["field", "isFunction"]$/;"	kind:variable	line:111
-_hx_statics	../exporter.py	/^    _hx_statics = ["keywords", "toString1", "fields", "simpleField", "field", "getInstanceFields", "getSuperClass", "getClassFields", "prefixLength", "unhandleKeywords"]$/;"	kind:variable	line:647
+_hx_statics	../exporter.py	/^    _hx_statics = ["floatToI32"]$/;"	kind:variable	line:764
+_hx_statics	../exporter.py	/^    _hx_statics = ["keywords", "toString1", "fields", "simpleField", "field", "getInstanceFields", "getSuperClass", "getClassFields", "prefixLength", "unhandleKeywords"]$/;"	kind:variable	line:1376
 _hx_statics	../exporter.py	/^    _hx_statics = ["lpad"]$/;"	kind:variable	line:214
-_hx_statics	../exporter.py	/^    _hx_statics = ["print"]$/;"	kind:variable	line:335
-_hx_statics	../exporter.py	/^    _hx_statics = ["saveContent"]$/;"	kind:variable	line:1342
-_hx_statics	../exporter.py	/^    _hx_statics = ["split", "charCodeAt", "charAt", "lastIndexOf", "toUpperCase", "toLowerCase", "indexOf", "toString", "substring", "substr"]$/;"	kind:variable	line:1259
+_hx_statics	../exporter.py	/^    _hx_statics = ["ofString"]$/;"	kind:variable	line:599
+_hx_statics	../exporter.py	/^    _hx_statics = ["print"]$/;"	kind:variable	line:384
+_hx_statics	../exporter.py	/^    _hx_statics = ["saveContent", "saveBytes"]$/;"	kind:variable	line:2075
+_hx_statics	../exporter.py	/^    _hx_statics = ["split", "charCodeAt", "charAt", "lastIndexOf", "toUpperCase", "toLowerCase", "indexOf", "toString", "substring", "substr"]$/;"	kind:variable	line:1992
 _hx_statics	../exporter.py	/^    _hx_statics = ["string", "parseInt", "shortenPossibleNumber", "parseFloat"]$/;"	kind:variable	line:129
 _hx_statics	../exporter.py	/^    _hx_statics = ["typeof"]$/;"	kind:variable	line:249
-_hx_statics	../exporter.py	/^    _hx_statics = []$/;"	kind:variable	line:1224
+_hx_statics	../exporter.py	/^    _hx_statics = []$/;"	kind:variable	line:1953
+_hx_statics	../exporter.py	/^    _hx_statics = []$/;"	kind:variable	line:708
 _hx_super	../dumper.py	/^    _hx_super = Exception$/;"	kind:variable	line:9226
 _hx_super	../dumper.py	/^    _hx_super = h3d_anim_AnimatedObject$/;"	kind:variable	line:1632
 _hx_super	../dumper.py	/^    _hx_super = h3d_anim_Animation$/;"	kind:variable	line:1655
@@ -1024,22 +1123,21 @@ _hx_super	../dumper.py	/^    _hx_super = python_io_NativeInput$/;"	kind:variable
 _hx_super	../dumper.py	/^    _hx_super = python_io_NativeOutput$/;"	kind:variable	line:9420
 _hx_super	../dumper.py	/^    _hx_super = python_io_NativeTextInput$/;"	kind:variable	line:9405
 _hx_super	../dumper.py	/^    _hx_super = python_io_NativeTextOutput$/;"	kind:variable	line:9441
-_hx_super	../exporter.py	/^    _hx_super = Exception$/;"	kind:variable	line:1225
+_hx_super	../exporter.py	/^    _hx_super = Exception$/;"	kind:variable	line:1954
+_hx_super	../exporter.py	/^    _hx_super = haxe_io_Output$/;"	kind:variable	line:709
 _set	../dumper.py	/^    def _set(x,idx,v):$/;"	kind:member	line:2779
 absolutePath	../dumper.py	/^    def absolutePath(relPath):$/;"	kind:member	line:541
 addAlphaCurve	../dumper.py	/^    def addAlphaCurve(self,objName,alphas):$/;"	kind:member	line:1670
 addChild	../dumper.py	/^    def addChild(self,x):$/;"	kind:member	line:971
 addCurve	../dumper.py	/^    def addCurve(self,objName,frames,hasRot,hasScale):$/;"	kind:member	line:1663
+addIndex	../exporter.py	/^    def addIndex(self,index):$/;"	kind:member	line:1312
 addLink	../dumper.py	/^    def addLink(self,parent,child):$/;"	kind:member	line:5751
-addModel	../exporter.py	/^    def addModel(self,m):$/;"	kind:member	line:606
+addModel	../exporter.py	/^    def addModel(self,m):$/;"	kind:member	line:1339
 addModels	../dumper.py	/^    def addModels(self,includeGeometry):$/;"	kind:member	line:7352
-addNormal	../exporter.py	/^    def addNormal(self,x,y,z):$/;"	kind:member	line:629
 addPropCurve	../dumper.py	/^    def addPropCurve(self,objName,propName,values):$/;"	kind:member	line:1680
 addTrailingSlash	../dumper.py	/^    def addTrailingSlash(path):$/;"	kind:member	line:4438
-addTriangle	../exporter.py	/^    def addTriangle(self,triangle):$/;"	kind:member	line:580
 addUVCurve	../dumper.py	/^    def addUVCurve(self,objName,uvs):$/;"	kind:member	line:1675
-addUv	../exporter.py	/^    def addUv(self,u,v):$/;"	kind:member	line:635
-addVertex	../exporter.py	/^    def addVertex(self,x,y,z):$/;"	kind:member	line:623
+addVertex	../exporter.py	/^    def addVertex(self,vertex):$/;"	kind:member	line:1309
 allEnums	../dumper.py	/^    def allEnums(e):$/;"	kind:member	line:907
 alloc	../dumper.py	/^    def alloc(length):$/;"	kind:member	line:4016
 alloc	../dumper.py	/^    def alloc(self):$/;"	kind:member	line:2987
@@ -1057,14 +1155,21 @@ bl_info	../__init__.py	/^bl_info = {$/;"	kind:variable	line:3
 bl_label	../__init__.py	/^    bl_label = 'Export HMD'$/;"	kind:variable	line:41
 bl_options	../__init__.py	/^    bl_options = {'PRESET'}$/;"	kind:variable	line:42
 blit	../dumper.py	/^    def blit(self,pos,src,srcpos,_hx_len):$/;"	kind:member	line:3999
+bmesh	../export_hmd.py	/^    import bmesh$/;"	kind:namespace	line:17
+bmesh	../export_hmd_back.py	/^    import bmesh$/;"	kind:namespace	line:11
 bpp	../dumper.py	/^    def bpp(self,t):$/;"	kind:member	line:2803
+bpy	../__init__.py	/^import bpy$/;"	kind:namespace	line:19
+bpy	../export_hmd.py	/^import bpy$/;"	kind:namespace	line:3
+bpy	../export_hmd_back.py	/^import bpy$/;"	kind:namespace	line:3
+bpy_extras	../export_hmd.py	/^import bpy_extras.io_utils$/;"	kind:namespace	line:5
+bpy_extras	../export_hmd_back.py	/^import bpy_extras.io_utils$/;"	kind:namespace	line:5
 buildGeom	../dumper.py	/^    def buildGeom(self,geom,skin,dataOut):$/;"	kind:member	line:7049
 buildHierarchy	../dumper.py	/^    def buildHierarchy(self):$/;"	kind:member	line:5483
 bytesPerPixel	../dumper.py	/^    def bytesPerPixel(format):$/;"	kind:member	line:5068
 charAt	../dumper.py	/^    def charAt(s,index):$/;"	kind:member	line:2596
-charAt	../exporter.py	/^    def charAt(s,index):$/;"	kind:member	line:1276
+charAt	../exporter.py	/^    def charAt(s,index):$/;"	kind:member	line:2009
 charCodeAt	../dumper.py	/^    def charCodeAt(s,index):$/;"	kind:member	line:2589
-charCodeAt	../exporter.py	/^    def charCodeAt(s,index):$/;"	kind:member	line:1269
+charCodeAt	../exporter.py	/^    def charCodeAt(s,index):$/;"	kind:member	line:2002
 checkData	../dumper.py	/^    def checkData(self,t):$/;"	kind:member	line:5763
 checkMipMapGen	../dumper.py	/^    def checkMipMapGen(self,mipLevel,side):$/;"	kind:member	line:3058
 check_extension	../__init__.py	/^    check_extension = True$/;"	kind:variable	line:70
@@ -1074,7 +1179,7 @@ clone	../dumper.py	/^    def clone(self):$/;"	kind:member	line:1389
 command	../dumper.py	/^    def command(cmd,args = None):$/;"	kind:member	line:694
 compare	../dumper.py	/^    def compare(a,b):$/;"	kind:member	line:244
 concat	../dumper.py	/^    def concat(a1,a2):$/;"	kind:member	line:2665
-concat	../exporter.py	/^    def concat(a1,a2):$/;"	kind:member	line:1104
+concat	../exporter.py	/^    def concat(a1,a2):$/;"	kind:member	line:1833
 convert	../dumper.py	/^    def convert(self):$/;"	kind:member	line:9061
 convertPoints	../dumper.py	/^    def convertPoints(self,a):$/;"	kind:member	line:5306
 cpuTime	../dumper.py	/^    def cpuTime():$/;"	kind:member	line:701
@@ -1110,28 +1215,33 @@ endsWith	../dumper.py	/^    def endsWith(s,end):$/;"	kind:member	line:477
 enumEq	../dumper.py	/^    def enumEq(a,b):$/;"	kind:member	line:879
 environment	../dumper.py	/^    def environment():$/;"	kind:member	line:652
 eq	../dumper.py	/^    def eq(a,b):$/;"	kind:member	line:9249
-eq	../exporter.py	/^    def eq(a,b):$/;"	kind:member	line:1242
+eq	../exporter.py	/^    def eq(a,b):$/;"	kind:member	line:1971
 error	../dumper.py	/^    def error(self,msg):$/;"	kind:member	line:8126
 executablePath	../dumper.py	/^    def executablePath():$/;"	kind:member	line:705
 execute	../__init__.py	/^    def execute(self, context):$/;"	kind:member	line:72
 exists	../dumper.py	/^    def exists(self,att):$/;"	kind:member	line:941
 exit	../dumper.py	/^    def exit(code):$/;"	kind:member	line:627
+export_hmd	../__init__.py	/^        from . import export_hmd$/;"	kind:namespace	line:73
 export_hmd.py	../export_hmd.py	1;"	kind:file	line:1
+export_hmd_back.py	../export_hmd_back.py	1;"	kind:file	line:1
+exporter	../export_hmd.py	/^from . import exporter$/;"	kind:namespace	line:6
+exporter	../export_hmd_back.py	/^from . import exporter$/;"	kind:namespace	line:6
 exporter.py	../exporter.py	1;"	kind:file	line:1
 field	../dumper.py	/^    def field(o,field):$/;"	kind:member	line:229
 field	../dumper.py	/^    def field(o,field):$/;"	kind:member	line:2331
 field	../exporter.py	/^    def field(o,field):$/;"	kind:member	line:114
-field	../exporter.py	/^    def field(o,field):$/;"	kind:member	line:816
+field	../exporter.py	/^    def field(o,field):$/;"	kind:member	line:1545
 fields	../dumper.py	/^    def fields(o):$/;"	kind:member	line:2301
-fields	../exporter.py	/^    def fields(o):$/;"	kind:member	line:786
+fields	../exporter.py	/^    def fields(o):$/;"	kind:member	line:1515
 fieldsString	../dumper.py	/^    def fieldsString(self,v,fields):$/;"	kind:member	line:3880
-fieldsString	../exporter.py	/^    def fieldsString(self,v,fields):$/;"	kind:member	line:444
+fieldsString	../exporter.py	/^    def fieldsString(self,v,fields):$/;"	kind:member	line:493
 filename_ext	../__init__.py	/^    filename_ext = ".hmd"$/;"	kind:variable	line:44
 filter	../dumper.py	/^    def filter(x,f):$/;"	kind:member	line:2760
-filter	../exporter.py	/^    def filter(x,f):$/;"	kind:member	line:1199
+filter	../exporter.py	/^    def filter(x,f):$/;"	kind:member	line:1928
 filter_glob	../__init__.py	/^    filter_glob = StringProperty($/;"	kind:variable	line:45
 firstElement	../dumper.py	/^    def firstElement(self):$/;"	kind:member	line:959
 floatToI32	../dumper.py	/^    def floatToI32(f):$/;"	kind:member	line:4345
+floatToI32	../exporter.py	/^    def floatToI32(f):$/;"	kind:member	line:767
 freeMemory	../dumper.py	/^    def freeMemory():$/;"	kind:member	line:9127
 fromBitmap	../dumper.py	/^    def fromBitmap(bmp,allocPos = None):$/;"	kind:member	line:3101
 fromColor	../dumper.py	/^    def fromColor(color,alpha = 1.,allocPos = None):$/;"	kind:member	line:3113
@@ -1154,12 +1264,14 @@ getBytes	../dumper.py	/^    def getBytes(path):$/;"	kind:member	line:9470
 getBytes	../dumper.py	/^    def getBytes(self):$/;"	kind:member	line:4040
 getBytes	../dumper.py	/^    def getBytes(self):$/;"	kind:member	line:4298
 getBytes	../dumper.py	/^    def getBytes(size):$/;"	kind:member	line:9101
+getBytes	../exporter.py	/^    def getBytes(self):$/;"	kind:member	line:622
+getBytes	../exporter.py	/^    def getBytes(self):$/;"	kind:member	line:732
 getChar	../dumper.py	/^    def getChar(echo):$/;"	kind:member	line:713
 getChild	../dumper.py	/^    def getChild(self,node,nodeName,opt = None):$/;"	kind:member	line:5413
 getChilds	../dumper.py	/^    def getChilds(self,node,nodeName = None):$/;"	kind:member	line:5440
 getClass	../dumper.py	/^    def getClass(o):$/;"	kind:member	line:813
 getClassFields	../dumper.py	/^    def getClassFields(c):$/;"	kind:member	line:2559
-getClassFields	../exporter.py	/^    def getClassFields(c):$/;"	kind:member	line:1044
+getClassFields	../exporter.py	/^    def getClassFields(c):$/;"	kind:member	line:1773
 getClassName	../dumper.py	/^    def getClassName(c):$/;"	kind:member	line:828
 getColors	../dumper.py	/^    def getColors(self):$/;"	kind:member	line:6937
 getCwd	../dumper.py	/^    def getCwd():$/;"	kind:member	line:664
@@ -1172,7 +1284,7 @@ getGeomMatrix	../dumper.py	/^    def getGeomMatrix(self):$/;"	kind:member	line:6
 getId	../dumper.py	/^    def getId(n):$/;"	kind:member	line:6657
 getIndexes	../dumper.py	/^    def getIndexes(self):$/;"	kind:member	line:6886
 getInstanceFields	../dumper.py	/^    def getInstanceFields(c):$/;"	kind:member	line:2527
-getInstanceFields	../exporter.py	/^    def getInstanceFields(c):$/;"	kind:member	line:1012
+getInstanceFields	../exporter.py	/^    def getInstanceFields(c):$/;"	kind:member	line:1741
 getInts	../dumper.py	/^    def getInts(n):$/;"	kind:member	line:6585
 getMaterialByTriangle	../dumper.py	/^    def getMaterialByTriangle(self):$/;"	kind:member	line:6726
 getMaterials	../dumper.py	/^    def getMaterials(self):$/;"	kind:member	line:6719
@@ -1186,7 +1298,7 @@ getRoot	../dumper.py	/^    def getRoot(self):$/;"	kind:member	line:6710
 getSpecChild	../dumper.py	/^    def getSpecChild(self,node,name):$/;"	kind:member	line:5429
 getString	../dumper.py	/^    def getString(self,pos,_hx_len):$/;"	kind:member	line:4007
 getSuperClass	../dumper.py	/^    def getSuperClass(c):$/;"	kind:member	line:2546
-getSuperClass	../exporter.py	/^    def getSuperClass(c):$/;"	kind:member	line:1031
+getSuperClass	../exporter.py	/^    def getSuperClass(c):$/;"	kind:member	line:1760
 getType	../dumper.py	/^    def getType(n):$/;"	kind:member	line:6689
 getUVs	../dumper.py	/^    def getUVs(self):$/;"	kind:member	line:6944
 getVertices	../dumper.py	/^    def getVertices(self):$/;"	kind:member	line:6713
@@ -1195,12 +1307,13 @@ get_innerData	../dumper.py	/^    def get_innerData(self):$/;"	kind:member	line:4
 get_name	../dumper.py	/^    def get_name(self):$/;"	kind:member	line:4536
 global_scale	../__init__.py	/^    global_scale = FloatProperty($/;"	kind:variable	line:62
 h2d_BlendMode	../dumper.py	/^class h2d_BlendMode(Enum):$/;"	kind:class	line:1045
+h2d_BlendMode	../exporter.py	/^class h2d_BlendMode(Enum):$/;"	kind:class	line:277
 h2d_RenderContext	../dumper.py	/^class h2d_RenderContext(h3d_impl_RenderContext):$/;"	kind:class	line:1071
 h3d_Engine	../dumper.py	/^class h3d_Engine:$/;"	kind:class	line:1083
 h3d_Matrix	../dumper.py	/^class h3d_Matrix:$/;"	kind:class	line:1098
 h3d_Quat	../dumper.py	/^class h3d_Quat:$/;"	kind:class	line:1436
 h3d_Vector	../dumper.py	/^class h3d_Vector:$/;"	kind:class	line:1553
-h3d_Vector	../exporter.py	/^class h3d_Vector:$/;"	kind:class	line:278
+h3d_Vector	../exporter.py	/^class h3d_Vector:$/;"	kind:class	line:290
 h3d_anim_AnimatedObject	../dumper.py	/^class h3d_anim_AnimatedObject:$/;"	kind:class	line:1575
 h3d_anim_Animation	../dumper.py	/^class h3d_anim_Animation:$/;"	kind:class	line:1586
 h3d_anim_Joint	../dumper.py	/^class h3d_anim_Joint:$/;"	kind:class	line:1689
@@ -1211,13 +1324,17 @@ h3d_anim_Skin	../dumper.py	/^class h3d_anim_Skin:$/;"	kind:class	line:1733
 h3d_anim__Skin_Influence	../dumper.py	/^class h3d_anim__Skin_Influence:$/;"	kind:class	line:1721
 h3d_anim__Skin_Permut	../dumper.py	/^class h3d_anim__Skin_Permut:$/;"	kind:class	line:1707
 h3d_col_Bounds	../dumper.py	/^class h3d_col_Bounds:$/;"	kind:class	line:2100
+h3d_col_Bounds	../exporter.py	/^class h3d_col_Bounds:$/;"	kind:class	line:324
 h3d_col_Collider	../dumper.py	/^class h3d_col_Collider:$/;"	kind:class	line:2093
+h3d_col_Collider	../exporter.py	/^class h3d_col_Collider:$/;"	kind:class	line:318
 h3d_col_Point	../dumper.py	/^class h3d_col_Point:$/;"	kind:class	line:2117
 h3d_impl_Driver	../dumper.py	/^class h3d_impl_Driver:$/;"	kind:class	line:2136
 h3d_impl_MemoryManager	../dumper.py	/^class h3d_impl_MemoryManager:$/;"	kind:class	line:2792
 h3d_impl_RenderContext	../dumper.py	/^class h3d_impl_RenderContext:$/;"	kind:class	line:1065
 h3d_impl__Serializable_EmptyInterface	../dumper.py	/^class h3d_impl__Serializable_EmptyInterface:$/;"	kind:class	line:1059
+h3d_impl__Serializable_EmptyInterface	../exporter.py	/^class h3d_impl__Serializable_EmptyInterface:$/;"	kind:class	line:312
 h3d_mat_Face	../dumper.py	/^class h3d_mat_Face(Enum):$/;"	kind:class	line:2849
+h3d_mat_Face	../exporter.py	/^class h3d_mat_Face(Enum):$/;"	kind:class	line:339
 h3d_mat_Filter	../dumper.py	/^class h3d_mat_Filter(Enum):$/;"	kind:class	line:2868
 h3d_mat_MipMap	../dumper.py	/^class h3d_mat_MipMap(Enum):$/;"	kind:class	line:2859
 h3d_mat_Pass	../dumper.py	/^class h3d_mat_Pass:$/;"	kind:class	line:2902
@@ -1227,7 +1344,7 @@ h3d_mat_Wrap	../dumper.py	/^class h3d_mat_Wrap(Enum):$/;"	kind:class	line:2876
 h3d_pass__Border_BorderShader	../dumper.py	/^class h3d_pass__Border_BorderShader(hxsl_Shader):$/;"	kind:class	line:3201
 h3d_pass__Copy_CopyShader	../dumper.py	/^class h3d_pass__Copy_CopyShader(h3d_shader_ScreenShader):$/;"	kind:class	line:3228
 h3d_pass__HardwarePick_FixedColor	../dumper.py	/^class h3d_pass__HardwarePick_FixedColor(hxsl_Shader):$/;"	kind:class	line:3242
-h3d_prim_UV	../exporter.py	/^class h3d_prim_UV:$/;"	kind:class	line:300
+h3d_prim_UV	../exporter.py	/^class h3d_prim_UV:$/;"	kind:class	line:349
 h3d_shader_AmbientLight	../dumper.py	/^class h3d_shader_AmbientLight(hxsl_Shader):$/;"	kind:class	line:3256
 h3d_shader_Base2d	../dumper.py	/^class h3d_shader_Base2d(hxsl_Shader):$/;"	kind:class	line:3270
 h3d_shader_BaseMesh	../dumper.py	/^class h3d_shader_BaseMesh(hxsl_Shader):$/;"	kind:class	line:3284
@@ -1246,30 +1363,36 @@ h3d_shader_UVDelta	../dumper.py	/^class h3d_shader_UVDelta(hxsl_Shader):$/;"	kin
 h3d_shader_VertexColorAlpha	../dumper.py	/^class h3d_shader_VertexColorAlpha(hxsl_Shader):$/;"	kind:class	line:3452
 h3d_shader_VolumeDecal	../dumper.py	/^class h3d_shader_VolumeDecal(hxsl_Shader):$/;"	kind:class	line:3466
 hasNext	../dumper.py	/^    def hasNext(self):$/;"	kind:member	line:598
-hasNext	../exporter.py	/^    def hasNext(self):$/;"	kind:member	line:1079
+hasNext	../exporter.py	/^    def hasNext(self):$/;"	kind:member	line:1808
 haxe_EntryPoint	../dumper.py	/^class haxe_EntryPoint:$/;"	kind:class	line:3480
 haxe_IMap	../dumper.py	/^class haxe_IMap:$/;"	kind:class	line:548
-haxe_IMap	../exporter.py	/^class haxe_IMap:$/;"	kind:class	line:312
+haxe_IMap	../exporter.py	/^class haxe_IMap:$/;"	kind:class	line:361
 haxe_MainEvent	../dumper.py	/^class haxe_MainEvent:$/;"	kind:class	line:3504
 haxe_MainLoop	../dumper.py	/^class haxe_MainLoop:$/;"	kind:class	line:3512
 haxe_ds_ArraySort	../dumper.py	/^class haxe_ds_ArraySort:$/;"	kind:class	line:3596
 haxe_ds_IntMap	../dumper.py	/^class haxe_ds_IntMap:$/;"	kind:class	line:3725
 haxe_ds_ObjectMap	../dumper.py	/^class haxe_ds_ObjectMap:$/;"	kind:class	line:3747
 haxe_ds_StringMap	../dumper.py	/^class haxe_ds_StringMap:$/;"	kind:class	line:555
-haxe_ds_StringMap	../exporter.py	/^class haxe_ds_StringMap:$/;"	kind:class	line:318
+haxe_ds_StringMap	../exporter.py	/^class haxe_ds_StringMap:$/;"	kind:class	line:367
 haxe_format_JsonPrinter	../dumper.py	/^class haxe_format_JsonPrinter:$/;"	kind:class	line:3766
-haxe_format_JsonPrinter	../exporter.py	/^class haxe_format_JsonPrinter:$/;"	kind:class	line:330
+haxe_format_JsonPrinter	../exporter.py	/^class haxe_format_JsonPrinter:$/;"	kind:class	line:379
 haxe_io_ArrayBufferViewImpl	../dumper.py	/^class haxe_io_ArrayBufferViewImpl:$/;"	kind:class	line:3982
 haxe_io_Bytes	../dumper.py	/^class haxe_io_Bytes:$/;"	kind:class	line:3988
+haxe_io_Bytes	../exporter.py	/^class haxe_io_Bytes:$/;"	kind:class	line:595
 haxe_io_BytesBuffer	../dumper.py	/^class haxe_io_BytesBuffer:$/;"	kind:class	line:4031
+haxe_io_BytesBuffer	../exporter.py	/^class haxe_io_BytesBuffer:$/;"	kind:class	line:613
 haxe_io_BytesInput	../dumper.py	/^class haxe_io_BytesInput(haxe_io_Input):$/;"	kind:class	line:4129
 haxe_io_BytesOutput	../dumper.py	/^class haxe_io_BytesOutput(haxe_io_Output):$/;"	kind:class	line:4268
+haxe_io_BytesOutput	../exporter.py	/^class haxe_io_BytesOutput(haxe_io_Output):$/;"	kind:class	line:703
 haxe_io_Eof	../dumper.py	/^class haxe_io_Eof:$/;"	kind:class	line:4304
-haxe_io_Eof	../exporter.py	/^class haxe_io_Eof:$/;"	kind:class	line:546
+haxe_io_Eof	../exporter.py	/^class haxe_io_Eof:$/;"	kind:class	line:738
 haxe_io_Error	../dumper.py	/^class haxe_io_Error(Enum):$/;"	kind:class	line:4317
+haxe_io_Error	../exporter.py	/^class haxe_io_Error(Enum):$/;"	kind:class	line:748
 haxe_io_FPHelper	../dumper.py	/^class haxe_io_FPHelper:$/;"	kind:class	line:4331
+haxe_io_FPHelper	../exporter.py	/^class haxe_io_FPHelper:$/;"	kind:class	line:761
 haxe_io_Input	../dumper.py	/^class haxe_io_Input:$/;"	kind:class	line:4049
 haxe_io_Output	../dumper.py	/^class haxe_io_Output:$/;"	kind:class	line:4196
+haxe_io_Output	../exporter.py	/^class haxe_io_Output:$/;"	kind:class	line:631
 haxe_io_Path	../dumper.py	/^class haxe_io_Path:$/;"	kind:class	line:4362
 haxe_xml_Fast	../dumper.py	/^class haxe_xml_Fast:$/;"	kind:class	line:4520
 haxe_xml_Parser	../dumper.py	/^class haxe_xml_Parser:$/;"	kind:class	line:4640
@@ -1297,22 +1420,38 @@ hxd_fmt_fbx_TmpObject	../dumper.py	/^class hxd_fmt_fbx_TmpObject:$/;"	kind:class
 hxd_fmt_fbx__BaseLibrary_AnimCurve	../dumper.py	/^class hxd_fmt_fbx__BaseLibrary_AnimCurve:$/;"	kind:class	line:5122
 hxd_fmt_fbx__Parser_Token	../dumper.py	/^class hxd_fmt_fbx__Parser_Token(Enum):$/;"	kind:class	line:7965
 hxd_fmt_hmd_Animation	../dumper.py	/^class hxd_fmt_hmd_Animation:$/;"	kind:class	line:8502
+hxd_fmt_hmd_Animation	../exporter.py	/^class hxd_fmt_hmd_Animation:$/;"	kind:class	line:941
 hxd_fmt_hmd_AnimationEvent	../dumper.py	/^class hxd_fmt_hmd_AnimationEvent:$/;"	kind:class	line:8490
+hxd_fmt_hmd_AnimationEvent	../exporter.py	/^class hxd_fmt_hmd_AnimationEvent:$/;"	kind:class	line:933
 hxd_fmt_hmd_AnimationFlag	../dumper.py	/^class hxd_fmt_hmd_AnimationFlag(Enum):$/;"	kind:class	line:8462
+hxd_fmt_hmd_AnimationFlag	../exporter.py	/^class hxd_fmt_hmd_AnimationFlag(Enum):$/;"	kind:class	line:911
 hxd_fmt_hmd_AnimationObject	../dumper.py	/^class hxd_fmt_hmd_AnimationObject:$/;"	kind:class	line:8477
+hxd_fmt_hmd_AnimationObject	../exporter.py	/^class hxd_fmt_hmd_AnimationObject:$/;"	kind:class	line:925
 hxd_fmt_hmd_Data	../dumper.py	/^class hxd_fmt_hmd_Data:$/;"	kind:class	line:8521
+hxd_fmt_hmd_Data	../exporter.py	/^class hxd_fmt_hmd_Data:$/;"	kind:class	line:949
 hxd_fmt_hmd_Geometry	../dumper.py	/^class hxd_fmt_hmd_Geometry:$/;"	kind:class	line:8356
+hxd_fmt_hmd_Geometry	../exporter.py	/^class hxd_fmt_hmd_Geometry:$/;"	kind:class	line:825
 hxd_fmt_hmd_GeometryFormat	../dumper.py	/^class hxd_fmt_hmd_GeometryFormat:$/;"	kind:class	line:8344
+hxd_fmt_hmd_GeometryFormat	../exporter.py	/^class hxd_fmt_hmd_GeometryFormat:$/;"	kind:class	line:813
 hxd_fmt_hmd_Material	../dumper.py	/^class hxd_fmt_hmd_Material:$/;"	kind:class	line:8385
+hxd_fmt_hmd_Material	../exporter.py	/^class hxd_fmt_hmd_Material:$/;"	kind:class	line:853
 hxd_fmt_hmd_MaterialFlag	../dumper.py	/^class hxd_fmt_hmd_MaterialFlag(Enum):$/;"	kind:class	line:8373
+hxd_fmt_hmd_MaterialFlag	../exporter.py	/^class hxd_fmt_hmd_MaterialFlag(Enum):$/;"	kind:class	line:842
 hxd_fmt_hmd_Model	../dumper.py	/^class hxd_fmt_hmd_Model:$/;"	kind:class	line:8445
+hxd_fmt_hmd_Model	../exporter.py	/^class hxd_fmt_hmd_Model:$/;"	kind:class	line:894
 hxd_fmt_hmd_Position	../dumper.py	/^class hxd_fmt_hmd_Position:$/;"	kind:class	line:8325
+hxd_fmt_hmd_Position	../exporter.py	/^class hxd_fmt_hmd_Position:$/;"	kind:class	line:794
 hxd_fmt_hmd_Property	../dumper.py	/^class hxd_fmt_hmd_Property(Enum):$/;"	kind:class	line:8313
+hxd_fmt_hmd_Property	../exporter.py	/^class hxd_fmt_hmd_Property(Enum):$/;"	kind:class	line:783
 hxd_fmt_hmd_Reader	../dumper.py	/^class hxd_fmt_hmd_Reader:$/;"	kind:class	line:8539
 hxd_fmt_hmd_Skin	../dumper.py	/^class hxd_fmt_hmd_Skin:$/;"	kind:class	line:8431
+hxd_fmt_hmd_Skin	../exporter.py	/^class hxd_fmt_hmd_Skin:$/;"	kind:class	line:886
 hxd_fmt_hmd_SkinJoint	../dumper.py	/^class hxd_fmt_hmd_SkinJoint:$/;"	kind:class	line:8403
+hxd_fmt_hmd_SkinJoint	../exporter.py	/^class hxd_fmt_hmd_SkinJoint:$/;"	kind:class	line:870
 hxd_fmt_hmd_SkinSplit	../dumper.py	/^class hxd_fmt_hmd_SkinSplit:$/;"	kind:class	line:8419
+hxd_fmt_hmd_SkinSplit	../exporter.py	/^class hxd_fmt_hmd_SkinSplit:$/;"	kind:class	line:878
 hxd_fmt_hmd_Writer	../dumper.py	/^class hxd_fmt_hmd_Writer:$/;"	kind:class	line:8789
+hxd_fmt_hmd_Writer	../exporter.py	/^class hxd_fmt_hmd_Writer:$/;"	kind:class	line:967
 hxd_fs_Convert	../dumper.py	/^class hxd_fs_Convert:$/;"	kind:class	line:9028
 hxd_fs_ConvertFBX2HMD	../dumper.py	/^class hxd_fs_ConvertFBX2HMD(hxd_fs_Convert):$/;"	kind:class	line:9048
 hxd_fs_NotFound	../dumper.py	/^class hxd_fs_NotFound:$/;"	kind:class	line:9079
@@ -1323,11 +1462,12 @@ hxsl_SharedShader	../dumper.py	/^class hxsl_SharedShader:$/;"	kind:class	line:91
 i32ToFloat	../dumper.py	/^    def i32ToFloat(i):$/;"	kind:member	line:4337
 identity	../dumper.py	/^    def identity(self):$/;"	kind:member	line:1123
 ignoreMissingObject	../dumper.py	/^    def ignoreMissingObject(self,name):$/;"	kind:member	line:5476
+importlib	../__init__.py	/^import importlib$/;"	kind:namespace	line:1
 indexOf	../dumper.py	/^    def indexOf(a,x,fromIndex = None):$/;"	kind:member	line:2673
 indexOf	../dumper.py	/^    def indexOf(it,v):$/;"	kind:member	line:212
 indexOf	../dumper.py	/^    def indexOf(s,_hx_str,startIndex = None):$/;"	kind:member	line:2624
-indexOf	../exporter.py	/^    def indexOf(a,x,fromIndex = None):$/;"	kind:member	line:1112
-indexOf	../exporter.py	/^    def indexOf(s,_hx_str,startIndex = None):$/;"	kind:member	line:1304
+indexOf	../exporter.py	/^    def indexOf(a,x,fromIndex = None):$/;"	kind:member	line:1841
+indexOf	../exporter.py	/^    def indexOf(s,_hx_str,startIndex = None):$/;"	kind:member	line:2037
 init	../dumper.py	/^    def init(self,n):$/;"	kind:member	line:5344
 initRotate	../dumper.py	/^    def initRotate(self,ax,ay,az):$/;"	kind:member	line:1521
 initRotate	../dumper.py	/^    def initRotate(self,x,y,z):$/;"	kind:member	line:1165
@@ -1335,13 +1475,15 @@ initRotateMatrix	../dumper.py	/^    def initRotateMatrix(self,m):$/;"	kind:membe
 initScale	../dumper.py	/^    def initScale(self,x = 1.,y = 1.,z = 1.):$/;"	kind:member	line:1141
 initWeights	../dumper.py	/^    def initWeights(self):$/;"	kind:member	line:1774
 insert	../dumper.py	/^    def insert(a,pos,x):$/;"	kind:member	line:2764
-insert	../exporter.py	/^    def insert(a,pos,x):$/;"	kind:member	line:1203
+insert	../exporter.py	/^    def insert(a,pos,x):$/;"	kind:member	line:1932
 int32tof	../dumper.py	/^    def int32tof(self,v):$/;"	kind:member	line:7026
-io_Exporter	../exporter.py	/^class io_Exporter:$/;"	kind:class	line:557
-io_Geometry	../exporter.py	/^class io_Geometry:$/;"	kind:class	line:571
-io_Model	../exporter.py	/^class io_Model:$/;"	kind:class	line:586
-io_Scene	../exporter.py	/^class io_Scene:$/;"	kind:class	line:597
-io_Triangle	../exporter.py	/^class io_Triangle:$/;"	kind:class	line:612
+io_Exporter	../exporter.py	/^class io_Exporter:$/;"	kind:class	line:1206
+io_Geometry	../exporter.py	/^class io_Geometry:$/;"	kind:class	line:1298
+io_Model	../exporter.py	/^class io_Model:$/;"	kind:class	line:1318
+io_Scene	../exporter.py	/^class io_Scene:$/;"	kind:class	line:1330
+io_Vertex	../exporter.py	/^class io_Vertex:$/;"	kind:class	line:1345
+io_utils	../export_hmd.py	/^import bpy_extras.io_utils$/;"	kind:namespace	line:5
+io_utils	../export_hmd_back.py	/^import bpy_extras.io_utils$/;"	kind:namespace	line:5
 isAbsolute	../dumper.py	/^    def isAbsolute(path):$/;"	kind:member	line:4454
 isFunction	../dumper.py	/^    def isFunction(f):$/;"	kind:member	line:237
 isFunction	../exporter.py	/^    def isFunction(f):$/;"	kind:member	line:118
@@ -1352,17 +1494,17 @@ iterator	../dumper.py	/^    def iterator(self):$/;"	kind:member	line:3741
 iterator	../dumper.py	/^    def iterator(self):$/;"	kind:member	line:574
 iterator	../dumper.py	/^    def iterator(x):$/;"	kind:member	line:2669
 iterator	../dumper.py	/^    def iterator(x):$/;"	kind:member	line:9243
-iterator	../exporter.py	/^    def iterator(x):$/;"	kind:member	line:1108
+iterator	../exporter.py	/^    def iterator(x):$/;"	kind:member	line:1837
 join	../dumper.py	/^    def join(paths):$/;"	kind:member	line:4368
 jointsDiff	../dumper.py	/^    def jointsDiff(self,p1,p2):$/;"	kind:member	line:1856
 keepJoint	../dumper.py	/^    def keepJoint(self,j):$/;"	kind:member	line:6340
 keepJoint	../dumper.py	/^    def keepJoint(self,j):$/;"	kind:member	line:7033
 keys	../dumper.py	/^    def keys(self):$/;"	kind:member	line:571
-keys	../exporter.py	/^    def keys(self):$/;"	kind:member	line:324
+keys	../exporter.py	/^    def keys(self):$/;"	kind:member	line:373
 lastIndexOf	../dumper.py	/^    def lastIndexOf(a,x,fromIndex = None):$/;"	kind:member	line:2687
 lastIndexOf	../dumper.py	/^    def lastIndexOf(s,_hx_str,startIndex = None):$/;"	kind:member	line:2603
-lastIndexOf	../exporter.py	/^    def lastIndexOf(a,x,fromIndex = None):$/;"	kind:member	line:1126
-lastIndexOf	../exporter.py	/^    def lastIndexOf(s,_hx_str,startIndex = None):$/;"	kind:member	line:1283
+lastIndexOf	../exporter.py	/^    def lastIndexOf(a,x,fromIndex = None):$/;"	kind:member	line:1855
+lastIndexOf	../exporter.py	/^    def lastIndexOf(s,_hx_str,startIndex = None):$/;"	kind:member	line:2016
 leftHandConvert	../dumper.py	/^    def leftHandConvert(self):$/;"	kind:member	line:5322
 load	../dumper.py	/^    def load(self,a):$/;"	kind:member	line:1409
 load	../dumper.py	/^    def load(self,root):$/;"	kind:member	line:5224
@@ -1376,13 +1518,16 @@ makeAnimation	../dumper.py	/^    def makeAnimation(self,anim):$/;"	kind:member	l
 makePosition	../dumper.py	/^    def makePosition(self,m):$/;"	kind:member	line:7804
 makeSkin	../dumper.py	/^    def makeSkin(self,skin,obj):$/;"	kind:member	line:7746
 map	../dumper.py	/^    def map(x,f):$/;"	kind:member	line:2756
-map	../exporter.py	/^    def map(x,f):$/;"	kind:member	line:1195
+map	../exporter.py	/^    def map(x,f):$/;"	kind:member	line:1924
 mapKwArgs	../dumper.py	/^    def mapKwArgs(a,v):$/;"	kind:member	line:9274
+mathutils	../export_hmd.py	/^import mathutils$/;"	kind:namespace	line:4
+mathutils	../export_hmd_back.py	/^import mathutils$/;"	kind:namespace	line:4
 menu_func_export	../__init__.py	/^def menu_func_export(self, context):$/;"	kind:function	line:92
 merge	../dumper.py	/^    def merge(self,g,materials):$/;"	kind:member	line:6750
 merge	../dumper.py	/^    def merge(self,permuts):$/;"	kind:member	line:1836
 mergeModels	../dumper.py	/^    def mergeModels(self,modelNames):$/;"	kind:member	line:5653
-mesh_triangulate	../export_hmd.py	/^def mesh_triangulate(me):$/;"	kind:function	line:11
+meshTriangulate	../export_hmd.py	/^def meshTriangulate(me):$/;"	kind:function	line:16
+mesh_triangulate	../export_hmd_back.py	/^def mesh_triangulate(me):$/;"	kind:function	line:10
 mod	../dumper.py	/^    def mod(a,b):$/;"	kind:member	line:9270
 modf	../dumper.py	/^    def modf(a,b):$/;"	kind:member	line:9266
 multiply	../dumper.py	/^    def multiply(self,a,b):$/;"	kind:member	line:1319
@@ -1392,7 +1537,7 @@ name	../__init__.py	/^            name="Selection Only",$/;"	kind:variable	line:
 name	../__init__.py	/^            name="Skeletal animation",$/;"	kind:variable	line:57
 next	../dumper.py	/^    def next(self):$/;"	kind:member	line:592
 next	../dumper.py	/^    def next(self):$/;"	kind:member	line:8119
-next	../exporter.py	/^    def next(self):$/;"	kind:member	line:1073
+next	../exporter.py	/^    def next(self):$/;"	kind:member	line:1802
 nextToken	../dumper.py	/^    def nextToken(self):$/;"	kind:member	line:8157
 normalize	../dumper.py	/^    def normalize(path):$/;"	kind:member	line:4388
 normalize	../dumper.py	/^    def normalize(self):$/;"	kind:member	line:1491
@@ -1400,7 +1545,10 @@ now	../dumper.py	/^    def now():$/;"	kind:member	line:89
 now	../exporter.py	/^    def now():$/;"	kind:member	line:64
 ofData	../dumper.py	/^    def ofData(b):$/;"	kind:member	line:4025
 ofString	../dumper.py	/^    def ofString(s):$/;"	kind:member	line:4020
+ofString	../exporter.py	/^    def ofString(s):$/;"	kind:member	line:606
 options	../__init__.py	/^            options={'HIDDEN'},$/;"	kind:variable	line:47
+os	../export_hmd.py	/^import os$/;"	kind:namespace	line:1
+os	../export_hmd_back.py	/^import os$/;"	kind:namespace	line:1
 outOfMemory	../dumper.py	/^    def outOfMemory():$/;"	kind:member	line:9097
 parse	../dumper.py	/^    def parse(_hx_str):$/;"	kind:member	line:988
 parse	../dumper.py	/^    def parse(_hx_str,strict = False):$/;"	kind:member	line:4646
@@ -1415,27 +1563,27 @@ parseText	../dumper.py	/^    def parseText(self,_hx_str):$/;"	kind:member	line:8
 path_mode	../__init__.py	/^    path_mode = path_reference_mode$/;"	kind:variable	line:68
 peek	../dumper.py	/^    def peek(self):$/;"	kind:member	line:8114
 pop	../dumper.py	/^    def pop(x):$/;"	kind:member	line:2706
-pop	../exporter.py	/^    def pop(x):$/;"	kind:member	line:1145
+pop	../exporter.py	/^    def pop(x):$/;"	kind:member	line:1874
 prependScale	../dumper.py	/^    def prependScale(self,sx = 1.,sy = 1.,sz = 1.):$/;"	kind:member	line:1308
 print	../dumper.py	/^    def print(o,replacer = None,space = None):$/;"	kind:member	line:3974
 print	../dumper.py	/^    def print(v):$/;"	kind:member	line:631
 print	../dumper.py	/^    def print(v):$/;"	kind:member	line:9188
-print	../exporter.py	/^    def print(o,replacer = None,space = None):$/;"	kind:member	line:538
+print	../exporter.py	/^    def print(o,replacer = None,space = None):$/;"	kind:member	line:587
 println	../dumper.py	/^    def println(v):$/;"	kind:member	line:635
 println	../dumper.py	/^    def println(v):$/;"	kind:member	line:9194
 processEvents	../dumper.py	/^    def processEvents():$/;"	kind:member	line:3486
 programPath	../dumper.py	/^    def programPath():$/;"	kind:member	line:709
 push	../dumper.py	/^    def push(x,e):$/;"	kind:member	line:2713
-push	../exporter.py	/^    def push(x,e):$/;"	kind:member	line:1152
+push	../exporter.py	/^    def push(x,e):$/;"	kind:member	line:1881
 putEnv	../dumper.py	/^    def putEnv(s,v):$/;"	kind:member	line:647
 python_Boot	../dumper.py	/^class python_Boot:$/;"	kind:class	line:2159
-python_Boot	../exporter.py	/^class python_Boot:$/;"	kind:class	line:644
+python_Boot	../exporter.py	/^class python_Boot:$/;"	kind:class	line:1373
 python_HaxeIterator	../dumper.py	/^class python_HaxeIterator:$/;"	kind:class	line:580
-python_HaxeIterator	../exporter.py	/^class python_HaxeIterator:$/;"	kind:class	line:1061
+python_HaxeIterator	../exporter.py	/^class python_HaxeIterator:$/;"	kind:class	line:1790
 python_Lib	../dumper.py	/^class python_Lib:$/;"	kind:class	line:9182
 python__KwArgs_KwArgs_Impl_	../dumper.py	/^class python__KwArgs_KwArgs_Impl_:$/;"	kind:class	line:9171
 python_internal_ArrayImpl	../dumper.py	/^class python_internal_ArrayImpl:$/;"	kind:class	line:2659
-python_internal_ArrayImpl	../exporter.py	/^class python_internal_ArrayImpl:$/;"	kind:class	line:1098
+python_internal_ArrayImpl	../exporter.py	/^class python_internal_ArrayImpl:$/;"	kind:class	line:1827
 python_io_FileTextInput	../dumper.py	/^class python_io_FileTextInput(python_io_NativeTextInput):$/;"	kind:class	line:9398
 python_io_FileTextOutput	../dumper.py	/^class python_io_FileTextOutput(python_io_NativeTextOutput):$/;"	kind:class	line:9434
 python_io_IFileInput	../dumper.py	/^class python_io_IFileInput:$/;"	kind:class	line:9332
@@ -1447,8 +1595,35 @@ python_io_NativeInput	../dumper.py	/^class python_io_NativeInput(haxe_io_Input):
 python_io_NativeOutput	../dumper.py	/^class python_io_NativeOutput(haxe_io_Output):$/;"	kind:class	line:9339
 python_io_NativeTextInput	../dumper.py	/^class python_io_NativeTextInput(python_io_NativeInput):$/;"	kind:class	line:9373
 python_io_NativeTextOutput	../dumper.py	/^class python_io_NativeTextOutput(python_io_NativeOutput):$/;"	kind:class	line:9413
+python_lib_Builtins	../dumper.py	/^import builtins as python_lib_Builtins$/;"	kind:namespace	line:12
+python_lib_Builtins	../exporter.py	/^import builtins as python_lib_Builtins$/;"	kind:namespace	line:8
+python_lib_Functools	../dumper.py	/^import functools as python_lib_Functools$/;"	kind:namespace	line:11
+python_lib_Functools	../exporter.py	/^import functools as python_lib_Functools$/;"	kind:namespace	line:9
+python_lib_Inspect	../dumper.py	/^import inspect as python_lib_Inspect$/;"	kind:namespace	line:9
+python_lib_Inspect	../exporter.py	/^import inspect as python_lib_Inspect$/;"	kind:namespace	line:10
+python_lib_Math	../dumper.py	/^import math as python_lib_Math$/;"	kind:namespace	line:6
+python_lib_Math	../exporter.py	/^import math as python_lib_Math$/;"	kind:namespace	line:6
+python_lib_Msvcrt	../dumper.py	/^    import msvcrt as python_lib_Msvcrt$/;"	kind:namespace	line:14
+python_lib_Os	../dumper.py	/^import os as python_lib_Os$/;"	kind:namespace	line:10
+python_lib_Random	../dumper.py	/^import random as python_lib_Random$/;"	kind:namespace	line:17
+python_lib_Random	../exporter.py	/^import random as python_lib_Random$/;"	kind:namespace	line:11
+python_lib_Re	../dumper.py	/^import re as python_lib_Re$/;"	kind:namespace	line:18
+python_lib_Subprocess	../dumper.py	/^import subprocess as python_lib_Subprocess$/;"	kind:namespace	line:19
+python_lib_Sys	../dumper.py	/^import sys as python_lib_Sys$/;"	kind:namespace	line:20
+python_lib_Termios	../dumper.py	/^    import termios as python_lib_Termios$/;"	kind:namespace	line:22
+python_lib_Time	../dumper.py	/^import time as python_lib_Time$/;"	kind:namespace	line:25
+python_lib_Timeit	../dumper.py	/^import timeit as python_lib_Timeit$/;"	kind:namespace	line:26
+python_lib_Tty	../dumper.py	/^    import tty as python_lib_Tty$/;"	kind:namespace	line:28
+python_lib_datetime_Datetime	../dumper.py	/^from datetime import datetime as python_lib_datetime_Datetime$/;"	kind:namespace	line:4
+python_lib_datetime_Datetime	../exporter.py	/^from datetime import datetime as python_lib_datetime_Datetime$/;"	kind:namespace	line:4
+python_lib_datetime_Timezone	../dumper.py	/^from datetime import timezone as python_lib_datetime_Timezone$/;"	kind:namespace	line:5
+python_lib_datetime_Timezone	../exporter.py	/^from datetime import timezone as python_lib_datetime_Timezone$/;"	kind:namespace	line:5
+python_lib_io_StringIO	../dumper.py	/^from io import StringIO as python_lib_io_StringIO$/;"	kind:namespace	line:31
+python_lib_io_StringIO	../exporter.py	/^from io import StringIO as python_lib_io_StringIO$/;"	kind:namespace	line:12
+python_lib_os_Path	../dumper.py	/^from os import path as python_lib_os_Path$/;"	kind:namespace	line:8
+python_lib_urllib_Parse	../dumper.py	/^import urllib.parse as python_lib_urllib_Parse$/;"	kind:namespace	line:32
 quote	../dumper.py	/^    def quote(self,s):$/;"	kind:member	line:3939
-quote	../exporter.py	/^    def quote(self,s):$/;"	kind:member	line:503
+quote	../exporter.py	/^    def quote(self,s):$/;"	kind:member	line:552
 read	../dumper.py	/^    def read(self):$/;"	kind:member	line:8781
 read	../dumper.py	/^    def read(self,nbytes):$/;"	kind:member	line:4088
 read	../dumper.py	/^    def read(self,nbytes):$/;"	kind:member	line:9509
@@ -1482,26 +1657,31 @@ readinto	../dumper.py	/^    def readinto(self,b):$/;"	kind:member	line:9392
 rec	../dumper.py	/^    def rec(a,cmp,_hx_from,to):$/;"	kind:member	line:3606
 register	../__init__.py	/^def register():$/;"	kind:function	line:95
 remove	../dumper.py	/^    def remove(x,e):$/;"	kind:member	line:2722
-remove	../exporter.py	/^    def remove(x,e):$/;"	kind:member	line:1161
+remove	../exporter.py	/^    def remove(x,e):$/;"	kind:member	line:1890
 removeChild	../dumper.py	/^    def removeChild(self,x):$/;"	kind:member	line:979
 removeLink	../dumper.py	/^    def removeLink(self,parent,child):$/;"	kind:member	line:5757
 replace	../dumper.py	/^    def replace(self,s,by):$/;"	kind:member	line:175
 reset	../dumper.py	/^    def reset(self):$/;"	kind:member	line:5217
 reverse	../dumper.py	/^    def reverse(a):$/;"	kind:member	line:2768
-reverse	../exporter.py	/^    def reverse(a):$/;"	kind:member	line:1207
+reverse	../exporter.py	/^    def reverse(a):$/;"	kind:member	line:1936
 rotate	../dumper.py	/^    def rotate(a,cmp,_hx_from,mid,to):$/;"	kind:member	line:3656
 rotate	../dumper.py	/^    def rotate(self,x,y,z):$/;"	kind:member	line:1303
 round	../dumper.py	/^    def round(self,v):$/;"	kind:member	line:6443
 roundValues	../dumper.py	/^    def roundValues(self,data,_hx_def,mult = 1.):$/;"	kind:member	line:5795
 rshift	../dumper.py	/^    def rshift(val,n):$/;"	kind:member	line:9262
+rshift	../exporter.py	/^    def rshift(val,n):$/;"	kind:member	line:1984
 rtrim	../dumper.py	/^    def rtrim(s):$/;"	kind:member	line:507
 run	../dumper.py	/^    def run():$/;"	kind:member	line:3498
+rvec2d	../export_hmd.py	/^def rvec2d(v):$/;"	kind:function	line:13
+rvec3d	../export_hmd.py	/^def rvec3d(v):$/;"	kind:function	line:10
 save	../dumper.py	/^    def save(self,_hx_bytes):$/;"	kind:member	line:9042
-save	../export_hmd.py	/^def save(context, filepath,$/;"	kind:function	line:19
+save	../export_hmd.py	/^def save(context, filepath,$/;"	kind:function	line:24
+save	../export_hmd_back.py	/^def save(context, filepath,$/;"	kind:function	line:21
 saveBytes	../dumper.py	/^    def saveBytes(b):$/;"	kind:member	line:9142
 saveBytes	../dumper.py	/^    def saveBytes(path,_hx_bytes):$/;"	kind:member	line:9477
 saveBytes	../dumper.py	/^    def saveBytes(path,data):$/;"	kind:member	line:5022
-saveContent	../exporter.py	/^    def saveContent(path,content):$/;"	kind:member	line:1345
+saveBytes	../exporter.py	/^    def saveBytes(path,_hx_bytes):$/;"	kind:member	line:2084
+saveContent	../exporter.py	/^    def saveContent(path,content):$/;"	kind:member	line:2078
 scale	../dumper.py	/^    def scale(self,x = 1.,y = 1.,z = 1.):$/;"	kind:member	line:1247
 set	../dumper.py	/^    def set(self,att,value):$/;"	kind:member	line:936
 set	../dumper.py	/^    def set(self,key,value):$/;"	kind:member	line:3735
@@ -1510,38 +1690,42 @@ set	../dumper.py	/^    def set(self,key,value):$/;"	kind:member	line:565
 setCwd	../dumper.py	/^    def setCwd(s):$/;"	kind:member	line:668
 setField	../dumper.py	/^    def setField(o,field,value):$/;"	kind:member	line:233
 setJoints	../dumper.py	/^    def setJoints(self,joints,roots):$/;"	kind:member	line:1757
+setNormal	../exporter.py	/^    def setNormal(self,x,y,z):$/;"	kind:member	line:1361
 setPixel	../dumper.py	/^    def setPixel(self,x,y,c):$/;"	kind:member	line:5009
+setPosition	../exporter.py	/^    def setPosition(self,x,y,z):$/;"	kind:member	line:1356
 setTimeLocale	../dumper.py	/^    def setTimeLocale(loc):$/;"	kind:member	line:660
+setUv	../exporter.py	/^    def setUv(self,u,v):$/;"	kind:member	line:1366
 set_bigEndian	../dumper.py	/^    def set_bigEndian(self,b):$/;"	kind:member	line:4076
 set_bigEndian	../dumper.py	/^    def set_bigEndian(self,b):$/;"	kind:member	line:4216
 set_bigEndian	../dumper.py	/^    def set_bigEndian(self,b):$/;"	kind:member	line:9497
 set_bigEndian	../dumper.py	/^    def set_bigEndian(self,b):$/;"	kind:member	line:9540
+set_bigEndian	../exporter.py	/^    def set_bigEndian(self,b):$/;"	kind:member	line:651
 set_filter	../dumper.py	/^    def set_filter(self,f):$/;"	kind:member	line:3000
 set_innerFormat	../dumper.py	/^    def set_innerFormat(self,fmt):$/;"	kind:member	line:5056
 set_mipMap	../dumper.py	/^    def set_mipMap(self,m):$/;"	kind:member	line:2991
 set_wrap	../dumper.py	/^    def set_wrap(self,w):$/;"	kind:member	line:3009
 shift	../dumper.py	/^    def shift(x):$/;"	kind:member	line:2732
-shift	../exporter.py	/^    def shift(x):$/;"	kind:member	line:1171
+shift	../exporter.py	/^    def shift(x):$/;"	kind:member	line:1900
 shortenPossibleNumber	../dumper.py	/^    def shortenPossibleNumber(x):$/;"	kind:member	line:401
 shortenPossibleNumber	../exporter.py	/^    def shortenPossibleNumber(x):$/;"	kind:member	line:168
 simpleField	../dumper.py	/^    def simpleField(o,field):$/;"	kind:member	line:2321
-simpleField	../exporter.py	/^    def simpleField(o,field):$/;"	kind:member	line:806
+simpleField	../exporter.py	/^    def simpleField(o,field):$/;"	kind:member	line:1535
 sleep	../dumper.py	/^    def sleep(seconds):$/;"	kind:member	line:656
 slice	../dumper.py	/^    def slice(x,pos,end = None):$/;"	kind:member	line:2738
-slice	../exporter.py	/^    def slice(x,pos,end = None):$/;"	kind:member	line:1177
+slice	../exporter.py	/^    def slice(x,pos,end = None):$/;"	kind:member	line:1906
 sort	../dumper.py	/^    def sort(a,cmp):$/;"	kind:member	line:3602
 sort	../dumper.py	/^    def sort(x,f):$/;"	kind:member	line:2742
-sort	../exporter.py	/^    def sort(x,f):$/;"	kind:member	line:1181
+sort	../exporter.py	/^    def sort(x,f):$/;"	kind:member	line:1910
 sortByBindIndex	../dumper.py	/^    def sortByBindIndex(self,j1,j2):$/;"	kind:member	line:1816
 sortByLRU	../dumper.py	/^    def sortByLRU(self,t1,t2):$/;"	kind:member	line:2822
 sortDistinctFloats	../dumper.py	/^    def sortDistinctFloats(self,a,b):$/;"	kind:member	line:6248
 sortEvents	../dumper.py	/^    def sortEvents():$/;"	kind:member	line:3519
 sortInfluences	../dumper.py	/^    def sortInfluences(self,i1,i2):$/;"	kind:member	line:1768
 splice	../dumper.py	/^    def splice(x,pos,_hx_len):$/;"	kind:member	line:2746
-splice	../exporter.py	/^    def splice(x,pos,_hx_len):$/;"	kind:member	line:1185
+splice	../exporter.py	/^    def splice(x,pos,_hx_len):$/;"	kind:member	line:1914
 split	../dumper.py	/^    def split(s,d):$/;"	kind:member	line:2582
 split	../dumper.py	/^    def split(self,maxBones,index,triangleMaterials):$/;"	kind:member	line:1876
-split	../exporter.py	/^    def split(s,d):$/;"	kind:member	line:1262
+split	../exporter.py	/^    def split(s,d):$/;"	kind:member	line:1995
 startsWith	../dumper.py	/^    def startsWith(s,start):$/;"	kind:member	line:470
 stderr	../dumper.py	/^    def stderr():$/;"	kind:member	line:781
 stdin	../dumper.py	/^    def stdin():$/;"	kind:member	line:773
@@ -1549,15 +1733,15 @@ stdout	../dumper.py	/^    def stdout():$/;"	kind:member	line:777
 string	../dumper.py	/^    def string(s):$/;"	kind:member	line:365
 string	../exporter.py	/^    def string(s):$/;"	kind:member	line:132
 stringOrNull	../dumper.py	/^    def stringOrNull(s):$/;"	kind:member	line:9255
-stringOrNull	../exporter.py	/^    def stringOrNull(s):$/;"	kind:member	line:1248
+stringOrNull	../exporter.py	/^    def stringOrNull(s):$/;"	kind:member	line:1977
 substr	../dumper.py	/^    def substr(s,startIndex,_hx_len = None):$/;"	kind:member	line:2649
-substr	../exporter.py	/^    def substr(s,startIndex,_hx_len = None):$/;"	kind:member	line:1329
+substr	../exporter.py	/^    def substr(s,startIndex,_hx_len = None):$/;"	kind:member	line:2062
 substring	../dumper.py	/^    def substring(s,startIndex,endIndex = None):$/;"	kind:member	line:2635
-substring	../exporter.py	/^    def substring(s,startIndex,endIndex = None):$/;"	kind:member	line:1315
+substring	../exporter.py	/^    def substring(s,startIndex,endIndex = None):$/;"	kind:member	line:2048
 swap	../dumper.py	/^    def swap(a,i,j):$/;"	kind:member	line:3718
 sys_FileSystem	../dumper.py	/^class sys_FileSystem:$/;"	kind:class	line:531
 sys_io_File	../dumper.py	/^class sys_io_File:$/;"	kind:class	line:9464
-sys_io_File	../exporter.py	/^class sys_io_File:$/;"	kind:class	line:1339
+sys_io_File	../exporter.py	/^class sys_io_File:$/;"	kind:class	line:2072
 sys_io_FileInput	../dumper.py	/^class sys_io_FileInput(haxe_io_Input):$/;"	kind:class	line:9484
 sys_io_FileOutput	../dumper.py	/^class sys_io_FileOutput(haxe_io_Output):$/;"	kind:class	line:9527
 systemName	../dumper.py	/^    def systemName():$/;"	kind:member	line:672
@@ -1569,7 +1753,7 @@ toFloat	../dumper.py	/^    def toFloat(n):$/;"	kind:member	line:6636
 toHMD	../dumper.py	/^    def toHMD(self,filePath,includeGeometry):$/;"	kind:member	line:7936
 toInt	../dumper.py	/^    def toInt(n):$/;"	kind:member	line:6616
 toLowerCase	../dumper.py	/^    def toLowerCase(s):$/;"	kind:member	line:2620
-toLowerCase	../exporter.py	/^    def toLowerCase(s):$/;"	kind:member	line:1300
+toLowerCase	../exporter.py	/^    def toLowerCase(s):$/;"	kind:member	line:2033
 toMatrix	../dumper.py	/^    def toMatrix(self,leftHand):$/;"	kind:member	line:5154
 toQuaternion	../dumper.py	/^    def toQuaternion(self,leftHand):$/;"	kind:member	line:5173
 toString	../dumper.py	/^    def toString(n):$/;"	kind:member	line:6648
@@ -1580,14 +1764,14 @@ toString	../dumper.py	/^    def toString(self):$/;"	kind:member	line:4634
 toString	../dumper.py	/^    def toString(self):$/;"	kind:member	line:80
 toString	../dumper.py	/^    def toString(self):$/;"	kind:member	line:9085
 toString	../dumper.py	/^    def toString(x):$/;"	kind:member	line:2702
-toString	../exporter.py	/^    def toString(s):$/;"	kind:member	line:1311
+toString	../exporter.py	/^    def toString(s):$/;"	kind:member	line:2044
 toString	../exporter.py	/^    def toString(self):$/;"	kind:member	line:55
-toString	../exporter.py	/^    def toString(self):$/;"	kind:member	line:551
-toString	../exporter.py	/^    def toString(x):$/;"	kind:member	line:1141
+toString	../exporter.py	/^    def toString(self):$/;"	kind:member	line:743
+toString	../exporter.py	/^    def toString(x):$/;"	kind:member	line:1870
 toString1	../dumper.py	/^    def toString1(o,s):$/;"	kind:member	line:2165
-toString1	../exporter.py	/^    def toString1(o,s):$/;"	kind:member	line:650
+toString1	../exporter.py	/^    def toString1(o,s):$/;"	kind:member	line:1379
 toUpperCase	../dumper.py	/^    def toUpperCase(s):$/;"	kind:member	line:2616
-toUpperCase	../exporter.py	/^    def toUpperCase(s):$/;"	kind:member	line:1296
+toUpperCase	../exporter.py	/^    def toUpperCase(s):$/;"	kind:member	line:2029
 tokenStr	../dumper.py	/^    def tokenStr(self,t):$/;"	kind:member	line:8132
 translate	../dumper.py	/^    def translate(self,x = 0.,y = 0.,z = 0.):$/;"	kind:member	line:1191
 transpose	../dumper.py	/^    def transpose(self):$/;"	kind:member	line:1369
@@ -1596,43 +1780,62 @@ typeof	../dumper.py	/^    def typeof(v):$/;"	kind:member	line:854
 typeof	../exporter.py	/^    def typeof(v):$/;"	kind:member	line:252
 unexpected	../dumper.py	/^    def unexpected(self,t):$/;"	kind:member	line:8129
 unhandleKeywords	../dumper.py	/^    def unhandleKeywords(name):$/;"	kind:member	line:2567
-unhandleKeywords	../exporter.py	/^    def unhandleKeywords(name):$/;"	kind:member	line:1052
+unhandleKeywords	../exporter.py	/^    def unhandleKeywords(name):$/;"	kind:member	line:1781
 unregister	../__init__.py	/^def unregister():$/;"	kind:function	line:100
 unshift	../dumper.py	/^    def unshift(x,e):$/;"	kind:member	line:2718
-unshift	../exporter.py	/^    def unshift(x,e):$/;"	kind:member	line:1157
+unshift	../exporter.py	/^    def unshift(x,e):$/;"	kind:member	line:1886
 uploadBitmap	../dumper.py	/^    def uploadBitmap(self,bmp,mipLevel = 0,side = 0):$/;"	kind:member	line:3062
 uploadPixels	../dumper.py	/^    def uploadPixels(self,pixels,mipLevel = 0,side = 0):$/;"	kind:member	line:3079
 uploadTextureBitmap	../dumper.py	/^    def uploadTextureBitmap(self,t,bmp,mipLevel,side):$/;"	kind:member	line:2150
 uploadTexturePixels	../dumper.py	/^    def uploadTexturePixels(self,t,pixels,mipLevel,side):$/;"	kind:member	line:2153
 upper	../dumper.py	/^    def upper(a,cmp,_hx_from,to,val):$/;"	kind:member	line:3688
+urllib	../dumper.py	/^import urllib.parse as python_lib_urllib_Parse$/;"	kind:namespace	line:32
 use_animation	../__init__.py	/^    use_animation = BoolProperty($/;"	kind:variable	line:56
 use_selection	../__init__.py	/^    use_selection = BoolProperty($/;"	kind:variable	line:51
+veckey3d	../export_hmd_back.py	/^def veckey3d(v):$/;"	kind:function	line:18
 write	../dumper.py	/^    def write(self,d):$/;"	kind:member	line:8901
 write	../dumper.py	/^    def write(self,k,v):$/;"	kind:member	line:3780
 write	../dumper.py	/^    def write(self,s):$/;"	kind:member	line:4220
 write	../dumper.py	/^    def write(self,s):$/;"	kind:member	line:9549
-write	../exporter.py	/^    def write(self,filepath,scene):$/;"	kind:member	line:565
-write	../exporter.py	/^    def write(self,k,v):$/;"	kind:member	line:344
+write	../exporter.py	/^    def write(self,d):$/;"	kind:member	line:1079
+write	../exporter.py	/^    def write(self,filepath,scene):$/;"	kind:member	line:1214
+write	../exporter.py	/^    def write(self,k,v):$/;"	kind:member	line:393
+write	../exporter.py	/^    def write(self,s):$/;"	kind:member	line:655
 writeBounds	../dumper.py	/^    def writeBounds(self,b):$/;"	kind:member	line:8854
+writeBounds	../exporter.py	/^    def writeBounds(self,b):$/;"	kind:member	line:1032
 writeByte	../dumper.py	/^    def writeByte(self,c):$/;"	kind:member	line:4202
 writeByte	../dumper.py	/^    def writeByte(self,c):$/;"	kind:member	line:4282
 writeByte	../dumper.py	/^    def writeByte(self,c):$/;"	kind:member	line:9428
 writeByte	../dumper.py	/^    def writeByte(self,c):$/;"	kind:member	line:9543
+writeByte	../exporter.py	/^    def writeByte(self,c):$/;"	kind:member	line:637
+writeByte	../exporter.py	/^    def writeByte(self,c):$/;"	kind:member	line:716
 writeBytes	../dumper.py	/^    def writeBytes(self,buf,pos,_hx_len):$/;"	kind:member	line:4285
 writeBytes	../dumper.py	/^    def writeBytes(self,s,pos,_hx_len):$/;"	kind:member	line:4205
 writeBytes	../dumper.py	/^    def writeBytes(self,s,pos,_hx_len):$/;"	kind:member	line:9546
+writeBytes	../exporter.py	/^    def writeBytes(self,buf,pos,_hx_len):$/;"	kind:member	line:719
+writeBytes	../exporter.py	/^    def writeBytes(self,s,pos,_hx_len):$/;"	kind:member	line:640
 writeFloat	../dumper.py	/^    def writeFloat(self,x):$/;"	kind:member	line:4236
 writeFloat	../dumper.py	/^    def writeFloat(self,x):$/;"	kind:member	line:9555
+writeFloat	../exporter.py	/^    def writeFloat(self,x):$/;"	kind:member	line:671
 writeFullBytes	../dumper.py	/^    def writeFullBytes(self,s,pos,_hx_len):$/;"	kind:member	line:4230
 writeFullBytes	../dumper.py	/^    def writeFullBytes(self,s,pos,_hx_len):$/;"	kind:member	line:9552
+writeFullBytes	../exporter.py	/^    def writeFullBytes(self,s,pos,_hx_len):$/;"	kind:member	line:665
 writeInt32	../dumper.py	/^    def writeInt32(self,x):$/;"	kind:member	line:4249
 writeInt32	../dumper.py	/^    def writeInt32(self,x):$/;"	kind:member	line:9561
+writeInt32	../exporter.py	/^    def writeInt32(self,x):$/;"	kind:member	line:684
 writeName	../dumper.py	/^    def writeName(self,name):$/;"	kind:member	line:8824
+writeName	../exporter.py	/^    def writeName(self,name):$/;"	kind:member	line:1002
 writePosition	../dumper.py	/^    def writePosition(self,p,hasScale = True):$/;"	kind:member	line:8831
+writePosition	../exporter.py	/^    def writePosition(self,p,hasScale = True):$/;"	kind:member	line:1009
 writeProperty	../dumper.py	/^    def writeProperty(self,p):$/;"	kind:member	line:8799
+writeProperty	../exporter.py	/^    def writeProperty(self,p):$/;"	kind:member	line:977
 writeProps	../dumper.py	/^    def writeProps(self,props):$/;"	kind:member	line:8809
+writeProps	../exporter.py	/^    def writeProps(self,props):$/;"	kind:member	line:987
 writeSkin	../dumper.py	/^    def writeSkin(self,s):$/;"	kind:member	line:8868
+writeSkin	../exporter.py	/^    def writeSkin(self,s):$/;"	kind:member	line:1046
 writeString	../dumper.py	/^    def writeString(self,s):$/;"	kind:member	line:4261
 writeString	../dumper.py	/^    def writeString(self,s):$/;"	kind:member	line:9564
+writeString	../exporter.py	/^    def writeString(self,s):$/;"	kind:member	line:696
 writeUInt16	../dumper.py	/^    def writeUInt16(self,x):$/;"	kind:member	line:4239
 writeUInt16	../dumper.py	/^    def writeUInt16(self,x):$/;"	kind:member	line:9558
+writeUInt16	../exporter.py	/^    def writeUInt16(self,x):$/;"	kind:member	line:674

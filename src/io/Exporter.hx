@@ -33,7 +33,7 @@ class Exporter {
 
         var model = scene.modelArray[0];
         var egeom = model.geometry;
-        var vertCount = egeom.triangles.length * 3;
+        var vertCount = egeom.vertexArray.length;
 
         var ngeom = new Geometry();        
         ngeom.vertexCount = vertCount;
@@ -51,7 +51,7 @@ class Exporter {
             ngeom.vertexStride = 6;
         }        
               
-        ngeom.indexCounts = [vertCount];
+        ngeom.indexCounts = [egeom.indexArray.length];
         ngeom.bounds = Bounds.fromValues (0,0,0,1,1,1);        
 
         var nmodel = new Model ();        
@@ -87,30 +87,25 @@ class Exporter {
 
         var bytes = new haxe.io.BytesOutput ();
 
-        for (tri in egeom.triangles) {
-            for (vert in tri.vertexArray) {
-                bytes.writeFloat (vert.position.x);
-                bytes.writeFloat (vert.position.y);
-                bytes.writeFloat (vert.position.z);
-                bytes.writeFloat (vert.normal.x);
-                bytes.writeFloat (vert.normal.y);
-                bytes.writeFloat (vert.normal.z);
+        for (vert in egeom.vertexArray) {
+            bytes.writeFloat (vert.position.x);
+            bytes.writeFloat (vert.position.y);
+            bytes.writeFloat (vert.position.z);
+            bytes.writeFloat (vert.normal.x);
+            bytes.writeFloat (vert.normal.y);
+            bytes.writeFloat (vert.normal.z);
 
-                if (egeom.hasUv) {
-                    bytes.writeFloat (vert.uv.u);
-                    bytes.writeFloat (vert.uv.v);
-                }
+            if (egeom.hasUv) {
+                bytes.writeFloat (vert.uv.u);
+                bytes.writeFloat (vert.uv.v);
             }
+            
         }
 
         ngeom.indexPosition = bytes.length;
 
-        var idx = 0;
-        for (tri in egeom.triangles) {
-            for (vert in tri.vertexArray) {                
-                bytes.writeUInt16 (idx);
-                idx += 1;
-            }
+        for (idx in egeom.indexArray) {
+            bytes.writeUInt16 (idx);
         }
         
         hmd.data = bytes.getBytes ();

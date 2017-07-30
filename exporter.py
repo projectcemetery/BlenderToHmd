@@ -1219,9 +1219,8 @@ class io_Exporter:
         hmd.version = 2
         model = (scene.modelArray[0] if 0 < len(scene.modelArray) else None)
         egeom = model.geometry
-        vertCount = (len(egeom.triangles) * 3)
         ngeom = hxd_fmt_hmd_Geometry()
-        ngeom.vertexCount = vertCount
+        ngeom.vertexCount = len(egeom.vertexArray)
         ngeom.vertexPosition = 0
         ngeom.vertexFormat = [hxd_fmt_hmd_GeometryFormat("position",3), hxd_fmt_hmd_GeometryFormat("normal",3)]
         if egeom.hasUv:
@@ -1230,7 +1229,7 @@ class io_Exporter:
             ngeom.vertexFormat.append(pu)
         else:
             ngeom.vertexStride = 6
-        ngeom.indexCounts = [vertCount]
+        ngeom.indexCounts = [len(egeom.indexArray)]
         b = h3d_col_Bounds()
         b.xMin = 0
         b.yMin = 0
@@ -1268,37 +1267,26 @@ class io_Exporter:
         hmd.materials.append(nmat)
         _hx_bytes = haxe_io_BytesOutput()
         _g = 0
-        _g1 = egeom.triangles
+        _g1 = egeom.vertexArray
         while (_g < len(_g1)):
-            tri = (_g1[_g] if _g >= 0 and _g < len(_g1) else None)
+            vert = (_g1[_g] if _g >= 0 and _g < len(_g1) else None)
             _g = (_g + 1)
-            _g2 = 0
-            _g3 = tri.vertexArray
-            while (_g2 < len(_g3)):
-                vert = (_g3[_g2] if _g2 >= 0 and _g2 < len(_g3) else None)
-                _g2 = (_g2 + 1)
-                _hx_bytes.writeFloat(vert.position.x)
-                _hx_bytes.writeFloat(vert.position.y)
-                _hx_bytes.writeFloat(vert.position.z)
-                _hx_bytes.writeFloat(vert.normal.x)
-                _hx_bytes.writeFloat(vert.normal.y)
-                _hx_bytes.writeFloat(vert.normal.z)
-                if egeom.hasUv:
-                    _hx_bytes.writeFloat(vert.uv.u)
-                    _hx_bytes.writeFloat(vert.uv.v)
+            _hx_bytes.writeFloat(vert.position.x)
+            _hx_bytes.writeFloat(vert.position.y)
+            _hx_bytes.writeFloat(vert.position.z)
+            _hx_bytes.writeFloat(vert.normal.x)
+            _hx_bytes.writeFloat(vert.normal.y)
+            _hx_bytes.writeFloat(vert.normal.z)
+            if egeom.hasUv:
+                _hx_bytes.writeFloat(vert.uv.u)
+                _hx_bytes.writeFloat(vert.uv.v)
         ngeom.indexPosition = len(_hx_bytes.b.b)
-        idx = 0
-        _g4 = 0
-        _g11 = egeom.triangles
-        while (_g4 < len(_g11)):
-            tri1 = (_g11[_g4] if _g4 >= 0 and _g4 < len(_g11) else None)
-            _g4 = (_g4 + 1)
-            _g21 = 0
-            _g31 = tri1.vertexArray
-            while (_g21 < len(_g31)):
-                _g21 = (_g21 + 1)
-                _hx_bytes.writeUInt16(idx)
-                idx = (idx + 1)
+        _g2 = 0
+        _g11 = egeom.indexArray
+        while (_g2 < len(_g11)):
+            idx = (_g11[_g2] if _g2 >= 0 and _g2 < len(_g11) else None)
+            _g2 = (_g2 + 1)
+            _hx_bytes.writeUInt16(idx)
         hmd.data = _hx_bytes.getBytes()
         writer.write(hmd)
         sys_io_File.saveBytes(filepath,io1.getBytes())
@@ -1308,16 +1296,20 @@ io_Exporter._hx_class = io_Exporter
 
 class io_Geometry:
     _hx_class_name = "io.Geometry"
-    __slots__ = ("triangles", "hasUv")
-    _hx_fields = ["triangles", "hasUv"]
-    _hx_methods = ["addTriangle"]
+    __slots__ = ("vertexArray", "indexArray", "hasUv")
+    _hx_fields = ["vertexArray", "indexArray", "hasUv"]
+    _hx_methods = ["addVertex", "addIndex"]
 
     def __init__(self):
         self.hasUv = None
-        self.triangles = list()
+        self.vertexArray = list()
+        self.indexArray = list()
 
-    def addTriangle(self,triangle):
-        self.triangles.append(triangle)
+    def addVertex(self,vertex):
+        self.vertexArray.append(vertex)
+
+    def addIndex(self,index):
+        self.indexArray.append(index)
 
 io_Geometry._hx_class = io_Geometry
 
@@ -1347,23 +1339,6 @@ class io_Scene:
         self.modelArray.append(m)
 
 io_Scene._hx_class = io_Scene
-
-
-class io_Triangle:
-    _hx_class_name = "io.Triangle"
-    __slots__ = ("vertexArray",)
-    _hx_fields = ["vertexArray"]
-    _hx_methods = ["addVertex"]
-
-    def __init__(self):
-        self.vertexArray = list()
-
-    def addVertex(self,vertex):
-        if (len(self.vertexArray) >= 3):
-            raise _HxException("Too many vertex for triangle")
-        self.vertexArray.append(vertex)
-
-io_Triangle._hx_class = io_Triangle
 
 
 class io_Vertex:

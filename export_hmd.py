@@ -1,4 +1,3 @@
-
 import os
 
 import bpy
@@ -8,16 +7,19 @@ from . import exporter
 
 from progress_report import ProgressReport, ProgressReportSubstep
 
-def mesh_triangulate(me):
+def rvec3d(v):
+    return round(v[0], 4), round(v[1], 4), round(v[2], 4)
+
+def rvec2d(v):
+        return round(v[0], 4), round(v[1], 4)
+
+def meshTriangulate(me):
     import bmesh
     bm = bmesh.new()
     bm.from_mesh(me)
     bmesh.ops.triangulate(bm, faces=bm.faces)
     bm.to_mesh(me)
     bm.free()
-
-def veckey3d(v):
-    return round(v[0], 4), round(v[1], 4), round(v[2], 4)
 
 def save(context, filepath,
         EXPORT_APPLY_MODIFIERS = True):
@@ -31,86 +33,94 @@ def save(context, filepath,
         objects = scene.objects
 
         nscene = exporter.io_Scene ()
+        #file = open(filepath + ".test", 'w')
+        #fw = file.write
 
-        for i, ob_main in enumerate(objects):            
-            obs = [(ob_main, ob_main.matrix_world)]            
+        exp = exporter.io_Exporter ()
+        scn = exporter.io_Scene ()
 
-            for ob, ob_mat in obs:
-                nmodel = exporter.io_Model ()
-                try:
-                    me = ob.to_mesh(scene, EXPORT_APPLY_MODIFIERS, 'PREVIEW', calc_tessface=False)
-                except:
-                    continue
+        for oi, ob in enumerate(objects):            
+            try:
+                me = ob.to_mesh(scene, EXPORT_APPLY_MODIFIERS, 'PREVIEW')
+            except:
+                continue
 
-                ngeom = exporter.io_Geometry ()
-                ngeom.hasUv = False
+            meshTriangulate (me)
 
-                vertMap = {}
+            me.calc_tessface ()
+            me.calc_normals ()
+            meshVerts = me.vertices
+            # vdict = {} # (index, normal, uv) -> new index
+            vdict = [{} for i in range(len(meshVerts))]
+            normal = normalKey = uvcoord = uvcoordKey = None
+            vertCount = 0
+            vertArray = []
+            faces = [[] for f in range(len(me.tessfaces))]
 
-                mesh_triangulate (me)
-                me.calc_normals_split()
+            hasUv = bool(me.tessface_uv_textures)
+            if hasUv:
+                uvLayer = me.tessface_uv_textures.active.data
 
-                me_verts = me.vertices[:]
-                hasUv = len(me.uv_textures) > 0
+            for ti, f in enumerate(me.tessfaces):
+                # Normals
+                #normal = f.normal[:]
+                #normalKey = rvec3d(normal)
+
                 if hasUv:
-                    uv_layer = me.uv_layers.active.data[:]
-                    ngeom.hasUv = True
-                loops = me.loops                
-                
-                # Create full vertex map
-                for face in me.polygons:
-                    verts = face.vertices[:]
+                    uv = uvLayer[ti]
+                    uv = uv.uv1, uv.uv2, uv.uv3, uv.uv4
 
-                    # Vertices
-                    for vi in verts:
-                        vert = me_verts[vi]
-                        ps = vert.co[:]
-                        vertMap[vi] = ps
+                faceVerts = f.vertices
+                pf = faces[ti]
 
-                # Create triangle data
-                for face in me.polygons:
-                    verts = face.vertices[:]
-                    triangle = exporter.io_Triangle ()
+                for j, vidx in enumerate(faceVerts):
+                    vert = meshVerts[vidx]
 
                     # Normals
-                    normals = {}                    
-                    for l_idx in face.loop_indices:
-                        loop = loops[l_idx]
-                        vi = loop.vertex_index
-                        normal = loop.normal[:]
-                        normals[vi] = normal
+                    normal = vert.normal[:]
+                    normalKey = rvec3d(normal)
 
-                    # Uvs
-                    uvs = {}
                     if hasUv:
-                        for l_idx in face.loop_indices:
-                            loop = loops[l_idx]
-                            uv = uv_layer[l_idx].uv
-                            vi = loop.vertex_index
-                            uvs[vi] = uv[:]
+                        uvcoord = uv[j][0], uv[j][1]
+                        uvcoordKey = rvec2d(uvcoord)
 
-                    # Vertices
-                    for vi in verts:
-                        vert = me_verts[vi]
-                        ps = vert.co[:]
-                        normal = normals[vi]
+                    key = normalKey, uvcoordKey
 
-                        nvert = exporter.io_Vertex ()
-                        vps = veckey3d (ps)
-                        vnor = veckey3d (normal) 
-                        nvert.setPosition (vps[0], vps[1], vps[2])
-                        nvert.setNormal (vnor[0], vnor[1], vnor[2])
-                        if hasUv:
-                            uv = uvs[vi]
-                            nvert.setUv (uv[0], uv[1])
-                        triangle.addVertex (nvert)
+                    vdictLocal = vdict[vidx]
+                    pfVidx = vdictLocal.get(key)
+
+                    if pfVidx is None:
+                        pfVidx = vdictLocal[key] = vertCount
+                        vertArray.append((vidx, normal, uvcoord))
+                        vertCount += 1
                     
-                    ngeom.addTriangle (triangle)
+                    pf.append(pfVidx)
+            
+            nmodel = exporter.io_Model ()
+            ngeom = exporter.io_Geometry ()
+            ngeom.hasUv = hasUv
+            for i, v in enumerate(vertArray):
+                pos = rvec3d (meshVerts[v[0]].co[:])
+                nor = rvec3d (v[1])
+                vert = exporter.io_Vertex ()
+                vert.setPosition (pos[0], pos[1], pos[2])
+                vert.setNormal (nor[0], nor[1], nor[2])
+                if hasUv:
+                    uv = rvec2d (v[2])
+                    vert.setUv (uv[0], 1 - uv[1])
 
-                nmodel.name = ob.name
-                nmodel.geometry = ngeom
-                nscene.addModel (nmodel)
+                ngeom.addVertex (vert)
 
-        fhmd = exporter.io_Exporter ()
-        fhmd.write (filepath, nscene)
+            for pf in faces:
+                ngeom.addIndex (pf[0])
+                ngeom.addIndex (pf[1])
+                ngeom.addIndex (pf[2])
+
+            #fw("write2")
+            nmodel.geometry = ngeom
+            scn.addModel (nmodel)
+        
+        exp.write (filepath, scn)    
+        #file.close ()
+
     return {'FINISHED'}

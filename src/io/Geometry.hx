@@ -9,7 +9,12 @@ class Geometry {
     /**
      *  Vertex array
      */
-    public var triangles (default, null) : Array<Triangle>;
+    public var vertexArray (default, null) : Array<Vertex>;
+
+    /**
+     *  Index array
+     */
+    public var indexArray (default, null) : Array<Int>;
 
     /**
      *  Geometry has uv
@@ -20,14 +25,23 @@ class Geometry {
      *  Constructor
      */
     public function new () {
-        triangles = new Array<Triangle> ();
+        vertexArray = new Array<Vertex> ();
+        indexArray = new Array<Int> ();
     }
 
     /**
-     *  Add triangle
+     *  Add verted
      *  @param verts - 
      */
-    public function addTriangle (triangle : Triangle) : Void {
-        triangles.push (triangle);
+    public function addVertex (vertex : Vertex) : Void {
+        vertexArray.push (vertex);
+    }
+
+    /**
+     *  Add index
+     *  @param index - 
+     */
+    public function addIndex (index : Int) : Void {
+        indexArray.push (index);
     }
 }
