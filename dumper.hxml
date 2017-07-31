@@ -1,6 +1,0 @@
--cp src
--D analyzer-optimize
--dce full
--lib heaps
--main Dumper
--python dumper.py
