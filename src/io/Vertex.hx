@@ -10,6 +10,11 @@ import h3d.prim.UV;
 class Vertex {
 
     /**
+     *  Max bone per vertex
+     */
+    public static inline var MAX_WEIGHT_COUNT = 4;
+
+    /**
      *  Vertex position
      */
     public var position (default, null) : Vector;
@@ -25,12 +30,18 @@ class Vertex {
     public var uv (default, null) : UV;
 
     /**
+     *  Vertex weight to bone
+     */
+    public var weights (default, null) : Array<Weight>;
+
+    /**
      *  Constructor
      */
     public function new () {
         position = new Vector ();
         normal = new Vector ();
         uv = new UV (0,0);
+        weights = new Array<Weight> ();
     }
     
     /**
@@ -65,5 +76,11 @@ class Vertex {
     public function setUv (u : Float, v : Float) : Void {
         uv.u = u;
         uv.v = v;
+    }
+
+    public function addWeight (weight : Float, boneIndex : Int) : Void {
+        if (weights.length > MAX_WEIGHT_COUNT) throw "Too many weights";
+        var w = new Weight (weight, boneIndex);
+        weights.push (w);
     }
 }

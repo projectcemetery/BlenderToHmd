@@ -1205,19 +1205,14 @@ hxd_fmt_hmd_Writer._hx_class = hxd_fmt_hmd_Writer
 
 class io_Exporter:
     _hx_class_name = "io.Exporter"
-    __slots__ = ()
-    _hx_methods = ["write"]
+    __slots__ = ("dataBytes",)
+    _hx_fields = ["dataBytes"]
+    _hx_methods = ["addModel", "write"]
 
     def __init__(self):
-        pass
+        self.dataBytes = None
 
-    def write(self,filepath,scene):
-        sys_io_File.saveContent((("null" if filepath is None else filepath) + ".trace"),haxe_format_JsonPrinter.print(scene,None," "))
-        io1 = haxe_io_BytesOutput()
-        writer = hxd_fmt_hmd_Writer(io1)
-        hmd = hxd_fmt_hmd_Data()
-        hmd.version = 2
-        model = (scene.modelArray[0] if 0 < len(scene.modelArray) else None)
+    def addModel(self,hmd,model):
         egeom = model.geometry
         ngeom = hxd_fmt_hmd_Geometry()
         ngeom.vertexCount = len(egeom.vertexArray)
@@ -1253,19 +1248,15 @@ class io_Exporter:
         nmodel.position.sy = 1
         nmodel.position.sz = 1
         nmodel.materials = [0]
+        _hx_bytes = self.dataBytes
         nmat = hxd_fmt_hmd_Material()
         nmat.name = "Default"
         nmat.blendMode = h2d_BlendMode._hx_None
         nmat.culling = h3d_mat_Face.Back
-        hmd.geometries = list()
-        hmd.materials = list()
-        hmd.models = list()
-        hmd.animations = list()
-        hmd.dataPosition = 0
         hmd.geometries.append(ngeom)
         hmd.models.append(nmodel)
         hmd.materials.append(nmat)
-        _hx_bytes = haxe_io_BytesOutput()
+        hmd.dataPosition = len(_hx_bytes.b.b)
         _g = 0
         _g1 = egeom.vertexArray
         while (_g < len(_g1)):
@@ -1287,7 +1278,21 @@ class io_Exporter:
             idx = (_g11[_g2] if _g2 >= 0 and _g2 < len(_g11) else None)
             _g2 = (_g2 + 1)
             _hx_bytes.writeUInt16(idx)
-        hmd.data = _hx_bytes.getBytes()
+
+    def write(self,filepath,scene):
+        sys_io_File.saveContent((("null" if filepath is None else filepath) + ".trace"),haxe_format_JsonPrinter.print(scene,None," "))
+        io1 = haxe_io_BytesOutput()
+        writer = hxd_fmt_hmd_Writer(io1)
+        hmd = hxd_fmt_hmd_Data()
+        hmd.version = 2
+        hmd.geometries = list()
+        hmd.materials = list()
+        hmd.models = list()
+        hmd.animations = list()
+        self.dataBytes = haxe_io_BytesOutput()
+        if (len(scene.modelArray) > 0):
+            self.addModel(hmd,(scene.modelArray[0] if 0 < len(scene.modelArray) else None))
+        hmd.data = self.dataBytes.getBytes()
         writer.write(hmd)
         sys_io_File.saveBytes(filepath,io1.getBytes())
 
@@ -1343,14 +1348,16 @@ io_Scene._hx_class = io_Scene
 
 class io_Vertex:
     _hx_class_name = "io.Vertex"
-    __slots__ = ("position", "normal", "uv")
-    _hx_fields = ["position", "normal", "uv"]
-    _hx_methods = ["setPosition", "setNormal", "setUv"]
+    __slots__ = ("position", "normal", "uv", "weights")
+    _hx_fields = ["position", "normal", "uv", "weights"]
+    _hx_methods = ["setPosition", "setNormal", "setUv", "addWeight"]
+    _hx_statics = ["MAX_WEIGHT_COUNT"]
 
     def __init__(self):
         self.position = h3d_Vector()
         self.normal = h3d_Vector()
         self.uv = h3d_prim_UV(0,0)
+        self.weights = list()
 
     def setPosition(self,x,y,z):
         self.position.x = x
@@ -1366,7 +1373,25 @@ class io_Vertex:
         self.uv.u = u
         self.uv.v = v
 
+    def addWeight(self,weight,boneIndex):
+        if (len(self.weights) > 4):
+            raise _HxException("Too many weights")
+        w = io_Weight(weight,boneIndex)
+        self.weights.append(w)
+
 io_Vertex._hx_class = io_Vertex
+
+
+class io_Weight:
+    _hx_class_name = "io.Weight"
+    __slots__ = ("weight", "boneIndex")
+    _hx_fields = ["weight", "boneIndex"]
+
+    def __init__(self,weight,boneIndex):
+        self.weight = weight
+        self.boneIndex = boneIndex
+
+io_Weight._hx_class = io_Weight
 
 
 class python_Boot:
@@ -2092,5 +2117,6 @@ Math.NaN = float("nan")
 Math.PI = python_lib_Math.pi
 
 Date.EPOCH_UTC = python_lib_datetime_Datetime.fromtimestamp(0,python_lib_datetime_Timezone.utc)
+io_Vertex.MAX_WEIGHT_COUNT = 4
 python_Boot.keywords = set(["and", "del", "from", "not", "with", "as", "elif", "global", "or", "yield", "assert", "else", "if", "pass", "None", "break", "except", "import", "raise", "True", "class", "exec", "in", "return", "False", "continue", "finally", "is", "try", "def", "for", "lambda", "while"])
 python_Boot.prefixLength = len("_hx_")

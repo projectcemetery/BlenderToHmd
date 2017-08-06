@@ -10,28 +10,18 @@ import h3d.mat.BlendMode;
  *  For working with hmd
  */
 @:keep
-class Exporter {    
+class Exporter {
 
     /**
-     *  Constructor
+     *  Data for vertex, index, animation, etc
      */
-    public function new () {
-    }
+    var dataBytes : haxe.io.BytesOutput;
 
     /**
-     *  Write scene
-     *  @param filepath - 
-     *  @param scene - 
+     *  Add model to HMD
      */
-    public function write (filepath : String, scene : Scene) : Void {
-        sys.io.File.saveContent (filepath + ".trace", haxe.Json.stringify (scene, null, " "));        
 
-        var io = new haxe.io.BytesOutput ();
-        var writer = new Writer (io);
-        var hmd = new Data ();
-        hmd.version = Data.CURRENT_VERSION;        
-
-        var model = scene.modelArray[0];
+    function addModel (hmd : Data, model : io.Model) : Void {
         var egeom = model.geometry;
         var vertCount = egeom.vertexArray.length;
 
@@ -49,8 +39,8 @@ class Exporter {
             ngeom.vertexFormat.push (pu);
         } else {
             ngeom.vertexStride = 6;
-        }        
-              
+        }
+
         ngeom.indexCounts = [egeom.indexArray.length];
         ngeom.bounds = Bounds.fromValues (0,0,0,1,1,1);        
 
@@ -70,22 +60,17 @@ class Exporter {
         nmodel.position.sz = 1;
         nmodel.materials = [0];
 
+        var bytes = dataBytes;
         var nmat = new Material();
         nmat.name = "Default";
         nmat.blendMode = BlendMode.None;
         nmat.culling = h3d.mat.Data.Face.Back;
 
-        hmd.geometries = new Array<Geometry> ();
-        hmd.materials = new Array<Material> ();
-        hmd.models = new Array<Model> ();
-        hmd.animations = new Array<Animation> ();        
-        hmd.dataPosition = 0;
-
         hmd.geometries.push (ngeom);
         hmd.models.push (nmodel);
         hmd.materials.push (nmat);
 
-        var bytes = new haxe.io.BytesOutput ();
+        hmd.dataPosition = bytes.length;
 
         for (vert in egeom.vertexArray) {
             bytes.writeFloat (vert.position.x);
@@ -98,8 +83,7 @@ class Exporter {
             if (egeom.hasUv) {
                 bytes.writeFloat (vert.uv.u);
                 bytes.writeFloat (vert.uv.v);
-            }
-            
+            }   
         }
 
         ngeom.indexPosition = bytes.length;
@@ -107,9 +91,39 @@ class Exporter {
         for (idx in egeom.indexArray) {
             bytes.writeUInt16 (idx);
         }
-        
-        hmd.data = bytes.getBytes ();
+    }
 
+    /**
+     *  Constructor
+     */
+    public function new () {
+    }
+
+    /**
+     *  Write scene
+     *  @param filepath - 
+     *  @param scene - 
+     */
+    public function write (filepath : String, scene : Scene) : Void {
+        sys.io.File.saveContent (filepath + ".trace", haxe.Json.stringify (scene, null, " "));        
+
+        var io = new haxe.io.BytesOutput ();
+        var writer = new Writer (io);
+        var hmd = new Data ();
+        hmd.version = Data.CURRENT_VERSION;  
+        hmd.geometries = new Array<Geometry> ();
+        hmd.materials = new Array<Material> ();
+        hmd.models = new Array<Model> ();
+        hmd.animations = new Array<Animation> ();      
+
+        dataBytes = new haxe.io.BytesOutput ();
+
+        // TODO: multiple model export
+        if (scene.modelArray.length > 0) {
+            addModel (hmd, scene.modelArray[0]);
+        } 
+
+        hmd.data = dataBytes.getBytes ();
         writer.write (hmd);
         sys.io.File.saveBytes (filepath, io.getBytes ());
     }
