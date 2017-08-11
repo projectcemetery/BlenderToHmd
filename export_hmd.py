@@ -1,7 +1,9 @@
 import os
 
+import math
 import bpy
 import mathutils
+from mathutils import Vector, Matrix
 import bpy_extras.io_utils
 from . import exporter
 
@@ -80,8 +82,55 @@ def getGeometry (me):
     return vertArray, faces
 
 # Get armature and weights
-def getSkin(me, armob):
-    pass
+def getSkin(me, armob, fw):
+    mtx4_z90 = Matrix.Rotation(math.pi / 2.0, 4, 'Z')
+
+    loc, rot, scale = armob.matrix_local.decompose()
+    fw (armob.name)
+    fw ("; ")
+    fw (str (loc))
+    fw ("\n\n")
+
+    arm = armob.data
+    bones = arm.bones
+    poseBones = armob.pose.bones
+
+    boneDict = {}
+
+    for bone in bones:
+        boneDict[bone.name] = None
+        if bone.parent:
+            boneDict[bone.name] = bone.parent.name
+
+    for name in boneDict:
+        matrix = armob.matrix_local * mtx4_z90
+        parName = boneDict[name]
+        poseBone = poseBones[name]
+        poseBoneMat = poseBone.bone.matrix_local
+
+        #if parName:
+        #    parBone = poseBones[parName]
+        #    poseBoneMat = poseBoneMat * parBone.bone.matrix
+
+        loc, rot, scale = poseBoneMat.decompose()
+        fw (name)
+        fw ("; ")
+        if parName:
+            fw (parName)
+            fw ("; ")
+
+        fw (str (poseBone.location))
+        fw ("; ")
+
+        loc2, rot2, scale2 = poseBone.matrix.decompose()
+        fw (str (loc2))
+        fw ("; ")
+
+        fw (str (loc))
+        fw ("\n")
+
+
+    return (1,2)
 
 # Get animation
 def getAnimation (obj):
@@ -136,10 +185,9 @@ def save(context, filepath,
         for oi, ob in enumerate(objects):
             # Animation export
             if ob.animation_data:
-                fw ("Has animation")
                 anim = getAnimation (ob)
             else:
-                fw ("No animation")
+                pass
 
             # Get mesh
             try:
@@ -147,15 +195,13 @@ def save(context, filepath,
             except:
                 continue
 
+            vertices, faces = getGeometry (me)
+
             # Export skin
             armob = None
             if ob.parent and ob.parent.type == 'ARMATURE':
                 armob = ob.parent
-
-            vertices, faces = getGeometry (me)
-            if armob:
-                #skin, weights = getSkin (me, armob)
-                pass
+                skin, weights = getSkin (me, armob, fw)
 
             writeModel (scn, me, vertices, faces)
         
