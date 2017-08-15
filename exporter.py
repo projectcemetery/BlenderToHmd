@@ -287,6 +287,12 @@ h2d_BlendMode.Screen = h2d_BlendMode("Screen", 6, list())
 h2d_BlendMode._hx_class = h2d_BlendMode
 
 
+class h3d_Quat:
+    _hx_class_name = "h3d.Quat"
+    __slots__ = ()
+h3d_Quat._hx_class = h3d_Quat
+
+
 class h3d_Vector:
     _hx_class_name = "h3d.Vector"
     __slots__ = ("x", "y", "z", "w")
@@ -1319,12 +1325,34 @@ class io_Geometry:
 io_Geometry._hx_class = io_Geometry
 
 
-class io_Model:
-    _hx_class_name = "io.Model"
-    __slots__ = ("name", "geometry")
-    _hx_fields = ["name", "geometry"]
+class io_Joint:
+    _hx_class_name = "io.Joint"
+    __slots__ = ("index", "parentIndex", "name", "position", "quat")
+    _hx_fields = ["index", "parentIndex", "name", "position", "quat"]
+    _hx_methods = ["setPosition"]
 
     def __init__(self):
+        self.quat = None
+        self.name = None
+        self.parentIndex = None
+        self.index = None
+        self.position = h3d_Vector(0,0,0,0)
+
+    def setPosition(self,x,y,z):
+        self.position.x = x
+        self.position.y = y
+        self.position.z = z
+
+io_Joint._hx_class = io_Joint
+
+
+class io_Model:
+    _hx_class_name = "io.Model"
+    __slots__ = ("name", "geometry", "skin")
+    _hx_fields = ["name", "geometry", "skin"]
+
+    def __init__(self):
+        self.skin = None
         self.geometry = None
         self.name = "Object"
 
@@ -1344,6 +1372,21 @@ class io_Scene:
         self.modelArray.append(m)
 
 io_Scene._hx_class = io_Scene
+
+
+class io_Skin:
+    _hx_class_name = "io.Skin"
+    __slots__ = ("joints",)
+    _hx_fields = ["joints"]
+    _hx_methods = ["addJoint"]
+
+    def __init__(self):
+        self.joints = list()
+
+    def addJoint(self,joint):
+        self.joints.append(joint)
+
+io_Skin._hx_class = io_Skin
 
 
 class io_Vertex:

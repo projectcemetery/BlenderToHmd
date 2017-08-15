@@ -83,13 +83,9 @@ def getGeometry (me):
 
 # Get armature and weights
 def getSkin(me, armob, fw):
-    mtx4_z90 = Matrix.Rotation(math.pi / 2.0, 4, 'Z')
+    skin = exporter.io_Skin ()
 
     loc, rot, scale = armob.matrix_local.decompose()
-    fw (armob.name)
-    fw ("; ")
-    fw (str (loc))
-    fw ("\n\n")
 
     arm = armob.data
     bones = arm.bones
@@ -97,50 +93,47 @@ def getSkin(me, armob, fw):
 
     boneDict = {}
 
+    ind = 0
     for bone in bones:
-        boneDict[bone.name] = None
+        boneDict[bone.name] = { "index" : ind }
         if bone.parent:
-            boneDict[bone.name] = bone.parent.name
+            boneDict[bone.name]["parent"] = bone.parent.name
+        
+        ind += 1
 
     for name in boneDict:
-        matrix = armob.matrix_local * mtx4_z90
-        parName = boneDict[name]
+        boneData = boneDict[name]
+        parName = boneData["parent"]
         poseBone = poseBones[name]
         poseBoneMat = poseBone.bone.matrix_local
+                    
+        joint = exporter.io_Joint ()
+        joint.index = boneData["index"]
+        joint.name = name
+        joint.setPosition (loc.x, loc.y, loc.z)
 
-        #if parName:
-        #    parBone = poseBones[parName]
-        #    poseBoneMat = poseBoneMat * parBone.bone.matrix
-
-        loc, rot, scale = poseBoneMat.decompose()
-        fw (name)
-        fw ("; ")
         if parName:
-            fw (parName)
-            fw ("; ")
+            parBoneData =  boneDict[parName]
+            joint.parentIndex = parBoneData["index"]
 
-        fw (str (poseBone.location))
-        fw ("; ")
+        skin.addJoint (joint)
 
-        loc2, rot2, scale2 = poseBone.matrix.decompose()
-        fw (str (loc2))
-        fw ("; ")
+        #loc, rot, scale = poseBoneMat.decompose()        
+        #if parName:
+        #    pass
 
-        fw (str (loc))
-        fw ("\n")
-
-
-    return (1,2)
+    return (skin, 2)
 
 # Get animation
 def getAnimation (obj):
     pass
 
 # Add model to scene
-def writeModel(scn, me, verts, faces):
+def writeModel(scn, me, verts, faces, weights, skin):
     hasUv = bool(me.tessface_uv_textures)
     meshVerts = me.vertices
     nmodel = exporter.io_Model ()
+    nmodel.skin = skin
     ngeom = exporter.io_Geometry ()
     ngeom.hasUv = hasUv
     for i, v in enumerate(verts):
@@ -199,11 +192,13 @@ def save(context, filepath,
 
             # Export skin
             armob = None
+            skin = None
+            weights = None
             if ob.parent and ob.parent.type == 'ARMATURE':
                 armob = ob.parent
                 skin, weights = getSkin (me, armob, fw)
 
-            writeModel (scn, me, vertices, faces)
+            writeModel (scn, me, vertices, faces, weights, skin)
         
         exp.write (filepath, scn)    
         file.close ()

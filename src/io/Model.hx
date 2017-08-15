@@ -17,6 +17,11 @@ class Model {
     public var geometry : Geometry;
 
     /**
+     *  Skin data
+     */
+    public var skin : Skin;
+
+    /**
      *  Constructor
      */
     public function new () {

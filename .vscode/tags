@@ -3,7 +3,7 @@
 !_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
-!_TAG_PROGRAM_VERSION	5.8	//
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
 CameraFOVY	../exporter.py	/^    def CameraFOVY(v):$/;"	kind:member	line:788
 Custom	../exporter.py	/^    def Custom(e):$/;"	kind:member	line:753
 Date	../exporter.py	/^class Date:$/;"	kind:class	line:41
@@ -13,10 +13,6 @@ ExportHMD	../__init__.py	/^class ExportHMD(bpy.types.Operator, ExportHelper, IOO
 HxOverrides	../exporter.py	/^class HxOverrides:$/;"	kind:class	line:1989
 HxString	../exporter.py	/^class HxString:$/;"	kind:class	line:2013
 IOOBJOrientationHelper	../__init__.py	/^IOOBJOrientationHelper = orientation_helper_factory("IOOBJOrientationHelper", axis_forward='-Z', axis_up='Y')$/;"	kind:variable	line:34
-Math	../exporter.py	/^import math as Math$/;"	kind:namespace	line:7
-Matrix	../__init__.py	/^        from mathutils import Matrix$/;"	kind:namespace	line:74
-ProgressReport	../export_hmd.py	/^from progress_report import ProgressReport, ProgressReportSubstep$/;"	kind:namespace	line:8
-ProgressReportSubstep	../export_hmd.py	/^from progress_report import ProgressReport, ProgressReportSubstep$/;"	kind:namespace	line:8
 Reflect	../exporter.py	/^class Reflect:$/;"	kind:class	line:108
 Std	../exporter.py	/^class Std:$/;"	kind:class	line:126
 StringBuf	../exporter.py	/^class StringBuf:$/;"	kind:class	line:200
@@ -270,10 +266,6 @@ bl_idname	../__init__.py	/^    bl_idname = "export_scene.hmd"$/;"	kind:variable	
 bl_info	../__init__.py	/^bl_info = {$/;"	kind:variable	line:3
 bl_label	../__init__.py	/^    bl_label = 'Export HMD'$/;"	kind:variable	line:41
 bl_options	../__init__.py	/^    bl_options = {'PRESET'}$/;"	kind:variable	line:42
-bmesh	../export_hmd.py	/^    import bmesh$/;"	kind:namespace	line:20
-bpy	../__init__.py	/^import bpy$/;"	kind:namespace	line:19
-bpy	../export_hmd.py	/^import bpy$/;"	kind:namespace	line:3
-bpy_extras	../export_hmd.py	/^import bpy_extras.io_utils$/;"	kind:namespace	line:5
 charAt	../exporter.py	/^    def charAt(s,index):$/;"	kind:member	line:2033
 charCodeAt	../exporter.py	/^    def charCodeAt(s,index):$/;"	kind:member	line:2026
 check_extension	../__init__.py	/^    check_extension = True$/;"	kind:variable	line:70
@@ -287,9 +279,7 @@ description	../__init__.py	/^            description="Export selected objects on
 description	../__init__.py	/^            description="Write baked skeletal animations",$/;"	kind:variable	line:58
 eq	../exporter.py	/^    def eq(a,b):$/;"	kind:member	line:1995
 execute	../__init__.py	/^    def execute(self, context):$/;"	kind:member	line:72
-export_hmd	../__init__.py	/^        from . import export_hmd$/;"	kind:namespace	line:73
 export_hmd.py	../export_hmd.py	1;"	kind:file	line:1
-exporter	../export_hmd.py	/^from . import exporter$/;"	kind:namespace	line:6
 exporter.py	../exporter.py	1;"	kind:file	line:1
 field	../exporter.py	/^    def field(o,field):$/;"	kind:member	line:114
 field	../exporter.py	/^    def field(o,field):$/;"	kind:member	line:1569
@@ -301,13 +291,13 @@ filter_glob	../__init__.py	/^    filter_glob = StringProperty($/;"	kind:variable
 floatToI32	../exporter.py	/^    def floatToI32(f):$/;"	kind:member	line:767
 fromString	../exporter.py	/^    def fromString(s):$/;"	kind:member	line:84
 fromTime	../exporter.py	/^    def fromTime(t):$/;"	kind:member	line:70
-getAnimation	../export_hmd.py	/^def getAnimation (obj):$/;"	kind:function	line:88
+getAnimation	../export_hmd.py	/^def getAnimation (obj):$/;"	kind:function	line:136
 getBytes	../exporter.py	/^    def getBytes(self):$/;"	kind:member	line:622
 getBytes	../exporter.py	/^    def getBytes(self):$/;"	kind:member	line:732
 getClassFields	../exporter.py	/^    def getClassFields(c):$/;"	kind:member	line:1797
-getGeometry	../export_hmd.py	/^def getGeometry (me):$/;"	kind:function	line:28
+getGeometry	../export_hmd.py	/^def getGeometry (me):$/;"	kind:function	line:30
 getInstanceFields	../exporter.py	/^    def getInstanceFields(c):$/;"	kind:member	line:1765
-getSkin	../export_hmd.py	/^def getSkin(me, armob):$/;"	kind:function	line:83
+getSkin	../export_hmd.py	/^def getSkin(me, armob, fw):$/;"	kind:function	line:85
 getSuperClass	../exporter.py	/^    def getSuperClass(c):$/;"	kind:member	line:1784
 global_scale	../__init__.py	/^    global_scale = FloatProperty($/;"	kind:variable	line:62
 h2d_BlendMode	../exporter.py	/^class h2d_BlendMode(Enum):$/;"	kind:class	line:277
@@ -344,7 +334,6 @@ hxd_fmt_hmd_Skin	../exporter.py	/^class hxd_fmt_hmd_Skin:$/;"	kind:class	line:88
 hxd_fmt_hmd_SkinJoint	../exporter.py	/^class hxd_fmt_hmd_SkinJoint:$/;"	kind:class	line:870
 hxd_fmt_hmd_SkinSplit	../exporter.py	/^class hxd_fmt_hmd_SkinSplit:$/;"	kind:class	line:878
 hxd_fmt_hmd_Writer	../exporter.py	/^class hxd_fmt_hmd_Writer:$/;"	kind:class	line:967
-importlib	../__init__.py	/^import importlib$/;"	kind:namespace	line:1
 indexOf	../exporter.py	/^    def indexOf(a,x,fromIndex = None):$/;"	kind:member	line:1865
 indexOf	../exporter.py	/^    def indexOf(s,_hx_str,startIndex = None):$/;"	kind:member	line:2061
 insert	../exporter.py	/^    def insert(a,pos,x):$/;"	kind:member	line:1956
@@ -354,7 +343,6 @@ io_Model	../exporter.py	/^class io_Model:$/;"	kind:class	line:1322
 io_Scene	../exporter.py	/^class io_Scene:$/;"	kind:class	line:1334
 io_Vertex	../exporter.py	/^class io_Vertex:$/;"	kind:class	line:1349
 io_Weight	../exporter.py	/^class io_Weight:$/;"	kind:class	line:1385
-io_utils	../export_hmd.py	/^import bpy_extras.io_utils$/;"	kind:namespace	line:5
 isFunction	../exporter.py	/^    def isFunction(f):$/;"	kind:member	line:118
 iterator	../exporter.py	/^    def iterator(x):$/;"	kind:member	line:1861
 keys	../exporter.py	/^    def keys(self):$/;"	kind:member	line:373
@@ -362,9 +350,8 @@ lastIndexOf	../exporter.py	/^    def lastIndexOf(a,x,fromIndex = None):$/;"	kind
 lastIndexOf	../exporter.py	/^    def lastIndexOf(s,_hx_str,startIndex = None):$/;"	kind:member	line:2040
 lpad	../exporter.py	/^    def lpad(s,c,l):$/;"	kind:member	line:217
 map	../exporter.py	/^    def map(x,f):$/;"	kind:member	line:1948
-mathutils	../export_hmd.py	/^import mathutils$/;"	kind:namespace	line:4
 menu_func_export	../__init__.py	/^def menu_func_export(self, context):$/;"	kind:function	line:92
-meshTriangulate	../export_hmd.py	/^def meshTriangulate(me):$/;"	kind:function	line:19
+meshTriangulate	../export_hmd.py	/^def meshTriangulate(me):$/;"	kind:function	line:21
 name	../__init__.py	/^            name="Scale",$/;"	kind:variable	line:63
 name	../__init__.py	/^            name="Selection Only",$/;"	kind:variable	line:52
 name	../__init__.py	/^            name="Skeletal animation",$/;"	kind:variable	line:57
@@ -372,7 +359,6 @@ next	../exporter.py	/^    def next(self):$/;"	kind:member	line:1826
 now	../exporter.py	/^    def now():$/;"	kind:member	line:64
 ofString	../exporter.py	/^    def ofString(s):$/;"	kind:member	line:606
 options	../__init__.py	/^            options={'HIDDEN'},$/;"	kind:variable	line:47
-os	../export_hmd.py	/^import os$/;"	kind:namespace	line:1
 parseFloat	../exporter.py	/^    def parseFloat(x):$/;"	kind:member	line:186
 parseInt	../exporter.py	/^    def parseInt(x):$/;"	kind:member	line:136
 path_mode	../__init__.py	/^    path_mode = path_reference_mode$/;"	kind:variable	line:68
@@ -382,22 +368,14 @@ push	../exporter.py	/^    def push(x,e):$/;"	kind:member	line:1905
 python_Boot	../exporter.py	/^class python_Boot:$/;"	kind:class	line:1397
 python_HaxeIterator	../exporter.py	/^class python_HaxeIterator:$/;"	kind:class	line:1814
 python_internal_ArrayImpl	../exporter.py	/^class python_internal_ArrayImpl:$/;"	kind:class	line:1851
-python_lib_Builtins	../exporter.py	/^import builtins as python_lib_Builtins$/;"	kind:namespace	line:8
-python_lib_Functools	../exporter.py	/^import functools as python_lib_Functools$/;"	kind:namespace	line:9
-python_lib_Inspect	../exporter.py	/^import inspect as python_lib_Inspect$/;"	kind:namespace	line:10
-python_lib_Math	../exporter.py	/^import math as python_lib_Math$/;"	kind:namespace	line:6
-python_lib_Random	../exporter.py	/^import random as python_lib_Random$/;"	kind:namespace	line:11
-python_lib_datetime_Datetime	../exporter.py	/^from datetime import datetime as python_lib_datetime_Datetime$/;"	kind:namespace	line:4
-python_lib_datetime_Timezone	../exporter.py	/^from datetime import timezone as python_lib_datetime_Timezone$/;"	kind:namespace	line:5
-python_lib_io_StringIO	../exporter.py	/^from io import StringIO as python_lib_io_StringIO$/;"	kind:namespace	line:12
 quote	../exporter.py	/^    def quote(self,s):$/;"	kind:member	line:552
 register	../__init__.py	/^def register():$/;"	kind:function	line:95
 remove	../exporter.py	/^    def remove(x,e):$/;"	kind:member	line:1914
 reverse	../exporter.py	/^    def reverse(a):$/;"	kind:member	line:1960
 rshift	../exporter.py	/^    def rshift(val,n):$/;"	kind:member	line:2008
-rvec2d	../export_hmd.py	/^def rvec2d(v):$/;"	kind:function	line:11
-rvec3d	../export_hmd.py	/^def rvec3d(v):$/;"	kind:function	line:15
-save	../export_hmd.py	/^def save(context, filepath,$/;"	kind:function	line:119
+rvec2d	../export_hmd.py	/^def rvec2d(v):$/;"	kind:function	line:13
+rvec3d	../export_hmd.py	/^def rvec3d(v):$/;"	kind:function	line:17
+save	../export_hmd.py	/^def save(context, filepath,$/;"	kind:function	line:167
 saveBytes	../exporter.py	/^    def saveBytes(path,_hx_bytes):$/;"	kind:member	line:2108
 saveContent	../exporter.py	/^    def saveContent(path,content):$/;"	kind:member	line:2102
 setNormal	../exporter.py	/^    def setNormal(self,x,y,z):$/;"	kind:member	line:1367
@@ -441,7 +419,7 @@ writeBytes	../exporter.py	/^    def writeBytes(self,s,pos,_hx_len):$/;"	kind:mem
 writeFloat	../exporter.py	/^    def writeFloat(self,x):$/;"	kind:member	line:671
 writeFullBytes	../exporter.py	/^    def writeFullBytes(self,s,pos,_hx_len):$/;"	kind:member	line:665
 writeInt32	../exporter.py	/^    def writeInt32(self,x):$/;"	kind:member	line:684
-writeModel	../export_hmd.py	/^def writeModel(scn, me, verts, faces):$/;"	kind:function	line:92
+writeModel	../export_hmd.py	/^def writeModel(scn, me, verts, faces):$/;"	kind:function	line:140
 writeName	../exporter.py	/^    def writeName(self,name):$/;"	kind:member	line:1002
 writePosition	../exporter.py	/^    def writePosition(self,p,hasScale = True):$/;"	kind:member	line:1009
 writeProperty	../exporter.py	/^    def writeProperty(self,p):$/;"	kind:member	line:977
