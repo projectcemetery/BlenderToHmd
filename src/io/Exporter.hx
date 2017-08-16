@@ -18,6 +18,25 @@ class Exporter {
     var dataBytes : haxe.io.BytesOutput;
 
     /**
+     *  Get skin for export
+     *  @param skin - 
+     */
+    function getSkin (skin : io.Skin) : Skin {
+        var nskin = new Skin ();
+        nskin.name = "Skin";
+        nskin.joints = new Array<SkinJoint> ();
+
+
+        for (j in skin.joints) {
+            var njoint = new SkinJoint ();
+            njoint.name = j.name;
+            nskin.joints.push (njoint);
+        }
+
+        return nskin;
+    }
+
+    /**
      *  Add model to HMD
      */
 
@@ -42,6 +61,7 @@ class Exporter {
         }
 
         ngeom.indexCounts = [egeom.indexArray.length];
+        // TODO: fix bounds
         ngeom.bounds = Bounds.fromValues (0,0,0,1,1,1);        
 
         var nmodel = new Model ();        
@@ -90,6 +110,10 @@ class Exporter {
 
         for (idx in egeom.indexArray) {
             bytes.writeUInt16 (idx);
+        }
+
+        if (model.skin != null) {
+            nmodel.skin = getSkin (model.skin);
         }
     }
 

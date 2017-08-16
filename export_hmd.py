@@ -95,10 +95,11 @@ def getSkin(me, armob, fw):
 
     ind = 0
     for bone in bones:
-        boneDict[bone.name] = { "index" : ind }
+        bdat = { "index" : ind, "parent" : None }         
         if bone.parent:
-            boneDict[bone.name]["parent"] = bone.parent.name
+            bdat["parent"] = bone.parent.name
         
+        boneDict[bone.name] = bdat
         ind += 1
 
     for name in boneDict:
@@ -129,10 +130,11 @@ def getAnimation (obj):
     pass
 
 # Add model to scene
-def writeModel(scn, me, verts, faces, weights, skin):
+def writeModel(scn, ob, me, verts, faces, weights, skin):
     hasUv = bool(me.tessface_uv_textures)
     meshVerts = me.vertices
     nmodel = exporter.io_Model ()
+    nmodel.name = ob.name
     nmodel.skin = skin
     ngeom = exporter.io_Geometry ()
     ngeom.hasUv = hasUv
@@ -198,7 +200,7 @@ def save(context, filepath,
                 armob = ob.parent
                 skin, weights = getSkin (me, armob, fw)
 
-            writeModel (scn, me, vertices, faces, weights, skin)
+            writeModel (scn, ob, me, vertices, faces, weights, skin)
         
         exp.write (filepath, scn)    
         file.close ()
