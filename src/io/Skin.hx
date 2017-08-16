@@ -7,6 +7,11 @@ package io;
 class Skin {
 
     /**
+     *  Bone per vertex
+     */
+    public var bonePerVertex : Int = 4;
+
+    /**
      *  Skin joints
      */
     public var joints (default, null) : Array<Joint>;

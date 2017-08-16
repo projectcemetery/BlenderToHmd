@@ -82,12 +82,15 @@ def getGeometry (me):
     return vertArray, faces
 
 # Get armature and weights
-def getSkin(me, armob, fw):
+def getSkin(ob, me, armob, fw):
     skin = exporter.io_Skin ()
 
     loc, rot, scale = armob.matrix_local.decompose()
 
+    meshVerts = me.vertices
+    
     arm = armob.data
+    vertexGroups = ob.vertex_groups
     bones = arm.bones
     poseBones = armob.pose.bones
 
@@ -114,7 +117,7 @@ def getSkin(me, armob, fw):
         joint.setPosition (loc.x, loc.y, loc.z)
 
         if parName:
-            parBoneData =  boneDict[parName]
+            parBoneData = boneDict[parName]
             joint.parentIndex = parBoneData["index"]
 
         skin.addJoint (joint)
@@ -122,8 +125,32 @@ def getSkin(me, armob, fw):
         #loc, rot, scale = poseBoneMat.decompose()        
         #if parName:
         #    pass
+    
+    # weights    
+    weightDict = None
+    if len (vertexGroups) > 0:
+        groupDict = {}
+        bonePerVertex = 1
+        for vg in vertexGroups:
+            boneDat = boneDict[vg.name]
+            groupDict[vg.index] = boneDat["index"]
 
-    return (skin, 2)
+        weightDict = {}
+        for vert in meshVerts:
+            vertWeights = []
+            for vg in vert.groups:
+                boneIndex = groupDict[vg.group]
+                vertWeights.append ( { "boneIndex" : boneIndex, "weight" : vg.weight } )
+
+            wLen = len (vertWeights)
+            if (wLen > bonePerVertex):
+                bonePerVertex = wLen
+
+            weightDict[vert.index] = vertWeights
+        
+        skin.bonePerVertex = bonePerVertex
+
+    return (skin, weightDict)
 
 # Get animation
 def getAnimation (obj):
@@ -135,8 +162,9 @@ def writeModel(scn, ob, me, verts, faces, weights, skin):
     meshVerts = me.vertices
     nmodel = exporter.io_Model ()
     nmodel.name = ob.name
-    nmodel.skin = skin
+    nmodel.skin = skin    
     ngeom = exporter.io_Geometry ()
+    ngeom.hasWeights = weights != None
     ngeom.hasUv = hasUv
     for i, v in enumerate(verts):
         pos = rvec3d (meshVerts[v[0]].co[:])
@@ -148,12 +176,23 @@ def writeModel(scn, ob, me, verts, faces, weights, skin):
             uv = rvec2d (v[2])
             vert.setUv (uv[0], 1 - uv[1])
 
+        if weights:
+            wList = weights[v[0]]            
+            for ind in range (0, 4):
+                if (len (wList) > ind):
+                    wData = wList[ind]
+                    weight = wData["weight"]
+                    boneIndex = wData["boneIndex"]
+                    vert.addWeight (weight, boneIndex)
+                else:
+                    vert.addWeight (0, 0)
+
         ngeom.addVertex (vert)
 
     for pf in faces:
         ngeom.addIndex (pf[0])
         ngeom.addIndex (pf[1])
-        ngeom.addIndex (pf[2])
+        ngeom.addIndex (pf[2])    
 
     nmodel.geometry = ngeom
     scn.addModel (nmodel)
@@ -198,7 +237,7 @@ def save(context, filepath,
             weights = None
             if ob.parent and ob.parent.type == 'ARMATURE':
                 armob = ob.parent
-                skin, weights = getSkin (me, armob, fw)
+                skin, weights = getSkin (ob, me, armob, fw)
 
             writeModel (scn, ob, me, vertices, faces, weights, skin)
         

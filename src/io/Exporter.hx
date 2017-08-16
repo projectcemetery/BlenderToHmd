@@ -30,6 +30,10 @@ class Exporter {
         for (j in skin.joints) {
             var njoint = new SkinJoint ();
             njoint.name = j.name;
+            njoint.position = new Position ();
+            njoint.position.x = j.position.x;
+            njoint.position.y = j.position.y;
+            njoint.position.z = j.position.z;
             nskin.joints.push (njoint);
         }
 
@@ -60,12 +64,19 @@ class Exporter {
             ngeom.vertexStride = 6;
         }
 
+        if (egeom.hasWeights) {
+            ngeom.vertexStride += 4;
+            var pw = new GeometryFormat ("weights", GeometryDataFormat.DBytes4);
+            ngeom.vertexFormat.push (pw);
+        }
+
         ngeom.indexCounts = [egeom.indexArray.length];
         // TODO: fix bounds
         ngeom.bounds = Bounds.fromValues (0,0,0,1,1,1);        
 
         var nmodel = new Model ();        
         nmodel.name = model.name;
+        // TODO: geometry and parent
         nmodel.geometry = 0;
         nmodel.parent = -1;
         nmodel.position = new Position ();
@@ -103,7 +114,13 @@ class Exporter {
             if (egeom.hasUv) {
                 bytes.writeFloat (vert.uv.u);
                 bytes.writeFloat (vert.uv.v);
-            }   
+            }
+
+            if (egeom.hasWeights) {
+                for (w in vert.weights) {
+                    bytes.writeByte (w.boneIndex << 8 + Math.round (w.weight) * 100)
+                }                
+            }
         }
 
         ngeom.indexPosition = bytes.length;
@@ -144,7 +161,7 @@ class Exporter {
 
         // TODO: multiple model export
         if (scene.modelArray.length > 0) {
-            addModel (hmd, scene.modelArray[0]);
+            addModel (hmd, scene.modelArray[1]);
         } 
 
         hmd.data = dataBytes.getBytes ();

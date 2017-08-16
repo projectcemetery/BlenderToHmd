@@ -22,6 +22,11 @@ class Geometry {
     public var hasUv : Bool;
 
     /**
+     *  Geometry has skin weights
+     */
+    public var hasWeights : Bool;
+
+    /**
      *  Constructor
      */
     public function new () {
