@@ -110,19 +110,22 @@ def getSkin(ob, me, armob, fw):
         parName = boneData["parent"]
         poseBone = poseBones[name]
         poseBoneMat = poseBone.bone.matrix_local
-                    
+
+        loc, rot, scale = poseBoneMat.decompose()
         joint = exporter.io_Joint ()
         joint.index = boneData["index"]
         joint.name = name
         joint.setPosition (loc.x, loc.y, loc.z)
 
+        parInd = 0
         if parName:
             parBoneData = boneDict[parName]
-            joint.parentIndex = parBoneData["index"]
-
+            parInd = parBoneData["index"]            
+        
+        joint.parentIndex = parInd
         skin.addJoint (joint)
 
-        #loc, rot, scale = poseBoneMat.decompose()        
+        #loc, rot, scale = poseBoneMat.decompose()
         #if parName:
         #    pass
     
@@ -153,8 +156,8 @@ def getSkin(ob, me, armob, fw):
     return (skin, weightDict)
 
 # Get animation
-def getAnimation (obj):
-    pass
+def getAnimation (obj, anim, fw):
+    fw (obj.name)
 
 # Add model to scene
 def writeModel(scn, ob, me, verts, faces, weights, skin):
@@ -219,9 +222,7 @@ def save(context, filepath,
         for oi, ob in enumerate(objects):
             # Animation export
             if ob.animation_data:
-                anim = getAnimation (ob)
-            else:
-                pass
+                anim = getAnimation (ob, ob.animation_data, fw)            
 
             # Get mesh
             try:

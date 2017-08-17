@@ -4,6 +4,7 @@ import hxd.fmt.hmd.Writer;
 import hxd.fmt.hmd.Data;
 import h3d.col.Bounds;
 import haxe.io.Bytes;
+import haxe.io.BytesOutput;
 import h3d.mat.BlendMode;
 
 /**
@@ -15,7 +16,21 @@ class Exporter {
     /**
      *  Data for vertex, index, animation, etc
      */
-    var dataBytes : haxe.io.BytesOutput;
+    var dataBytes : BytesOutput;
+
+    /**
+     *  Convert int to float
+     *  @param v - 
+     *  @return Float
+     */
+    function int32ToFloat (v : Int) : Float {
+        var tmp = haxe.io.Bytes.alloc(4);
+		tmp.set(0, v & 0xFF);
+		tmp.set(1, (v >> 8) & 0xFF);
+		tmp.set(2, (v >> 16) & 0xFF);
+		tmp.set(3, v >>> 24);
+		return tmp.getFloat(0);
+	}
 
     /**
      *  Get skin for export
@@ -26,18 +41,72 @@ class Exporter {
         nskin.name = "Skin";
         nskin.joints = new Array<SkinJoint> ();
 
-
         for (j in skin.joints) {
             var njoint = new SkinJoint ();
             njoint.name = j.name;
+            njoint.parent = 0;
+            njoint.bind = 0;
+
             njoint.position = new Position ();
             njoint.position.x = j.position.x;
             njoint.position.y = j.position.y;
             njoint.position.z = j.position.z;
+            njoint.position.qx = 0;
+            njoint.position.qy = 0;
+            njoint.position.qz = 0;
+            njoint.position.sx = 1;
+            njoint.position.sy = 1;
+            njoint.position.sz = 1;
+
+            njoint.transpos = new Position ();
+            njoint.transpos.x = 0;
+            njoint.transpos.y = 0;
+            njoint.transpos.z = 0;
+            njoint.transpos.qx = 0;
+            njoint.transpos.qy = 0;
+            njoint.transpos.qz = 0;
+            njoint.transpos.sx = 1;
+            njoint.transpos.sy = 1;
+            njoint.transpos.sz = 1;
+
             nskin.joints.push (njoint);
         }
 
         return nskin;
+    }
+
+    /**
+     *  Write geometry vertex
+     *  @param geom - 
+     *  @param bytes - 
+     */
+    function writeVertex (geom : io.Geometry, bytes : BytesOutput) : Void {
+        for (vert in geom.vertexArray) {
+            bytes.writeFloat (vert.position.x);
+            bytes.writeFloat (vert.position.y);
+            bytes.writeFloat (vert.position.z);
+            bytes.writeFloat (vert.normal.x);
+            bytes.writeFloat (vert.normal.y);
+            bytes.writeFloat (vert.normal.z);
+
+            if (geom.hasUv) {
+                bytes.writeFloat (vert.uv.u);
+                bytes.writeFloat (vert.uv.v);
+            }
+
+            if (geom.hasWeights) {
+                for (w in vert.weights) {
+                    bytes.writeFloat (w.weight);
+                }
+
+                var idx = 0;
+                for (w in vert.weights) {
+                    idx = (idx << 8) | w.boneIndex;
+                }
+
+                bytes.writeFloat (int32ToFloat (idx));
+            }
+        }
     }
 
     /**
@@ -66,7 +135,9 @@ class Exporter {
 
         if (egeom.hasWeights) {
             ngeom.vertexStride += 4;
-            var pw = new GeometryFormat ("weights", GeometryDataFormat.DBytes4);
+            var pw = new GeometryFormat ("weights", [DFloat, DVec2, DVec3, DVec4][model.skin.bonePerVertex - 1]);
+            ngeom.vertexFormat.push (pw);
+            pw = new GeometryFormat ("indexes", DBytes4);
             ngeom.vertexFormat.push (pw);
         }
 
@@ -95,33 +166,11 @@ class Exporter {
         var nmat = new Material();
         nmat.name = "Default";
         nmat.blendMode = BlendMode.None;
-        nmat.culling = h3d.mat.Data.Face.Back;
-
-        hmd.geometries.push (ngeom);
-        hmd.models.push (nmodel);
-        hmd.materials.push (nmat);
+        nmat.culling = h3d.mat.Data.Face.Back;        
 
         hmd.dataPosition = bytes.length;
 
-        for (vert in egeom.vertexArray) {
-            bytes.writeFloat (vert.position.x);
-            bytes.writeFloat (vert.position.y);
-            bytes.writeFloat (vert.position.z);
-            bytes.writeFloat (vert.normal.x);
-            bytes.writeFloat (vert.normal.y);
-            bytes.writeFloat (vert.normal.z);
-
-            if (egeom.hasUv) {
-                bytes.writeFloat (vert.uv.u);
-                bytes.writeFloat (vert.uv.v);
-            }
-
-            if (egeom.hasWeights) {
-                for (w in vert.weights) {
-                    bytes.writeByte (w.boneIndex << 8 + Math.round (w.weight) * 100)
-                }                
-            }
-        }
+        writeVertex (egeom, bytes);
 
         ngeom.indexPosition = bytes.length;
 
@@ -132,6 +181,10 @@ class Exporter {
         if (model.skin != null) {
             nmodel.skin = getSkin (model.skin);
         }
+
+        hmd.geometries.push (ngeom);
+        hmd.models.push (nmodel);
+        hmd.materials.push (nmat);
     }
 
     /**
