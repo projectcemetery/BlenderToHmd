@@ -155,10 +155,6 @@ def getSkin(ob, me, armob, fw):
 
     return (skin, weightDict)
 
-# Get animation
-def getAnimation (obj, anim, fw):
-    fw (obj.name)
-
 # Add model to scene
 def writeModel(scn, ob, me, verts, faces, weights, skin):
     hasUv = bool(me.tessface_uv_textures)
@@ -200,6 +196,41 @@ def writeModel(scn, ob, me, verts, faces, weights, skin):
     nmodel.geometry = ngeom
     scn.addModel (nmodel)
 
+# Get animation object
+def getAnimationObject (scene, ob):
+    start = scene.frame_start
+    end = scene.frame_end
+    frame = scene.frame_current
+    animObj = exporter.io_ObjectAnimation (True, False)
+    for i in range (start, end):
+        scene.frame_set(frame, i)
+        mat = ob.matrix_local
+        loc, rot, scale = mat.decompose ()
+        animObj.addFrame (loc.x, loc.y, loc.z, rot.x, rot.y, rot.z)
+
+    return animObj        
+
+# Get animation object
+def getArmatureAnimationObjects (ob, start, end):
+    pass
+
+# Write animation for objects
+def writeAnimation (scene, scn, animObjects, fw):
+    start = scene.frame_start
+    end = scene.frame_end
+
+    animation = exporter.io_Animation (end - start)
+    for ob in animObjects:
+        if ob.type == "MESH":
+            anObj = getAnimationObject (scene, ob)
+            animation.addObjectAnimation (anObj)
+        #elif ob.type == "ARMATURE":
+        #    anObjs = getArmatureAnimationObjects (ob, start, end)
+        #    for anObj in anObjs:
+        #        animation.addObjectAnimation (anObj)
+
+    scn.addAnimation (animation)        
+
 # Save scene to HMD
 def save(context, filepath,
         EXPORT_APPLY_MODIFIERS = True):
@@ -210,7 +241,7 @@ def save(context, filepath,
         
         frame = scene.frame_current
         scene.frame_set(frame, 0.0)
-        objects = scene.objects
+        objects = scene.objects        
 
         nscene = exporter.io_Scene ()
         file = open(filepath + ".log", 'w')
@@ -219,11 +250,9 @@ def save(context, filepath,
         exp = exporter.io_Exporter ()
         scn = exporter.io_Scene ()
 
-        for oi, ob in enumerate(objects):
-            # Animation export
-            if ob.animation_data:
-                anim = getAnimation (ob, ob.animation_data, fw)            
+        animObjects = []
 
+        for oi, ob in enumerate(objects):
             # Get mesh
             try:
                 me = ob.to_mesh(scene, EXPORT_APPLY_MODIFIERS, 'PREVIEW')
@@ -232,16 +261,23 @@ def save(context, filepath,
 
             vertices, faces = getGeometry (me)
 
+            if ob.animation_data:
+                animObjects.append (ob)
+
             # Export skin
             armob = None
             skin = None
             weights = None
             if ob.parent and ob.parent.type == 'ARMATURE':
+                if ob.parent.animation_data:
+                    animObjects.append (ob.parent)
+
                 armob = ob.parent
                 skin, weights = getSkin (ob, me, armob, fw)
 
             writeModel (scn, ob, me, vertices, faces, weights, skin)
         
+        writeAnimation (scene, scn, animObjects, fw)
         exp.write (filepath, scn)    
         file.close ()
 

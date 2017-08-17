@@ -188,6 +188,41 @@ class Exporter {
     }
 
     /**
+     *  Add animtaion
+     */
+    function addAnimation (anim : io.Animation) : Void {
+        var bytes = dataBytes;
+
+        var nanim = new Animation ();
+        nanim.name = "Animation";
+        nanim.frames = anim.frames;
+        nanim.loop = true;        
+        nanim.speed = 1;
+        nanim.dataPosition = bytes.length;
+        nanim.objects = new Array<AnimationObject> ();
+
+        for (ao in anim.objectAnimations) {
+            var nanimObj = new AnimationObject ();
+            nanimObj.name = ao.name;
+            nanimObj.flags.set (AnimationFlag.HasPosition);
+            nanimObj.flags.set (AnimationFlag.HasRotation);
+            nanim.objects.push (nanimObj);
+
+            for (dat in ao.data) {
+                bytes.writeFloat (dat.x);
+                bytes.writeFloat (dat.y);
+                bytes.writeFloat (dat.z);
+
+                if (ao.hasRotation) {
+                    bytes.writeFloat (dat.qx);
+                    bytes.writeFloat (dat.qy);
+                    bytes.writeFloat (dat.qz);
+                }
+            }
+        }
+    }
+
+    /**
      *  Constructor
      */
     public function new () {
@@ -208,14 +243,19 @@ class Exporter {
         hmd.geometries = new Array<Geometry> ();
         hmd.materials = new Array<Material> ();
         hmd.models = new Array<Model> ();
-        hmd.animations = new Array<Animation> ();      
+        hmd.animations = new Array<Animation> ();
 
         dataBytes = new haxe.io.BytesOutput ();
 
         // TODO: multiple model export
         if (scene.modelArray.length > 0) {
-            addModel (hmd, scene.modelArray[1]);
-        } 
+            addModel (hmd, scene.modelArray[0]);
+        }
+
+        // TODO: multiple animations
+        if (scene.animations.length > 0) {
+            addAnimation (scene.animations[0]);
+        }
 
         hmd.data = dataBytes.getBytes ();
         writer.write (hmd);
