@@ -190,20 +190,22 @@ class Exporter {
     /**
      *  Add animtaion
      */
-    function addAnimation (anim : io.Animation) : Void {
+    function addAnimation (hmd : Data, anim : io.Animation) : Void {
         var bytes = dataBytes;
 
         var nanim = new Animation ();
         nanim.name = "Animation";
         nanim.frames = anim.frames;
-        nanim.loop = true;        
+        nanim.loop = true;
         nanim.speed = 1;
+        nanim.sampling = 30;
         nanim.dataPosition = bytes.length;
         nanim.objects = new Array<AnimationObject> ();
 
         for (ao in anim.objectAnimations) {
             var nanimObj = new AnimationObject ();
             nanimObj.name = ao.name;
+            nanimObj.flags = new haxe.EnumFlags<AnimationFlag> ();
             nanimObj.flags.set (AnimationFlag.HasPosition);
             nanimObj.flags.set (AnimationFlag.HasRotation);
             nanim.objects.push (nanimObj);
@@ -220,6 +222,8 @@ class Exporter {
                 }
             }
         }
+
+        hmd.animations.push (nanim);
     }
 
     /**
@@ -254,7 +258,7 @@ class Exporter {
 
         // TODO: multiple animations
         if (scene.animations.length > 0) {
-            addAnimation (scene.animations[0]);
+            addAnimation (hmd, scene.animations[0]);
         }
 
         hmd.data = dataBytes.getBytes ();

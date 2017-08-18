@@ -202,8 +202,9 @@ def getAnimationObject (scene, ob):
     end = scene.frame_end
     frame = scene.frame_current
     animObj = exporter.io_ObjectAnimation (True, False)
+    animObj.name = ob.name
     for i in range (start, end):
-        scene.frame_set(frame, i)
+        scene.frame_set(i)
         mat = ob.matrix_local
         loc, rot, scale = mat.decompose ()
         animObj.addFrame (loc.x, loc.y, loc.z, rot.x, rot.y, rot.z)
