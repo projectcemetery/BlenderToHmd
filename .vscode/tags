@@ -10,8 +10,8 @@ Date	../exporter.py	/^class Date:$/;"	kind:class	line:41
 Enum	../exporter.py	/^class Enum:$/;"	kind:class	line:20
 EnumValue	../exporter.py	/^class EnumValue:$/;"	kind:class	line:103
 ExportHMD	../__init__.py	/^class ExportHMD(bpy.types.Operator, ExportHelper, IOOBJOrientationHelper):$/;"	kind:class	line:37
-HxOverrides	../exporter.py	/^class HxOverrides:$/;"	kind:class	line:2208
-HxString	../exporter.py	/^class HxString:$/;"	kind:class	line:2232
+HxOverrides	../exporter.py	/^class HxOverrides:$/;"	kind:class	line:2319
+HxString	../exporter.py	/^class HxString:$/;"	kind:class	line:2343
 IOOBJOrientationHelper	../__init__.py	/^IOOBJOrientationHelper = orientation_helper_factory("IOOBJOrientationHelper", axis_forward='-Z', axis_up='Y')$/;"	kind:variable	line:34
 Reflect	../exporter.py	/^class Reflect:$/;"	kind:class	line:108
 Std	../exporter.py	/^class Std:$/;"	kind:class	line:126
@@ -22,16 +22,18 @@ TEnum	../exporter.py	/^    def TEnum(e):$/;"	kind:member	line:234
 Type	../exporter.py	/^class Type:$/;"	kind:class	line:246
 UTC	../exporter.py	/^    def UTC(year,month,day,hour,_hx_min,sec):$/;"	kind:member	line:76
 ValueType	../exporter.py	/^class ValueType(Enum):$/;"	kind:class	line:225
-_HxException	../exporter.py	/^class _HxException(Exception):$/;"	kind:class	line:2191
+_HxException	../exporter.py	/^class _HxException(Exception):$/;"	kind:class	line:2302
 __init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:1009
-__init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:1064
-__init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:1322
-__init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:1488
-__init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:1509
-__init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:1529
-__init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:1543
-__init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:1558
-__init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:1575
+__init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:1040
+__init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:1061
+__init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:1080
+__init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:1354
+__init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:1559
+__init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:1580
+__init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:1600
+__init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:1650
+__init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:1669
+__init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:1686
 __init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:205
 __init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:335
 __init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:633
@@ -44,15 +46,17 @@ __init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:971
 __init__	../exporter.py	/^    def __init__(self):$/;"	kind:member	line:995
 __init__	../exporter.py	/^    def __init__(self, fields):$/;"	kind:member	line:16
 __init__	../exporter.py	/^    def __init__(self,b,pos = None,_hx_len = None):$/;"	kind:member	line:684
-__init__	../exporter.py	/^    def __init__(self,it):$/;"	kind:member	line:2039
+__init__	../exporter.py	/^    def __init__(self,frames):$/;"	kind:member	line:1338
+__init__	../exporter.py	/^    def __init__(self,hasRotation,hasScale):$/;"	kind:member	line:1614
+__init__	../exporter.py	/^    def __init__(self,it):$/;"	kind:member	line:2150
 __init__	../exporter.py	/^    def __init__(self,length,b):$/;"	kind:member	line:608
 __init__	../exporter.py	/^    def __init__(self,name,format):$/;"	kind:member	line:914
-__init__	../exporter.py	/^    def __init__(self,out):$/;"	kind:member	line:1083
+__init__	../exporter.py	/^    def __init__(self,out):$/;"	kind:member	line:1099
 __init__	../exporter.py	/^    def __init__(self,replacer,space):$/;"	kind:member	line:392
 __init__	../exporter.py	/^    def __init__(self,tag,index,params):$/;"	kind:member	line:26
 __init__	../exporter.py	/^    def __init__(self,u,v):$/;"	kind:member	line:360
-__init__	../exporter.py	/^    def __init__(self,val):$/;"	kind:member	line:2200
-__init__	../exporter.py	/^    def __init__(self,weight,boneIndex):$/;"	kind:member	line:1609
+__init__	../exporter.py	/^    def __init__(self,val):$/;"	kind:member	line:2311
+__init__	../exporter.py	/^    def __init__(self,weight,boneIndex):$/;"	kind:member	line:1720
 __init__	../exporter.py	/^    def __init__(self,x = 0.,y = 0.,z = 0.,w = 1.):$/;"	kind:member	line:301
 __init__	../exporter.py	/^    def __init__(self,year,month,day,hour,_hx_min,sec):$/;"	kind:member	line:48
 __init__.py	../__init__.py	1;"	kind:file	line:1
@@ -62,47 +66,49 @@ __slots__	../exporter.py	/^    __slots__ = ("b",)$/;"	kind:variable	line:629
 __slots__	../exporter.py	/^    __slots__ = ("b",)$/;"	kind:variable	line:790
 __slots__	../exporter.py	/^    __slots__ = ("bigEndian",)$/;"	kind:variable	line:647
 __slots__	../exporter.py	/^    __slots__ = ("bigEndian",)$/;"	kind:variable	line:718
-__slots__	../exporter.py	/^    __slots__ = ("bonePerVertex", "joints")$/;"	kind:variable	line:1554
+__slots__	../exporter.py	/^    __slots__ = ("bonePerVertex", "joints")$/;"	kind:variable	line:1665
 __slots__	../exporter.py	/^    __slots__ = ("buf", "replacer", "indent", "pretty", "nind")$/;"	kind:variable	line:387
-__slots__	../exporter.py	/^    __slots__ = ("dataBytes",)$/;"	kind:variable	line:1318
+__slots__	../exporter.py	/^    __slots__ = ("dataBytes",)$/;"	kind:variable	line:1350
 __slots__	../exporter.py	/^    __slots__ = ("date",)$/;"	kind:variable	line:43
-__slots__	../exporter.py	/^    __slots__ = ("frame", "data")$/;"	kind:variable	line:1045
+__slots__	../exporter.py	/^    __slots__ = ("frame", "data")$/;"	kind:variable	line:1050
 __slots__	../exporter.py	/^    __slots__ = ("h",)$/;"	kind:variable	line:375
-__slots__	../exporter.py	/^    __slots__ = ("index", "parentIndex", "name", "position", "quat")$/;"	kind:variable	line:1505
-__slots__	../exporter.py	/^    __slots__ = ("it", "x", "has", "checked")$/;"	kind:variable	line:2035
+__slots__	../exporter.py	/^    __slots__ = ("index", "parentIndex", "name", "position", "quat")$/;"	kind:variable	line:1576
+__slots__	../exporter.py	/^    __slots__ = ("it", "x", "has", "checked")$/;"	kind:variable	line:2146
 __slots__	../exporter.py	/^    __slots__ = ("length", "b")$/;"	kind:variable	line:603
 __slots__	../exporter.py	/^    __slots__ = ("materialIndex", "joints")$/;"	kind:variable	line:984
-__slots__	../exporter.py	/^    __slots__ = ("modelArray",)$/;"	kind:variable	line:1539
+__slots__	../exporter.py	/^    __slots__ = ("modelArray", "animations")$/;"	kind:variable	line:1646
 __slots__	../exporter.py	/^    __slots__ = ("name", "flags", "props")$/;"	kind:variable	line:1037
 __slots__	../exporter.py	/^    __slots__ = ("name", "format")$/;"	kind:variable	line:911
-__slots__	../exporter.py	/^    __slots__ = ("name", "geometry", "skin")$/;"	kind:variable	line:1526
+__slots__	../exporter.py	/^    __slots__ = ("name", "geometry", "skin")$/;"	kind:variable	line:1597
+__slots__	../exporter.py	/^    __slots__ = ("name", "hasRotation", "hasScale", "data")$/;"	kind:variable	line:1610
 __slots__	../exporter.py	/^    __slots__ = ("name", "props", "diffuseTexture", "blendMode", "culling", "killAlpha", "flags")$/;"	kind:variable	line:951
-__slots__	../exporter.py	/^    __slots__ = ("name", "props", "frames", "sampling", "speed", "loop", "objects", "events", "dataPosition")$/;"	kind:variable	line:1053
+__slots__	../exporter.py	/^    __slots__ = ("name", "props", "frames", "sampling", "speed", "loop", "objects", "events", "dataPosition")$/;"	kind:variable	line:1058
 __slots__	../exporter.py	/^    __slots__ = ("name", "props", "joints", "split")$/;"	kind:variable	line:992
 __slots__	../exporter.py	/^    __slots__ = ("name", "props", "parent", "follow", "position", "geometry", "materials", "skin")$/;"	kind:variable	line:1006
 __slots__	../exporter.py	/^    __slots__ = ("name", "props", "parent", "position", "bind", "transpos")$/;"	kind:variable	line:968
-__slots__	../exporter.py	/^    __slots__ = ("out", "version")$/;"	kind:variable	line:1079
-__slots__	../exporter.py	/^    __slots__ = ("position", "normal", "uv", "weights")$/;"	kind:variable	line:1570
+__slots__	../exporter.py	/^    __slots__ = ("objectAnimations", "frames")$/;"	kind:variable	line:1334
+__slots__	../exporter.py	/^    __slots__ = ("out", "version")$/;"	kind:variable	line:1095
+__slots__	../exporter.py	/^    __slots__ = ("position", "normal", "uv", "weights")$/;"	kind:variable	line:1681
 __slots__	../exporter.py	/^    __slots__ = ("props", "vertexCount", "vertexStride", "vertexFormat", "vertexPosition", "indexCounts", "indexPosition", "bounds")$/;"	kind:variable	line:923
 __slots__	../exporter.py	/^    __slots__ = ("tag", "index", "params")$/;"	kind:variable	line:22
 __slots__	../exporter.py	/^    __slots__ = ("u", "v")$/;"	kind:variable	line:357
-__slots__	../exporter.py	/^    __slots__ = ("val",)$/;"	kind:variable	line:2193
-__slots__	../exporter.py	/^    __slots__ = ("version", "props", "geometries", "materials", "models", "animations", "dataPosition", "data")$/;"	kind:variable	line:1061
-__slots__	../exporter.py	/^    __slots__ = ("vertexArray", "indexArray", "hasUv", "hasWeights")$/;"	kind:variable	line:1484
-__slots__	../exporter.py	/^    __slots__ = ("weight", "boneIndex")$/;"	kind:variable	line:1606
+__slots__	../exporter.py	/^    __slots__ = ("val",)$/;"	kind:variable	line:2304
+__slots__	../exporter.py	/^    __slots__ = ("version", "props", "geometries", "materials", "models", "animations", "dataPosition", "data")$/;"	kind:variable	line:1077
+__slots__	../exporter.py	/^    __slots__ = ("vertexArray", "indexArray", "hasUv", "hasWeights")$/;"	kind:variable	line:1555
+__slots__	../exporter.py	/^    __slots__ = ("weight", "boneIndex")$/;"	kind:variable	line:1717
 __slots__	../exporter.py	/^    __slots__ = ("x", "y", "z", "qx", "qy", "qz", "sx", "sy", "sz")$/;"	kind:variable	line:892
 __slots__	../exporter.py	/^    __slots__ = ("x", "y", "z", "w")$/;"	kind:variable	line:298
 __slots__	../exporter.py	/^    __slots__ = ("xMin", "xMax", "yMin", "yMax", "zMin", "zMax")$/;"	kind:variable	line:332
 __slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:1022
 __slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:110
 __slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:128
-__slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:1618
-__slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:2072
+__slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:1729
 __slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:213
-__slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:2210
-__slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:2234
+__slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:2183
 __slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:226
-__slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:2317
+__slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:2321
+__slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:2345
+__slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:2428
 __slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:248
 __slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:278
 __slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:292
@@ -116,20 +122,20 @@ __slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:851
 __slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:880
 __slots__	../exporter.py	/^    __slots__ = ()$/;"	kind:variable	line:939
 __str__	../exporter.py	/^    def __str__(self):$/;"	kind:member	line:31
-_get	../exporter.py	/^    def _get(x,idx):$/;"	kind:member	line:2183
+_get	../exporter.py	/^    def _get(x,idx):$/;"	kind:member	line:2294
 _hx_AnonObject	../exporter.py	/^class _hx_AnonObject:$/;"	kind:class	line:15
 _hx_class_name	../exporter.py	/^    _hx_class_name = "Date"$/;"	kind:variable	line:42
 _hx_class_name	../exporter.py	/^    _hx_class_name = "Enum"$/;"	kind:variable	line:21
 _hx_class_name	../exporter.py	/^    _hx_class_name = "EnumValue"$/;"	kind:variable	line:104
-_hx_class_name	../exporter.py	/^    _hx_class_name = "HxOverrides"$/;"	kind:variable	line:2209
-_hx_class_name	../exporter.py	/^    _hx_class_name = "HxString"$/;"	kind:variable	line:2233
+_hx_class_name	../exporter.py	/^    _hx_class_name = "HxOverrides"$/;"	kind:variable	line:2320
+_hx_class_name	../exporter.py	/^    _hx_class_name = "HxString"$/;"	kind:variable	line:2344
 _hx_class_name	../exporter.py	/^    _hx_class_name = "Reflect"$/;"	kind:variable	line:109
 _hx_class_name	../exporter.py	/^    _hx_class_name = "Std"$/;"	kind:variable	line:127
 _hx_class_name	../exporter.py	/^    _hx_class_name = "StringBuf"$/;"	kind:variable	line:201
 _hx_class_name	../exporter.py	/^    _hx_class_name = "StringTools"$/;"	kind:variable	line:212
 _hx_class_name	../exporter.py	/^    _hx_class_name = "Type"$/;"	kind:variable	line:247
 _hx_class_name	../exporter.py	/^    _hx_class_name = "ValueType"$/;"	kind:variable	line:227
-_hx_class_name	../exporter.py	/^    _hx_class_name = "_HxException"$/;"	kind:variable	line:2192
+_hx_class_name	../exporter.py	/^    _hx_class_name = "_HxException"$/;"	kind:variable	line:2303
 _hx_class_name	../exporter.py	/^    _hx_class_name = "h2d.BlendMode"$/;"	kind:variable	line:279
 _hx_class_name	../exporter.py	/^    _hx_class_name = "h3d.Quat"$/;"	kind:variable	line:291
 _hx_class_name	../exporter.py	/^    _hx_class_name = "h3d.Vector"$/;"	kind:variable	line:297
@@ -150,11 +156,11 @@ _hx_class_name	../exporter.py	/^    _hx_class_name = "haxe.io.Error"$/;"	kind:va
 _hx_class_name	../exporter.py	/^    _hx_class_name = "haxe.io.FPHelper"$/;"	kind:variable	line:850
 _hx_class_name	../exporter.py	/^    _hx_class_name = "haxe.io.Input"$/;"	kind:variable	line:646
 _hx_class_name	../exporter.py	/^    _hx_class_name = "haxe.io.Output"$/;"	kind:variable	line:717
-_hx_class_name	../exporter.py	/^    _hx_class_name = "hxd.fmt.hmd.Animation"$/;"	kind:variable	line:1052
-_hx_class_name	../exporter.py	/^    _hx_class_name = "hxd.fmt.hmd.AnimationEvent"$/;"	kind:variable	line:1044
+_hx_class_name	../exporter.py	/^    _hx_class_name = "hxd.fmt.hmd.Animation"$/;"	kind:variable	line:1057
+_hx_class_name	../exporter.py	/^    _hx_class_name = "hxd.fmt.hmd.AnimationEvent"$/;"	kind:variable	line:1049
 _hx_class_name	../exporter.py	/^    _hx_class_name = "hxd.fmt.hmd.AnimationFlag"$/;"	kind:variable	line:1023
 _hx_class_name	../exporter.py	/^    _hx_class_name = "hxd.fmt.hmd.AnimationObject"$/;"	kind:variable	line:1036
-_hx_class_name	../exporter.py	/^    _hx_class_name = "hxd.fmt.hmd.Data"$/;"	kind:variable	line:1060
+_hx_class_name	../exporter.py	/^    _hx_class_name = "hxd.fmt.hmd.Data"$/;"	kind:variable	line:1076
 _hx_class_name	../exporter.py	/^    _hx_class_name = "hxd.fmt.hmd.Geometry"$/;"	kind:variable	line:922
 _hx_class_name	../exporter.py	/^    _hx_class_name = "hxd.fmt.hmd.GeometryFormat"$/;"	kind:variable	line:910
 _hx_class_name	../exporter.py	/^    _hx_class_name = "hxd.fmt.hmd.Material"$/;"	kind:variable	line:950
@@ -165,142 +171,153 @@ _hx_class_name	../exporter.py	/^    _hx_class_name = "hxd.fmt.hmd.Property"$/;"	
 _hx_class_name	../exporter.py	/^    _hx_class_name = "hxd.fmt.hmd.Skin"$/;"	kind:variable	line:991
 _hx_class_name	../exporter.py	/^    _hx_class_name = "hxd.fmt.hmd.SkinJoint"$/;"	kind:variable	line:967
 _hx_class_name	../exporter.py	/^    _hx_class_name = "hxd.fmt.hmd.SkinSplit"$/;"	kind:variable	line:983
-_hx_class_name	../exporter.py	/^    _hx_class_name = "hxd.fmt.hmd.Writer"$/;"	kind:variable	line:1078
-_hx_class_name	../exporter.py	/^    _hx_class_name = "io.Exporter"$/;"	kind:variable	line:1317
-_hx_class_name	../exporter.py	/^    _hx_class_name = "io.Geometry"$/;"	kind:variable	line:1483
-_hx_class_name	../exporter.py	/^    _hx_class_name = "io.Joint"$/;"	kind:variable	line:1504
-_hx_class_name	../exporter.py	/^    _hx_class_name = "io.Model"$/;"	kind:variable	line:1525
-_hx_class_name	../exporter.py	/^    _hx_class_name = "io.Scene"$/;"	kind:variable	line:1538
-_hx_class_name	../exporter.py	/^    _hx_class_name = "io.Skin"$/;"	kind:variable	line:1553
-_hx_class_name	../exporter.py	/^    _hx_class_name = "io.Vertex"$/;"	kind:variable	line:1569
-_hx_class_name	../exporter.py	/^    _hx_class_name = "io.Weight"$/;"	kind:variable	line:1605
-_hx_class_name	../exporter.py	/^    _hx_class_name = "python.Boot"$/;"	kind:variable	line:1617
-_hx_class_name	../exporter.py	/^    _hx_class_name = "python.HaxeIterator"$/;"	kind:variable	line:2034
-_hx_class_name	../exporter.py	/^    _hx_class_name = "python.internal.ArrayImpl"$/;"	kind:variable	line:2071
-_hx_class_name	../exporter.py	/^    _hx_class_name = "sys.io.File"$/;"	kind:variable	line:2316
+_hx_class_name	../exporter.py	/^    _hx_class_name = "hxd.fmt.hmd.Writer"$/;"	kind:variable	line:1094
+_hx_class_name	../exporter.py	/^    _hx_class_name = "io.Animation"$/;"	kind:variable	line:1333
+_hx_class_name	../exporter.py	/^    _hx_class_name = "io.Exporter"$/;"	kind:variable	line:1349
+_hx_class_name	../exporter.py	/^    _hx_class_name = "io.Geometry"$/;"	kind:variable	line:1554
+_hx_class_name	../exporter.py	/^    _hx_class_name = "io.Joint"$/;"	kind:variable	line:1575
+_hx_class_name	../exporter.py	/^    _hx_class_name = "io.Model"$/;"	kind:variable	line:1596
+_hx_class_name	../exporter.py	/^    _hx_class_name = "io.ObjectAnimation"$/;"	kind:variable	line:1609
+_hx_class_name	../exporter.py	/^    _hx_class_name = "io.Scene"$/;"	kind:variable	line:1645
+_hx_class_name	../exporter.py	/^    _hx_class_name = "io.Skin"$/;"	kind:variable	line:1664
+_hx_class_name	../exporter.py	/^    _hx_class_name = "io.Vertex"$/;"	kind:variable	line:1680
+_hx_class_name	../exporter.py	/^    _hx_class_name = "io.Weight"$/;"	kind:variable	line:1716
+_hx_class_name	../exporter.py	/^    _hx_class_name = "python.Boot"$/;"	kind:variable	line:1728
+_hx_class_name	../exporter.py	/^    _hx_class_name = "python.HaxeIterator"$/;"	kind:variable	line:2145
+_hx_class_name	../exporter.py	/^    _hx_class_name = "python.internal.ArrayImpl"$/;"	kind:variable	line:2182
+_hx_class_name	../exporter.py	/^    _hx_class_name = "sys.io.File"$/;"	kind:variable	line:2427
 _hx_fields	../exporter.py	/^    _hx_fields = ["b", "pos", "len", "totlen"]$/;"	kind:variable	line:678
 _hx_fields	../exporter.py	/^    _hx_fields = ["b"]$/;"	kind:variable	line:203
 _hx_fields	../exporter.py	/^    _hx_fields = ["b"]$/;"	kind:variable	line:630
 _hx_fields	../exporter.py	/^    _hx_fields = ["b"]$/;"	kind:variable	line:791
 _hx_fields	../exporter.py	/^    _hx_fields = ["bigEndian"]$/;"	kind:variable	line:648
 _hx_fields	../exporter.py	/^    _hx_fields = ["bigEndian"]$/;"	kind:variable	line:719
-_hx_fields	../exporter.py	/^    _hx_fields = ["bonePerVertex", "joints"]$/;"	kind:variable	line:1555
+_hx_fields	../exporter.py	/^    _hx_fields = ["bonePerVertex", "joints"]$/;"	kind:variable	line:1666
 _hx_fields	../exporter.py	/^    _hx_fields = ["buf", "replacer", "indent", "pretty", "nind"]$/;"	kind:variable	line:388
-_hx_fields	../exporter.py	/^    _hx_fields = ["dataBytes"]$/;"	kind:variable	line:1319
+_hx_fields	../exporter.py	/^    _hx_fields = ["dataBytes"]$/;"	kind:variable	line:1351
 _hx_fields	../exporter.py	/^    _hx_fields = ["date"]$/;"	kind:variable	line:44
-_hx_fields	../exporter.py	/^    _hx_fields = ["frame", "data"]$/;"	kind:variable	line:1046
+_hx_fields	../exporter.py	/^    _hx_fields = ["frame", "data"]$/;"	kind:variable	line:1051
 _hx_fields	../exporter.py	/^    _hx_fields = ["h"]$/;"	kind:variable	line:376
-_hx_fields	../exporter.py	/^    _hx_fields = ["index", "parentIndex", "name", "position", "quat"]$/;"	kind:variable	line:1506
-_hx_fields	../exporter.py	/^    _hx_fields = ["it", "x", "has", "checked"]$/;"	kind:variable	line:2036
+_hx_fields	../exporter.py	/^    _hx_fields = ["index", "parentIndex", "name", "position", "quat"]$/;"	kind:variable	line:1577
+_hx_fields	../exporter.py	/^    _hx_fields = ["it", "x", "has", "checked"]$/;"	kind:variable	line:2147
 _hx_fields	../exporter.py	/^    _hx_fields = ["length", "b"]$/;"	kind:variable	line:604
 _hx_fields	../exporter.py	/^    _hx_fields = ["materialIndex", "joints"]$/;"	kind:variable	line:985
-_hx_fields	../exporter.py	/^    _hx_fields = ["modelArray"]$/;"	kind:variable	line:1540
+_hx_fields	../exporter.py	/^    _hx_fields = ["modelArray", "animations"]$/;"	kind:variable	line:1647
 _hx_fields	../exporter.py	/^    _hx_fields = ["name", "flags", "props"]$/;"	kind:variable	line:1038
 _hx_fields	../exporter.py	/^    _hx_fields = ["name", "format"]$/;"	kind:variable	line:912
-_hx_fields	../exporter.py	/^    _hx_fields = ["name", "geometry", "skin"]$/;"	kind:variable	line:1527
+_hx_fields	../exporter.py	/^    _hx_fields = ["name", "geometry", "skin"]$/;"	kind:variable	line:1598
+_hx_fields	../exporter.py	/^    _hx_fields = ["name", "hasRotation", "hasScale", "data"]$/;"	kind:variable	line:1611
 _hx_fields	../exporter.py	/^    _hx_fields = ["name", "props", "diffuseTexture", "blendMode", "culling", "killAlpha", "flags"]$/;"	kind:variable	line:952
-_hx_fields	../exporter.py	/^    _hx_fields = ["name", "props", "frames", "sampling", "speed", "loop", "objects", "events", "dataPosition"]$/;"	kind:variable	line:1054
+_hx_fields	../exporter.py	/^    _hx_fields = ["name", "props", "frames", "sampling", "speed", "loop", "objects", "events", "dataPosition"]$/;"	kind:variable	line:1059
 _hx_fields	../exporter.py	/^    _hx_fields = ["name", "props", "joints", "split"]$/;"	kind:variable	line:993
 _hx_fields	../exporter.py	/^    _hx_fields = ["name", "props", "parent", "follow", "position", "geometry", "materials", "skin"]$/;"	kind:variable	line:1007
 _hx_fields	../exporter.py	/^    _hx_fields = ["name", "props", "parent", "position", "bind", "transpos"]$/;"	kind:variable	line:969
-_hx_fields	../exporter.py	/^    _hx_fields = ["out", "version"]$/;"	kind:variable	line:1080
-_hx_fields	../exporter.py	/^    _hx_fields = ["position", "normal", "uv", "weights"]$/;"	kind:variable	line:1571
+_hx_fields	../exporter.py	/^    _hx_fields = ["objectAnimations", "frames"]$/;"	kind:variable	line:1335
+_hx_fields	../exporter.py	/^    _hx_fields = ["out", "version"]$/;"	kind:variable	line:1096
+_hx_fields	../exporter.py	/^    _hx_fields = ["position", "normal", "uv", "weights"]$/;"	kind:variable	line:1682
 _hx_fields	../exporter.py	/^    _hx_fields = ["props", "vertexCount", "vertexStride", "vertexFormat", "vertexPosition", "indexCounts", "indexPosition", "bounds"]$/;"	kind:variable	line:924
 _hx_fields	../exporter.py	/^    _hx_fields = ["tag", "index", "params"]$/;"	kind:variable	line:23
 _hx_fields	../exporter.py	/^    _hx_fields = ["u", "v"]$/;"	kind:variable	line:358
-_hx_fields	../exporter.py	/^    _hx_fields = ["val"]$/;"	kind:variable	line:2194
-_hx_fields	../exporter.py	/^    _hx_fields = ["version", "props", "geometries", "materials", "models", "animations", "dataPosition", "data"]$/;"	kind:variable	line:1062
-_hx_fields	../exporter.py	/^    _hx_fields = ["vertexArray", "indexArray", "hasUv", "hasWeights"]$/;"	kind:variable	line:1485
-_hx_fields	../exporter.py	/^    _hx_fields = ["weight", "boneIndex"]$/;"	kind:variable	line:1607
+_hx_fields	../exporter.py	/^    _hx_fields = ["val"]$/;"	kind:variable	line:2305
+_hx_fields	../exporter.py	/^    _hx_fields = ["version", "props", "geometries", "materials", "models", "animations", "dataPosition", "data"]$/;"	kind:variable	line:1078
+_hx_fields	../exporter.py	/^    _hx_fields = ["vertexArray", "indexArray", "hasUv", "hasWeights"]$/;"	kind:variable	line:1556
+_hx_fields	../exporter.py	/^    _hx_fields = ["weight", "boneIndex"]$/;"	kind:variable	line:1718
 _hx_fields	../exporter.py	/^    _hx_fields = ["x", "y", "z", "qx", "qy", "qz", "sx", "sy", "sz"]$/;"	kind:variable	line:893
 _hx_fields	../exporter.py	/^    _hx_fields = ["x", "y", "z", "w"]$/;"	kind:variable	line:299
 _hx_fields	../exporter.py	/^    _hx_fields = ["xMin", "xMax", "yMin", "yMax", "zMin", "zMax"]$/;"	kind:variable	line:333
-_hx_local_1	../exporter.py	/^                    def _hx_local_1(a11):$/;"	kind:function	line:1796
-_hx_local_10	../exporter.py	/^                    def _hx_local_10(f2):$/;"	kind:function	line:1850
-_hx_local_11	../exporter.py	/^                    def _hx_local_11():$/;"	kind:function	line:1857
-_hx_local_12	../exporter.py	/^                    def _hx_local_12(a16):$/;"	kind:function	line:1863
-_hx_local_13	../exporter.py	/^                    def _hx_local_13(d):$/;"	kind:function	line:1869
-_hx_local_14	../exporter.py	/^                    def _hx_local_14(a13):$/;"	kind:function	line:1876
-_hx_local_15	../exporter.py	/^                    def _hx_local_15(x1):$/;"	kind:function	line:1881
-_hx_local_16	../exporter.py	/^                    def _hx_local_16():$/;"	kind:function	line:1887
-_hx_local_17	../exporter.py	/^                    def _hx_local_17(e2):$/;"	kind:function	line:1893
-_hx_local_18	../exporter.py	/^                    def _hx_local_18(f1):$/;"	kind:function	line:1900
-_hx_local_19	../exporter.py	/^                    def _hx_local_19():$/;"	kind:function	line:1906
-_hx_local_2	../exporter.py	/^                    def _hx_local_2(a15):$/;"	kind:function	line:1803
-_hx_local_20	../exporter.py	/^                    def _hx_local_20():$/;"	kind:function	line:1913
-_hx_local_21	../exporter.py	/^                    def _hx_local_21():$/;"	kind:function	line:1919
-_hx_local_22	../exporter.py	/^                    def _hx_local_22():$/;"	kind:function	line:1924
-_hx_local_23	../exporter.py	/^                    def _hx_local_23(a1):$/;"	kind:function	line:1931
-_hx_local_24	../exporter.py	/^                    def _hx_local_24(a2):$/;"	kind:function	line:1937
-_hx_local_25	../exporter.py	/^                    def _hx_local_25(f):$/;"	kind:function	line:1943
-_hx_local_26	../exporter.py	/^                    def _hx_local_26(a14,x2):$/;"	kind:function	line:1949
-_hx_local_27	../exporter.py	/^                    def _hx_local_27(e1):$/;"	kind:function	line:1960
-_hx_local_28	../exporter.py	/^                    def _hx_local_28(a17,a21):$/;"	kind:function	line:1966
-_hx_local_29	../exporter.py	/^                    def _hx_local_29(a18):$/;"	kind:function	line:1972
-_hx_local_3	../exporter.py	/^                    def _hx_local_3(x4):$/;"	kind:function	line:1808
-_hx_local_4	../exporter.py	/^                    def _hx_local_4():$/;"	kind:function	line:1814
+_hx_local_1	../exporter.py	/^                    def _hx_local_1(a11):$/;"	kind:function	line:1907
+_hx_local_10	../exporter.py	/^                    def _hx_local_10(f2):$/;"	kind:function	line:1961
+_hx_local_11	../exporter.py	/^                    def _hx_local_11():$/;"	kind:function	line:1968
+_hx_local_12	../exporter.py	/^                    def _hx_local_12(a16):$/;"	kind:function	line:1974
+_hx_local_13	../exporter.py	/^                    def _hx_local_13(d):$/;"	kind:function	line:1980
+_hx_local_14	../exporter.py	/^                    def _hx_local_14(a13):$/;"	kind:function	line:1987
+_hx_local_15	../exporter.py	/^                    def _hx_local_15(x1):$/;"	kind:function	line:1992
+_hx_local_16	../exporter.py	/^                    def _hx_local_16():$/;"	kind:function	line:1998
+_hx_local_17	../exporter.py	/^                    def _hx_local_17(e2):$/;"	kind:function	line:2004
+_hx_local_18	../exporter.py	/^                    def _hx_local_18(f1):$/;"	kind:function	line:2011
+_hx_local_19	../exporter.py	/^                    def _hx_local_19():$/;"	kind:function	line:2017
+_hx_local_2	../exporter.py	/^                    def _hx_local_2(a15):$/;"	kind:function	line:1914
+_hx_local_2	../exporter.py	/^            def _hx_local_2():$/;"	kind:function	line:1512
+_hx_local_20	../exporter.py	/^                    def _hx_local_20():$/;"	kind:function	line:2024
+_hx_local_21	../exporter.py	/^                    def _hx_local_21():$/;"	kind:function	line:2030
+_hx_local_22	../exporter.py	/^                    def _hx_local_22():$/;"	kind:function	line:2035
+_hx_local_23	../exporter.py	/^                    def _hx_local_23(a1):$/;"	kind:function	line:2042
+_hx_local_24	../exporter.py	/^                    def _hx_local_24(a2):$/;"	kind:function	line:2048
+_hx_local_25	../exporter.py	/^                    def _hx_local_25(f):$/;"	kind:function	line:2054
+_hx_local_26	../exporter.py	/^                    def _hx_local_26(a14,x2):$/;"	kind:function	line:2060
+_hx_local_27	../exporter.py	/^                    def _hx_local_27(e1):$/;"	kind:function	line:2071
+_hx_local_28	../exporter.py	/^                    def _hx_local_28(a17,a21):$/;"	kind:function	line:2077
+_hx_local_29	../exporter.py	/^                    def _hx_local_29(a18):$/;"	kind:function	line:2083
+_hx_local_3	../exporter.py	/^                    def _hx_local_3(x4):$/;"	kind:function	line:1919
+_hx_local_4	../exporter.py	/^                    def _hx_local_4():$/;"	kind:function	line:1925
 _hx_local_4	../exporter.py	/^            def _hx_local_4():$/;"	kind:function	line:705
-_hx_local_5	../exporter.py	/^                    def _hx_local_5():$/;"	kind:function	line:1820
+_hx_local_5	../exporter.py	/^                    def _hx_local_5():$/;"	kind:function	line:1931
 _hx_local_5	../exporter.py	/^        def _hx_local_5():$/;"	kind:function	line:704
-_hx_local_6	../exporter.py	/^                    def _hx_local_6(a19):$/;"	kind:function	line:1827
-_hx_local_7	../exporter.py	/^                    def _hx_local_7():$/;"	kind:function	line:1833
-_hx_local_8	../exporter.py	/^                    def _hx_local_8(sep):$/;"	kind:function	line:1838
-_hx_local_9	../exporter.py	/^                    def _hx_local_9(e):$/;"	kind:function	line:1844
+_hx_local_6	../exporter.py	/^                    def _hx_local_6(a19):$/;"	kind:function	line:1938
+_hx_local_7	../exporter.py	/^                    def _hx_local_7():$/;"	kind:function	line:1944
+_hx_local_8	../exporter.py	/^                    def _hx_local_8(sep):$/;"	kind:function	line:1949
+_hx_local_9	../exporter.py	/^                    def _hx_local_9(e):$/;"	kind:function	line:1955
 _hx_methods	../exporter.py	/^    _hx_methods = ["__str__"]$/;"	kind:variable	line:24
-_hx_methods	../exporter.py	/^    _hx_methods = ["addJoint"]$/;"	kind:variable	line:1556
-_hx_methods	../exporter.py	/^    _hx_methods = ["addModel"]$/;"	kind:variable	line:1541
-_hx_methods	../exporter.py	/^    _hx_methods = ["addVertex", "addIndex"]$/;"	kind:variable	line:1486
+_hx_methods	../exporter.py	/^    _hx_methods = ["addFrame"]$/;"	kind:variable	line:1612
+_hx_methods	../exporter.py	/^    _hx_methods = ["addJoint"]$/;"	kind:variable	line:1667
+_hx_methods	../exporter.py	/^    _hx_methods = ["addModel", "addAnimation"]$/;"	kind:variable	line:1648
+_hx_methods	../exporter.py	/^    _hx_methods = ["addObjectAnimation"]$/;"	kind:variable	line:1336
+_hx_methods	../exporter.py	/^    _hx_methods = ["addVertex", "addIndex"]$/;"	kind:variable	line:1557
 _hx_methods	../exporter.py	/^    _hx_methods = ["getBytes"]$/;"	kind:variable	line:631
 _hx_methods	../exporter.py	/^    _hx_methods = ["getFloat"]$/;"	kind:variable	line:605
-_hx_methods	../exporter.py	/^    _hx_methods = ["int32ToFloat", "getSkin", "writeVertex", "addModel", "write"]$/;"	kind:variable	line:1320
+_hx_methods	../exporter.py	/^    _hx_methods = ["int32ToFloat", "getSkin", "writeVertex", "addModel", "addAnimation", "write"]$/;"	kind:variable	line:1352
 _hx_methods	../exporter.py	/^    _hx_methods = ["keys"]$/;"	kind:variable	line:377
-_hx_methods	../exporter.py	/^    _hx_methods = ["next", "hasNext"]$/;"	kind:variable	line:2037
+_hx_methods	../exporter.py	/^    _hx_methods = ["next", "hasNext"]$/;"	kind:variable	line:2148
 _hx_methods	../exporter.py	/^    _hx_methods = ["readByte", "set_bigEndian", "readFloat", "readInt32"]$/;"	kind:variable	line:649
 _hx_methods	../exporter.py	/^    _hx_methods = ["readByte"]$/;"	kind:variable	line:679
-_hx_methods	../exporter.py	/^    _hx_methods = ["setPosition", "setNormal", "setUv", "addWeight"]$/;"	kind:variable	line:1572
-_hx_methods	../exporter.py	/^    _hx_methods = ["setPosition"]$/;"	kind:variable	line:1507
+_hx_methods	../exporter.py	/^    _hx_methods = ["setPosition", "setNormal", "setUv", "addWeight"]$/;"	kind:variable	line:1683
+_hx_methods	../exporter.py	/^    _hx_methods = ["setPosition"]$/;"	kind:variable	line:1578
 _hx_methods	../exporter.py	/^    _hx_methods = ["toString"]$/;"	kind:variable	line:45
 _hx_methods	../exporter.py	/^    _hx_methods = ["toString"]$/;"	kind:variable	line:826
 _hx_methods	../exporter.py	/^    _hx_methods = ["write", "fieldsString", "quote"]$/;"	kind:variable	line:389
 _hx_methods	../exporter.py	/^    _hx_methods = ["writeByte", "writeBytes", "getBytes"]$/;"	kind:variable	line:792
 _hx_methods	../exporter.py	/^    _hx_methods = ["writeByte", "writeBytes", "set_bigEndian", "write", "writeFullBytes", "writeFloat", "writeUInt16", "writeInt32", "writeString"]$/;"	kind:variable	line:720
-_hx_methods	../exporter.py	/^    _hx_methods = ["writeProperty", "writeProps", "writeName", "writePosition", "writeBounds", "writeSkin", "write"]$/;"	kind:variable	line:1081
-_hx_methods	../exporter.py	/^    _hx_methods = []$/;"	kind:variable	line:2195
+_hx_methods	../exporter.py	/^    _hx_methods = ["writeProperty", "writeProps", "writeName", "writePosition", "writeBounds", "writeSkin", "write"]$/;"	kind:variable	line:1097
+_hx_methods	../exporter.py	/^    _hx_methods = []$/;"	kind:variable	line:2306
 _hx_statics	../exporter.py	/^    _hx_statics = ["EPOCH_UTC", "now", "fromTime", "UTC", "datetimeTimestamp", "fromString"]$/;"	kind:variable	line:46
-_hx_statics	../exporter.py	/^    _hx_statics = ["MAX_WEIGHT_COUNT"]$/;"	kind:variable	line:1573
+_hx_statics	../exporter.py	/^    _hx_statics = ["MAX_WEIGHT_COUNT"]$/;"	kind:variable	line:1684
 _hx_statics	../exporter.py	/^    _hx_statics = ["alloc", "ofString"]$/;"	kind:variable	line:606
-_hx_statics	../exporter.py	/^    _hx_statics = ["concat", "iterator", "indexOf", "lastIndexOf", "toString", "pop", "push", "unshift", "remove", "shift", "slice", "sort", "splice", "map", "filter", "insert", "reverse", "_get"]$/;"	kind:variable	line:2073
-_hx_statics	../exporter.py	/^    _hx_statics = ["eq", "stringOrNull", "rshift"]$/;"	kind:variable	line:2211
+_hx_statics	../exporter.py	/^    _hx_statics = ["concat", "iterator", "indexOf", "lastIndexOf", "toString", "pop", "push", "unshift", "remove", "shift", "slice", "sort", "splice", "map", "filter", "insert", "reverse", "_get"]$/;"	kind:variable	line:2184
+_hx_statics	../exporter.py	/^    _hx_statics = ["eq", "stringOrNull", "rshift"]$/;"	kind:variable	line:2322
 _hx_statics	../exporter.py	/^    _hx_statics = ["field", "isFunction"]$/;"	kind:variable	line:111
 _hx_statics	../exporter.py	/^    _hx_statics = ["i32ToFloat", "floatToI32"]$/;"	kind:variable	line:852
-_hx_statics	../exporter.py	/^    _hx_statics = ["keywords", "toString1", "fields", "simpleField", "field", "getInstanceFields", "getSuperClass", "getClassFields", "prefixLength", "unhandleKeywords"]$/;"	kind:variable	line:1619
+_hx_statics	../exporter.py	/^    _hx_statics = ["keywords", "toString1", "fields", "simpleField", "field", "getInstanceFields", "getSuperClass", "getClassFields", "prefixLength", "unhandleKeywords"]$/;"	kind:variable	line:1730
 _hx_statics	../exporter.py	/^    _hx_statics = ["lpad"]$/;"	kind:variable	line:214
 _hx_statics	../exporter.py	/^    _hx_statics = ["print"]$/;"	kind:variable	line:390
-_hx_statics	../exporter.py	/^    _hx_statics = ["saveContent", "saveBytes"]$/;"	kind:variable	line:2318
-_hx_statics	../exporter.py	/^    _hx_statics = ["split", "charCodeAt", "charAt", "lastIndexOf", "toUpperCase", "toLowerCase", "indexOf", "toString", "substring", "substr"]$/;"	kind:variable	line:2235
+_hx_statics	../exporter.py	/^    _hx_statics = ["saveContent", "saveBytes"]$/;"	kind:variable	line:2429
+_hx_statics	../exporter.py	/^    _hx_statics = ["split", "charCodeAt", "charAt", "lastIndexOf", "toUpperCase", "toLowerCase", "indexOf", "toString", "substring", "substr"]$/;"	kind:variable	line:2346
 _hx_statics	../exporter.py	/^    _hx_statics = ["string", "parseInt", "shortenPossibleNumber", "parseFloat"]$/;"	kind:variable	line:129
 _hx_statics	../exporter.py	/^    _hx_statics = ["typeof"]$/;"	kind:variable	line:249
-_hx_statics	../exporter.py	/^    _hx_statics = []$/;"	kind:variable	line:2196
+_hx_statics	../exporter.py	/^    _hx_statics = []$/;"	kind:variable	line:2307
 _hx_statics	../exporter.py	/^    _hx_statics = []$/;"	kind:variable	line:680
 _hx_statics	../exporter.py	/^    _hx_statics = []$/;"	kind:variable	line:793
-_hx_super	../exporter.py	/^    _hx_super = Exception$/;"	kind:variable	line:2197
+_hx_super	../exporter.py	/^    _hx_super = Exception$/;"	kind:variable	line:2308
 _hx_super	../exporter.py	/^    _hx_super = haxe_io_Input$/;"	kind:variable	line:681
 _hx_super	../exporter.py	/^    _hx_super = haxe_io_Output$/;"	kind:variable	line:794
-addIndex	../exporter.py	/^    def addIndex(self,index):$/;"	kind:member	line:1497
-addJoint	../exporter.py	/^    def addJoint(self,joint):$/;"	kind:member	line:1562
-addModel	../exporter.py	/^    def addModel(self,hmd,model):$/;"	kind:member	line:1400
-addModel	../exporter.py	/^    def addModel(self,m):$/;"	kind:member	line:1546
-addVertex	../exporter.py	/^    def addVertex(self,vertex):$/;"	kind:member	line:1494
-addWeight	../exporter.py	/^    def addWeight(self,weight,boneIndex):$/;"	kind:member	line:1595
+addAnimation	../exporter.py	/^    def addAnimation(self,a):$/;"	kind:member	line:1657
+addAnimation	../exporter.py	/^    def addAnimation(self,hmd,anim):$/;"	kind:member	line:1494
+addFrame	../exporter.py	/^    def addFrame(self,x,y,z,qx = None,qy = None,qz = None,sx = None,sy = None,sz = None):$/;"	kind:member	line:1620
+addIndex	../exporter.py	/^    def addIndex(self,index):$/;"	kind:member	line:1568
+addJoint	../exporter.py	/^    def addJoint(self,joint):$/;"	kind:member	line:1673
+addModel	../exporter.py	/^    def addModel(self,hmd,model):$/;"	kind:member	line:1432
+addModel	../exporter.py	/^    def addModel(self,m):$/;"	kind:member	line:1654
+addObjectAnimation	../exporter.py	/^    def addObjectAnimation(self,anim):$/;"	kind:member	line:1342
+addVertex	../exporter.py	/^    def addVertex(self,vertex):$/;"	kind:member	line:1565
+addWeight	../exporter.py	/^    def addWeight(self,weight,boneIndex):$/;"	kind:member	line:1706
 alloc	../exporter.py	/^    def alloc(length):$/;"	kind:member	line:616
 bl_idname	../__init__.py	/^    bl_idname = "export_scene.hmd"$/;"	kind:variable	line:40
 bl_info	../__init__.py	/^bl_info = {$/;"	kind:variable	line:3
 bl_label	../__init__.py	/^    bl_label = 'Export HMD'$/;"	kind:variable	line:41
 bl_options	../__init__.py	/^    bl_options = {'PRESET'}$/;"	kind:variable	line:42
-charAt	../exporter.py	/^    def charAt(s,index):$/;"	kind:member	line:2252
-charCodeAt	../exporter.py	/^    def charCodeAt(s,index):$/;"	kind:member	line:2245
+charAt	../exporter.py	/^    def charAt(s,index):$/;"	kind:member	line:2363
+charCodeAt	../exporter.py	/^    def charCodeAt(s,index):$/;"	kind:member	line:2356
 check_extension	../__init__.py	/^    check_extension = True$/;"	kind:variable	line:70
-concat	../exporter.py	/^    def concat(a1,a2):$/;"	kind:member	line:2076
+concat	../exporter.py	/^    def concat(a1,a2):$/;"	kind:member	line:2187
 datetimeTimestamp	../exporter.py	/^    def datetimeTimestamp(dt,epoch):$/;"	kind:member	line:80
 default	../__init__.py	/^            default="*.hmd",$/;"	kind:variable	line:46
 default	../__init__.py	/^            default=1.0,$/;"	kind:variable	line:65
@@ -308,30 +325,31 @@ default	../__init__.py	/^            default=False,$/;"	kind:variable	line:54
 default	../__init__.py	/^            default=False,$/;"	kind:variable	line:59
 description	../__init__.py	/^            description="Export selected objects only",$/;"	kind:variable	line:53
 description	../__init__.py	/^            description="Write baked skeletal animations",$/;"	kind:variable	line:58
-eq	../exporter.py	/^    def eq(a,b):$/;"	kind:member	line:2214
+eq	../exporter.py	/^    def eq(a,b):$/;"	kind:member	line:2325
 execute	../__init__.py	/^    def execute(self, context):$/;"	kind:member	line:72
 export_hmd.py	../export_hmd.py	1;"	kind:file	line:1
 exporter.py	../exporter.py	1;"	kind:file	line:1
 field	../exporter.py	/^    def field(o,field):$/;"	kind:member	line:114
-field	../exporter.py	/^    def field(o,field):$/;"	kind:member	line:1788
-fields	../exporter.py	/^    def fields(o):$/;"	kind:member	line:1758
+field	../exporter.py	/^    def field(o,field):$/;"	kind:member	line:1899
+fields	../exporter.py	/^    def fields(o):$/;"	kind:member	line:1869
 fieldsString	../exporter.py	/^    def fieldsString(self,v,fields):$/;"	kind:member	line:499
 filename_ext	../__init__.py	/^    filename_ext = ".hmd"$/;"	kind:variable	line:44
-filter	../exporter.py	/^    def filter(x,f):$/;"	kind:member	line:2171
+filter	../exporter.py	/^    def filter(x,f):$/;"	kind:member	line:2282
 filter_glob	../__init__.py	/^    filter_glob = StringProperty($/;"	kind:variable	line:45
 floatToI32	../exporter.py	/^    def floatToI32(f):$/;"	kind:member	line:863
 fromString	../exporter.py	/^    def fromString(s):$/;"	kind:member	line:84
 fromTime	../exporter.py	/^    def fromTime(t):$/;"	kind:member	line:70
-getAnimation	../export_hmd.py	/^def getAnimation (obj, anim, fw):$/;"	kind:function	line:159
+getAnimationObject	../export_hmd.py	/^def getAnimationObject (scene, ob):$/;"	kind:function	line:200
+getArmatureAnimationObjects	../export_hmd.py	/^def getArmatureAnimationObjects (ob, start, end):$/;"	kind:function	line:215
 getBytes	../exporter.py	/^    def getBytes(self):$/;"	kind:member	line:636
 getBytes	../exporter.py	/^    def getBytes(self):$/;"	kind:member	line:817
-getClassFields	../exporter.py	/^    def getClassFields(c):$/;"	kind:member	line:2016
+getClassFields	../exporter.py	/^    def getClassFields(c):$/;"	kind:member	line:2127
 getFloat	../exporter.py	/^    def getFloat(self,pos):$/;"	kind:member	line:612
 getGeometry	../export_hmd.py	/^def getGeometry (me):$/;"	kind:function	line:30
-getInstanceFields	../exporter.py	/^    def getInstanceFields(c):$/;"	kind:member	line:1984
+getInstanceFields	../exporter.py	/^    def getInstanceFields(c):$/;"	kind:member	line:2095
 getSkin	../export_hmd.py	/^def getSkin(ob, me, armob, fw):$/;"	kind:function	line:85
-getSkin	../exporter.py	/^    def getSkin(self,skin):$/;"	kind:member	line:1333
-getSuperClass	../exporter.py	/^    def getSuperClass(c):$/;"	kind:member	line:2003
+getSkin	../exporter.py	/^    def getSkin(self,skin):$/;"	kind:member	line:1365
+getSuperClass	../exporter.py	/^    def getSuperClass(c):$/;"	kind:member	line:2114
 global_scale	../__init__.py	/^    global_scale = FloatProperty($/;"	kind:variable	line:62
 h2d_BlendMode	../exporter.py	/^class h2d_BlendMode(Enum):$/;"	kind:class	line:277
 h3d_Quat	../exporter.py	/^class h3d_Quat:$/;"	kind:class	line:290
@@ -341,7 +359,7 @@ h3d_col_Collider	../exporter.py	/^class h3d_col_Collider:$/;"	kind:class	line:32
 h3d_impl__Serializable_EmptyInterface	../exporter.py	/^class h3d_impl__Serializable_EmptyInterface:$/;"	kind:class	line:318
 h3d_mat_Face	../exporter.py	/^class h3d_mat_Face(Enum):$/;"	kind:class	line:345
 h3d_prim_UV	../exporter.py	/^class h3d_prim_UV:$/;"	kind:class	line:355
-hasNext	../exporter.py	/^    def hasNext(self):$/;"	kind:member	line:2051
+hasNext	../exporter.py	/^    def hasNext(self):$/;"	kind:member	line:2162
 haxe_IMap	../exporter.py	/^class haxe_IMap:$/;"	kind:class	line:367
 haxe_ds_StringMap	../exporter.py	/^class haxe_ds_StringMap:$/;"	kind:class	line:373
 haxe_format_JsonPrinter	../exporter.py	/^class haxe_format_JsonPrinter:$/;"	kind:class	line:385
@@ -354,11 +372,11 @@ haxe_io_Error	../exporter.py	/^class haxe_io_Error(Enum):$/;"	kind:class	line:83
 haxe_io_FPHelper	../exporter.py	/^class haxe_io_FPHelper:$/;"	kind:class	line:849
 haxe_io_Input	../exporter.py	/^class haxe_io_Input:$/;"	kind:class	line:645
 haxe_io_Output	../exporter.py	/^class haxe_io_Output:$/;"	kind:class	line:716
-hxd_fmt_hmd_Animation	../exporter.py	/^class hxd_fmt_hmd_Animation:$/;"	kind:class	line:1051
-hxd_fmt_hmd_AnimationEvent	../exporter.py	/^class hxd_fmt_hmd_AnimationEvent:$/;"	kind:class	line:1043
+hxd_fmt_hmd_Animation	../exporter.py	/^class hxd_fmt_hmd_Animation:$/;"	kind:class	line:1056
+hxd_fmt_hmd_AnimationEvent	../exporter.py	/^class hxd_fmt_hmd_AnimationEvent:$/;"	kind:class	line:1048
 hxd_fmt_hmd_AnimationFlag	../exporter.py	/^class hxd_fmt_hmd_AnimationFlag(Enum):$/;"	kind:class	line:1021
 hxd_fmt_hmd_AnimationObject	../exporter.py	/^class hxd_fmt_hmd_AnimationObject:$/;"	kind:class	line:1035
-hxd_fmt_hmd_Data	../exporter.py	/^class hxd_fmt_hmd_Data:$/;"	kind:class	line:1059
+hxd_fmt_hmd_Data	../exporter.py	/^class hxd_fmt_hmd_Data:$/;"	kind:class	line:1075
 hxd_fmt_hmd_Geometry	../exporter.py	/^class hxd_fmt_hmd_Geometry:$/;"	kind:class	line:921
 hxd_fmt_hmd_GeometryFormat	../exporter.py	/^class hxd_fmt_hmd_GeometryFormat:$/;"	kind:class	line:909
 hxd_fmt_hmd_Material	../exporter.py	/^class hxd_fmt_hmd_Material:$/;"	kind:class	line:949
@@ -369,95 +387,98 @@ hxd_fmt_hmd_Property	../exporter.py	/^class hxd_fmt_hmd_Property(Enum):$/;"	kind
 hxd_fmt_hmd_Skin	../exporter.py	/^class hxd_fmt_hmd_Skin:$/;"	kind:class	line:990
 hxd_fmt_hmd_SkinJoint	../exporter.py	/^class hxd_fmt_hmd_SkinJoint:$/;"	kind:class	line:966
 hxd_fmt_hmd_SkinSplit	../exporter.py	/^class hxd_fmt_hmd_SkinSplit:$/;"	kind:class	line:982
-hxd_fmt_hmd_Writer	../exporter.py	/^class hxd_fmt_hmd_Writer:$/;"	kind:class	line:1077
+hxd_fmt_hmd_Writer	../exporter.py	/^class hxd_fmt_hmd_Writer:$/;"	kind:class	line:1093
 i32ToFloat	../exporter.py	/^    def i32ToFloat(i):$/;"	kind:member	line:855
-indexOf	../exporter.py	/^    def indexOf(a,x,fromIndex = None):$/;"	kind:member	line:2084
-indexOf	../exporter.py	/^    def indexOf(s,_hx_str,startIndex = None):$/;"	kind:member	line:2280
-insert	../exporter.py	/^    def insert(a,pos,x):$/;"	kind:member	line:2175
-int32ToFloat	../exporter.py	/^    def int32ToFloat(self,v):$/;"	kind:member	line:1325
-io_Exporter	../exporter.py	/^class io_Exporter:$/;"	kind:class	line:1316
-io_Geometry	../exporter.py	/^class io_Geometry:$/;"	kind:class	line:1482
-io_Joint	../exporter.py	/^class io_Joint:$/;"	kind:class	line:1503
-io_Model	../exporter.py	/^class io_Model:$/;"	kind:class	line:1524
-io_Scene	../exporter.py	/^class io_Scene:$/;"	kind:class	line:1537
-io_Skin	../exporter.py	/^class io_Skin:$/;"	kind:class	line:1552
-io_Vertex	../exporter.py	/^class io_Vertex:$/;"	kind:class	line:1568
-io_Weight	../exporter.py	/^class io_Weight:$/;"	kind:class	line:1604
+indexOf	../exporter.py	/^    def indexOf(a,x,fromIndex = None):$/;"	kind:member	line:2195
+indexOf	../exporter.py	/^    def indexOf(s,_hx_str,startIndex = None):$/;"	kind:member	line:2391
+insert	../exporter.py	/^    def insert(a,pos,x):$/;"	kind:member	line:2286
+int32ToFloat	../exporter.py	/^    def int32ToFloat(self,v):$/;"	kind:member	line:1357
+io_Animation	../exporter.py	/^class io_Animation:$/;"	kind:class	line:1332
+io_Exporter	../exporter.py	/^class io_Exporter:$/;"	kind:class	line:1348
+io_Geometry	../exporter.py	/^class io_Geometry:$/;"	kind:class	line:1553
+io_Joint	../exporter.py	/^class io_Joint:$/;"	kind:class	line:1574
+io_Model	../exporter.py	/^class io_Model:$/;"	kind:class	line:1595
+io_ObjectAnimation	../exporter.py	/^class io_ObjectAnimation:$/;"	kind:class	line:1608
+io_Scene	../exporter.py	/^class io_Scene:$/;"	kind:class	line:1644
+io_Skin	../exporter.py	/^class io_Skin:$/;"	kind:class	line:1663
+io_Vertex	../exporter.py	/^class io_Vertex:$/;"	kind:class	line:1679
+io_Weight	../exporter.py	/^class io_Weight:$/;"	kind:class	line:1715
 isFunction	../exporter.py	/^    def isFunction(f):$/;"	kind:member	line:118
-iterator	../exporter.py	/^    def iterator(x):$/;"	kind:member	line:2080
+iterator	../exporter.py	/^    def iterator(x):$/;"	kind:member	line:2191
 keys	../exporter.py	/^    def keys(self):$/;"	kind:member	line:379
-lastIndexOf	../exporter.py	/^    def lastIndexOf(a,x,fromIndex = None):$/;"	kind:member	line:2098
-lastIndexOf	../exporter.py	/^    def lastIndexOf(s,_hx_str,startIndex = None):$/;"	kind:member	line:2259
+lastIndexOf	../exporter.py	/^    def lastIndexOf(a,x,fromIndex = None):$/;"	kind:member	line:2209
+lastIndexOf	../exporter.py	/^    def lastIndexOf(s,_hx_str,startIndex = None):$/;"	kind:member	line:2370
 lpad	../exporter.py	/^    def lpad(s,c,l):$/;"	kind:member	line:217
-map	../exporter.py	/^    def map(x,f):$/;"	kind:member	line:2167
+map	../exporter.py	/^    def map(x,f):$/;"	kind:member	line:2278
 menu_func_export	../__init__.py	/^def menu_func_export(self, context):$/;"	kind:function	line:92
 meshTriangulate	../export_hmd.py	/^def meshTriangulate(me):$/;"	kind:function	line:21
 name	../__init__.py	/^            name="Scale",$/;"	kind:variable	line:63
 name	../__init__.py	/^            name="Selection Only",$/;"	kind:variable	line:52
 name	../__init__.py	/^            name="Skeletal animation",$/;"	kind:variable	line:57
-next	../exporter.py	/^    def next(self):$/;"	kind:member	line:2045
+next	../exporter.py	/^    def next(self):$/;"	kind:member	line:2156
 now	../exporter.py	/^    def now():$/;"	kind:member	line:64
 ofString	../exporter.py	/^    def ofString(s):$/;"	kind:member	line:620
 options	../__init__.py	/^            options={'HIDDEN'},$/;"	kind:variable	line:47
 parseFloat	../exporter.py	/^    def parseFloat(x):$/;"	kind:member	line:186
 parseInt	../exporter.py	/^    def parseInt(x):$/;"	kind:member	line:136
 path_mode	../__init__.py	/^    path_mode = path_reference_mode$/;"	kind:variable	line:68
-pop	../exporter.py	/^    def pop(x):$/;"	kind:member	line:2117
+pop	../exporter.py	/^    def pop(x):$/;"	kind:member	line:2228
 print	../exporter.py	/^    def print(o,replacer = None,space = None):$/;"	kind:member	line:593
-push	../exporter.py	/^    def push(x,e):$/;"	kind:member	line:2124
-python_Boot	../exporter.py	/^class python_Boot:$/;"	kind:class	line:1616
-python_HaxeIterator	../exporter.py	/^class python_HaxeIterator:$/;"	kind:class	line:2033
-python_internal_ArrayImpl	../exporter.py	/^class python_internal_ArrayImpl:$/;"	kind:class	line:2070
+push	../exporter.py	/^    def push(x,e):$/;"	kind:member	line:2235
+python_Boot	../exporter.py	/^class python_Boot:$/;"	kind:class	line:1727
+python_HaxeIterator	../exporter.py	/^class python_HaxeIterator:$/;"	kind:class	line:2144
+python_internal_ArrayImpl	../exporter.py	/^class python_internal_ArrayImpl:$/;"	kind:class	line:2181
 quote	../exporter.py	/^    def quote(self,s):$/;"	kind:member	line:558
 readByte	../exporter.py	/^    def readByte(self):$/;"	kind:member	line:651
 readByte	../exporter.py	/^    def readByte(self):$/;"	kind:member	line:697
 readFloat	../exporter.py	/^    def readFloat(self):$/;"	kind:member	line:658
 readInt32	../exporter.py	/^    def readInt32(self):$/;"	kind:member	line:661
 register	../__init__.py	/^def register():$/;"	kind:function	line:95
-remove	../exporter.py	/^    def remove(x,e):$/;"	kind:member	line:2133
-reverse	../exporter.py	/^    def reverse(a):$/;"	kind:member	line:2179
-rshift	../exporter.py	/^    def rshift(val,n):$/;"	kind:member	line:2227
+remove	../exporter.py	/^    def remove(x,e):$/;"	kind:member	line:2244
+reverse	../exporter.py	/^    def reverse(a):$/;"	kind:member	line:2290
+rshift	../exporter.py	/^    def rshift(val,n):$/;"	kind:member	line:2338
 rvec2d	../export_hmd.py	/^def rvec2d(v):$/;"	kind:function	line:13
 rvec3d	../export_hmd.py	/^def rvec3d(v):$/;"	kind:function	line:17
-save	../export_hmd.py	/^def save(context, filepath,$/;"	kind:function	line:204
-saveBytes	../exporter.py	/^    def saveBytes(path,_hx_bytes):$/;"	kind:member	line:2327
-saveContent	../exporter.py	/^    def saveContent(path,content):$/;"	kind:member	line:2321
-setNormal	../exporter.py	/^    def setNormal(self,x,y,z):$/;"	kind:member	line:1586
-setPosition	../exporter.py	/^    def setPosition(self,x,y,z):$/;"	kind:member	line:1516
-setPosition	../exporter.py	/^    def setPosition(self,x,y,z):$/;"	kind:member	line:1581
-setUv	../exporter.py	/^    def setUv(self,u,v):$/;"	kind:member	line:1591
+save	../export_hmd.py	/^def save(context, filepath,$/;"	kind:function	line:236
+saveBytes	../exporter.py	/^    def saveBytes(path,_hx_bytes):$/;"	kind:member	line:2438
+saveContent	../exporter.py	/^    def saveContent(path,content):$/;"	kind:member	line:2432
+setNormal	../exporter.py	/^    def setNormal(self,x,y,z):$/;"	kind:member	line:1697
+setPosition	../exporter.py	/^    def setPosition(self,x,y,z):$/;"	kind:member	line:1587
+setPosition	../exporter.py	/^    def setPosition(self,x,y,z):$/;"	kind:member	line:1692
+setUv	../exporter.py	/^    def setUv(self,u,v):$/;"	kind:member	line:1702
 set_bigEndian	../exporter.py	/^    def set_bigEndian(self,b):$/;"	kind:member	line:654
 set_bigEndian	../exporter.py	/^    def set_bigEndian(self,b):$/;"	kind:member	line:736
-shift	../exporter.py	/^    def shift(x):$/;"	kind:member	line:2143
+shift	../exporter.py	/^    def shift(x):$/;"	kind:member	line:2254
 shortenPossibleNumber	../exporter.py	/^    def shortenPossibleNumber(x):$/;"	kind:member	line:168
-simpleField	../exporter.py	/^    def simpleField(o,field):$/;"	kind:member	line:1778
-slice	../exporter.py	/^    def slice(x,pos,end = None):$/;"	kind:member	line:2149
-sort	../exporter.py	/^    def sort(x,f):$/;"	kind:member	line:2153
-splice	../exporter.py	/^    def splice(x,pos,_hx_len):$/;"	kind:member	line:2157
-split	../exporter.py	/^    def split(s,d):$/;"	kind:member	line:2238
+simpleField	../exporter.py	/^    def simpleField(o,field):$/;"	kind:member	line:1889
+slice	../exporter.py	/^    def slice(x,pos,end = None):$/;"	kind:member	line:2260
+sort	../exporter.py	/^    def sort(x,f):$/;"	kind:member	line:2264
+splice	../exporter.py	/^    def splice(x,pos,_hx_len):$/;"	kind:member	line:2268
+split	../exporter.py	/^    def split(s,d):$/;"	kind:member	line:2349
 string	../exporter.py	/^    def string(s):$/;"	kind:member	line:132
-stringOrNull	../exporter.py	/^    def stringOrNull(s):$/;"	kind:member	line:2220
-substr	../exporter.py	/^    def substr(s,startIndex,_hx_len = None):$/;"	kind:member	line:2305
-substring	../exporter.py	/^    def substring(s,startIndex,endIndex = None):$/;"	kind:member	line:2291
-sys_io_File	../exporter.py	/^class sys_io_File:$/;"	kind:class	line:2315
-toLowerCase	../exporter.py	/^    def toLowerCase(s):$/;"	kind:member	line:2276
-toString	../exporter.py	/^    def toString(s):$/;"	kind:member	line:2287
+stringOrNull	../exporter.py	/^    def stringOrNull(s):$/;"	kind:member	line:2331
+substr	../exporter.py	/^    def substr(s,startIndex,_hx_len = None):$/;"	kind:member	line:2416
+substring	../exporter.py	/^    def substring(s,startIndex,endIndex = None):$/;"	kind:member	line:2402
+sys_io_File	../exporter.py	/^class sys_io_File:$/;"	kind:class	line:2426
+toLowerCase	../exporter.py	/^    def toLowerCase(s):$/;"	kind:member	line:2387
+toString	../exporter.py	/^    def toString(s):$/;"	kind:member	line:2398
 toString	../exporter.py	/^    def toString(self):$/;"	kind:member	line:55
 toString	../exporter.py	/^    def toString(self):$/;"	kind:member	line:831
-toString	../exporter.py	/^    def toString(x):$/;"	kind:member	line:2113
-toString1	../exporter.py	/^    def toString1(o,s):$/;"	kind:member	line:1622
-toUpperCase	../exporter.py	/^    def toUpperCase(s):$/;"	kind:member	line:2272
+toString	../exporter.py	/^    def toString(x):$/;"	kind:member	line:2224
+toString1	../exporter.py	/^    def toString1(o,s):$/;"	kind:member	line:1733
+toUpperCase	../exporter.py	/^    def toUpperCase(s):$/;"	kind:member	line:2383
 typeof	../exporter.py	/^    def typeof(v):$/;"	kind:member	line:252
-unhandleKeywords	../exporter.py	/^    def unhandleKeywords(name):$/;"	kind:member	line:2024
+unhandleKeywords	../exporter.py	/^    def unhandleKeywords(name):$/;"	kind:member	line:2135
 unregister	../__init__.py	/^def unregister():$/;"	kind:function	line:100
-unshift	../exporter.py	/^    def unshift(x,e):$/;"	kind:member	line:2129
+unshift	../exporter.py	/^    def unshift(x,e):$/;"	kind:member	line:2240
 use_animation	../__init__.py	/^    use_animation = BoolProperty($/;"	kind:variable	line:56
 use_selection	../__init__.py	/^    use_selection = BoolProperty($/;"	kind:variable	line:51
-write	../exporter.py	/^    def write(self,d):$/;"	kind:member	line:1189
-write	../exporter.py	/^    def write(self,filepath,scene):$/;"	kind:member	line:1462
+write	../exporter.py	/^    def write(self,d):$/;"	kind:member	line:1205
+write	../exporter.py	/^    def write(self,filepath,scene):$/;"	kind:member	line:1531
 write	../exporter.py	/^    def write(self,k,v):$/;"	kind:member	line:399
 write	../exporter.py	/^    def write(self,s):$/;"	kind:member	line:740
-writeBounds	../exporter.py	/^    def writeBounds(self,b):$/;"	kind:member	line:1142
+writeAnimation	../export_hmd.py	/^def writeAnimation (scene, scn, animObjects, fw):$/;"	kind:function	line:219
+writeBounds	../exporter.py	/^    def writeBounds(self,b):$/;"	kind:member	line:1158
 writeByte	../exporter.py	/^    def writeByte(self,c):$/;"	kind:member	line:722
 writeByte	../exporter.py	/^    def writeByte(self,c):$/;"	kind:member	line:801
 writeBytes	../exporter.py	/^    def writeBytes(self,buf,pos,_hx_len):$/;"	kind:member	line:804
@@ -465,12 +486,12 @@ writeBytes	../exporter.py	/^    def writeBytes(self,s,pos,_hx_len):$/;"	kind:mem
 writeFloat	../exporter.py	/^    def writeFloat(self,x):$/;"	kind:member	line:756
 writeFullBytes	../exporter.py	/^    def writeFullBytes(self,s,pos,_hx_len):$/;"	kind:member	line:750
 writeInt32	../exporter.py	/^    def writeInt32(self,x):$/;"	kind:member	line:769
-writeModel	../export_hmd.py	/^def writeModel(scn, ob, me, verts, faces, weights, skin):$/;"	kind:function	line:163
-writeName	../exporter.py	/^    def writeName(self,name):$/;"	kind:member	line:1112
-writePosition	../exporter.py	/^    def writePosition(self,p,hasScale = True):$/;"	kind:member	line:1119
-writeProperty	../exporter.py	/^    def writeProperty(self,p):$/;"	kind:member	line:1087
-writeProps	../exporter.py	/^    def writeProps(self,props):$/;"	kind:member	line:1097
-writeSkin	../exporter.py	/^    def writeSkin(self,s):$/;"	kind:member	line:1156
+writeModel	../export_hmd.py	/^def writeModel(scn, ob, me, verts, faces, weights, skin):$/;"	kind:function	line:159
+writeName	../exporter.py	/^    def writeName(self,name):$/;"	kind:member	line:1128
+writePosition	../exporter.py	/^    def writePosition(self,p,hasScale = True):$/;"	kind:member	line:1135
+writeProperty	../exporter.py	/^    def writeProperty(self,p):$/;"	kind:member	line:1103
+writeProps	../exporter.py	/^    def writeProps(self,props):$/;"	kind:member	line:1113
+writeSkin	../exporter.py	/^    def writeSkin(self,s):$/;"	kind:member	line:1172
 writeString	../exporter.py	/^    def writeString(self,s):$/;"	kind:member	line:781
 writeUInt16	../exporter.py	/^    def writeUInt16(self,x):$/;"	kind:member	line:759
-writeVertex	../exporter.py	/^    def writeVertex(self,geom,_hx_bytes):$/;"	kind:member	line:1369
+writeVertex	../exporter.py	/^    def writeVertex(self,geom,_hx_bytes):$/;"	kind:member	line:1401

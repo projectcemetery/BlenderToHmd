@@ -195,6 +195,7 @@ def writeModel(scn, ob, me, verts, faces, weights, skin):
 
     nmodel.geometry = ngeom
     scn.addModel (nmodel)
+    return nmodel
 
 # Get animation object
 def getAnimationObject (scene, ob):
@@ -232,9 +233,38 @@ def writeAnimation (scene, scn, animObjects, fw):
 
     scn.addAnimation (animation)        
 
+# Export mesh
+def exportMesh (scene, scn, ob, fw):
+    # Get mesh
+    try:
+        fw (ob.name)
+        me = ob.to_mesh(scene, True, 'PREVIEW')
+    except:
+        return None
+
+    vertices, faces = getGeometry (me)
+
+    # Export skin
+    armob = None
+    skin = None
+    weights = None
+    if ob.parent and ob.parent.type == 'ARMATURE':
+        armob = ob.parent
+        skin, weights = getSkin (ob, me, armob, fw)
+    
+    return writeModel (scn, ob, me, vertices, faces, weights, skin)
+
+# Export object without mesh and skin
+def exportObject (scene, scn, ob):
+    nmodel = exporter.io_Model ()
+    nmodel.name = ob.name
+    # TODO: matrix
+
+    scn.addModel (nmodel)
+    return nmodel
+
 # Save scene to HMD
-def save(context, filepath,
-        EXPORT_APPLY_MODIFIERS = True):
+def save(context, filepath):
     with ProgressReport(context.window_manager) as progress:
         scene = context.scene
         if bpy.ops.object.mode_set.poll():
@@ -252,32 +282,52 @@ def save(context, filepath,
         scn = exporter.io_Scene ()
 
         animObjects = []
+        models = {}
 
-        for oi, ob in enumerate(objects):
-            # Get mesh
-            try:
-                me = ob.to_mesh(scene, EXPORT_APPLY_MODIFIERS, 'PREVIEW')
-            except:
-                continue
-
-            vertices, faces = getGeometry (me)
+        for oi, ob in enumerate(objects):                        
+            model = None
 
             if ob.animation_data:
                 animObjects.append (ob)
 
-            # Export skin
-            armob = None
-            skin = None
-            weights = None
-            if ob.parent and ob.parent.type == 'ARMATURE':
-                if ob.parent.animation_data:
-                    animObjects.append (ob.parent)
+            if ob.type == 'MESH':            
+                model = exportMesh (scene, scn, ob, fw)
+            
+            if ob.type != 'ARMATURE' and ob.type != 'MESH':
+                model = exportObject (scene, scn, ob)
+            
+            if model:
+                parName = None
+                if ob.parent:
+                    parName = ob.parent.name
+                    if ob.parent.type == 'ARMATURE' and ob.parent.parent:
+                        parName = ob.parent.parent.name
 
-                armob = ob.parent
-                skin, weights = getSkin (ob, me, armob, fw)
+                models[model.name] = { "model" : model, "parent" : parName }
 
-            writeModel (scn, ob, me, vertices, faces, weights, skin)
-        
+        fw ("\n")
+
+        # Set parents
+        for name in models:
+            fw ("\n")
+            fw (name)
+            fw ("\n")
+            data = models[name]
+            parName = data["parent"]
+            fw ("1")
+            if parName:
+                parent = models.get (parName, None)
+                fw ("\n")
+                fw (parName)
+                fw ("\n")
+                if parent:
+                    fw ("3")
+                    parModel = parent["model"]
+                    data["model"].parent = parModel
+                    fw ("\n")
+                    fw (parModel.name)
+                    fw ("\n")
+
         writeAnimation (scene, scn, animObjects, fw)
         exp.write (filepath, scn)    
         file.close ()

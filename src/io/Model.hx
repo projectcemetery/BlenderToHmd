@@ -12,6 +12,11 @@ class Model {
     public var name : String = "Object";
 
     /**
+     *  Model parent
+     */
+    public var parent : Model;
+
+    /**
      *  Model geometry
      */
     public var geometry : Geometry;

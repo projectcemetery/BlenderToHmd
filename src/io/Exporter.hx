@@ -145,7 +145,7 @@ class Exporter {
         // TODO: fix bounds
         ngeom.bounds = Bounds.fromValues (0,0,0,1,1,1);        
 
-        var nmodel = new Model ();        
+        var nmodel = new Model ();
         nmodel.name = model.name;
         // TODO: geometry and parent
         nmodel.geometry = 0;
@@ -251,14 +251,12 @@ class Exporter {
 
         dataBytes = new haxe.io.BytesOutput ();
 
-        // TODO: multiple model export
-        if (scene.modelArray.length > 0) {
-            addModel (hmd, scene.modelArray[0]);
+        for (m in scene.modelArray) {
+            addModel (hmd, m);
         }
-
-        // TODO: multiple animations
-        if (scene.animations.length > 0) {
-            addAnimation (hmd, scene.animations[0]);
+        
+        for (a in scene.animations) {
+            addAnimation (hmd, a);
         }
 
         hmd.data = dataBytes.getBytes ();
